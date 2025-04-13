@@ -9,6 +9,8 @@ import WinnersSection from "../components/WinnersSection";
 import ContactSection from "../components/ContactSection";
 import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
+import StatsSection from "../components/StatsSection";
+import DeveloperSection from "../components/DeveloperSection";
 
 const Index = () => {
   return (
@@ -16,11 +18,13 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <AboutSection />
+      <StatsSection />
       <GallerySection />
       <SubmitSection />
       <JudgesSection />
       <WinnersSection />
       <ContactSection />
+      <DeveloperSection />
       <Footer />
       <ScrollToTop />
     </div>

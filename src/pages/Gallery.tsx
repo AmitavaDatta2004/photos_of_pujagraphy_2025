@@ -1,10 +1,9 @@
 
-import { useState } from 'react';
-import { X, ChevronLeft, ChevronRight } from 'lucide-react';
-import Navbar from "../components/Navbar";
+import { useState, useEffect } from 'react';
+import { X, ChevronLeft, ChevronRight, Search, ArrowLeft } from 'lucide-react';
 import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
   Pagination,
@@ -14,153 +13,36 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
-
-// Import the gallery images from the GallerySection component
-// In a production app, these would be fetched from an API
-const galleryImages = [
-  {
-    id: 1,
-    src: 'https://source.unsplash.com/random/800x600/?durga',
-    alt: 'Durga Idol',
-    category: 'Idol Making',
-    photographer: 'Anurag Deb',
-    caption: 'The magnificent Durga idol being crafted by skilled artisans in Kumartuli.'
-  },
-  {
-    id: 2,
-    src: 'https://source.unsplash.com/random/800x600/?festival',
-    alt: 'Cultural Dance',
-    category: 'Cultural Events',
-    photographer: 'Priya Sen',
-    caption: 'Traditional dance performance during the evening celebrations.'
-  },
-  {
-    id: 3,
-    src: 'https://source.unsplash.com/random/800x600/?celebration',
-    alt: 'Street Decorations',
-    category: 'Street Shots',
-    photographer: 'Sameer Khan',
-    caption: 'Beautifully lit street decorations creating a magical atmosphere.'
-  },
-  {
-    id: 4,
-    src: 'https://source.unsplash.com/random/800x600/?ritual',
-    alt: 'Aarti Ceremony',
-    category: 'Rituals & Traditions',
-    photographer: 'Nita Patel',
-    caption: 'The mesmerizing aarti ceremony with glowing lamps.'
-  },
-  {
-    id: 5,
-    src: 'https://source.unsplash.com/random/800x600/?light',
-    alt: 'Festival Lights',
-    category: 'Street Shots',
-    photographer: 'Rajiv Gupta',
-    caption: 'The pandal illuminated with thousands of colorful lights.'
-  },
-  {
-    id: 6,
-    src: 'https://source.unsplash.com/random/800x600/?sculpture',
-    alt: 'Idol Details',
-    category: 'Idol Making',
-    photographer: 'Anjali Sharma',
-    caption: 'Close-up detail of the intricate work on Durga\'s face.'
-  },
-  {
-    id: 7,
-    src: 'https://source.unsplash.com/random/800x600/?music',
-    alt: 'Dhak Players',
-    category: 'Cultural Events',
-    photographer: 'Rajan Dutta',
-    caption: 'The rhythmic beats of dhak drums filling the air with energy.'
-  },
-  {
-    id: 8,
-    src: 'https://source.unsplash.com/random/800x600/?prayer',
-    alt: 'Morning Prayers',
-    category: 'Rituals & Traditions',
-    photographer: 'Meera Roy',
-    caption: 'Devotees offering morning prayers with flowers and incense.'
-  },
-  {
-    id: 9,
-    src: 'https://source.unsplash.com/random/800x600/?devotion',
-    alt: 'Devotee Portrait',
-    category: 'Portraits',
-    photographer: 'Arun Mehta',
-    caption: 'The devotion and faith reflected in the eyes of a believer.'
-  },
-  {
-    id: 10,
-    src: 'https://source.unsplash.com/random/800x600/?emotion',
-    alt: 'Joy of Festival',
-    category: 'Moments & Emotions',
-    photographer: 'Kavita Sharma',
-    caption: 'Pure joy captured during sindoor khela celebrations.'
-  },
-  {
-    id: 11,
-    src: 'https://source.unsplash.com/random/800x600/?artist',
-    alt: 'Artisan at Work',
-    category: 'Idol Making',
-    photographer: 'Rahul Das',
-    caption: 'A skilled artisan giving final touches to the idol.'
-  },
-  {
-    id: 12,
-    src: 'https://source.unsplash.com/random/800x600/?crowd',
-    alt: 'Festival Crowd',
-    category: 'Street Shots',
-    photographer: 'Vikram Singh',
-    caption: 'The energy of the crowd during evening aarti.'
-  },
-  {
-    id: 13,
-    src: 'https://source.unsplash.com/random/800x600/?temple',
-    alt: 'Temple Ritual',
-    category: 'Rituals & Traditions',
-    photographer: 'Sanjay Bose',
-    caption: 'An age-old ritual being performed with utmost devotion.'
-  },
-  {
-    id: 14,
-    src: 'https://source.unsplash.com/random/800x600/?performer',
-    alt: 'Stage Performance',
-    category: 'Cultural Events',
-    photographer: 'Neha Rao',
-    caption: 'Cultural drama depicting scenes from mythology.'
-  },
-  {
-    id: 15,
-    src: 'https://source.unsplash.com/random/800x600/?portrait',
-    alt: 'Candid Moment',
-    category: 'Portraits',
-    photographer: 'Dinesh Joshi',
-    caption: 'A candid moment capturing the essence of the festival spirit.'
-  },
-  {
-    id: 16,
-    src: 'https://source.unsplash.com/random/800x600/?emotion',
-    alt: 'Emotional Farewell',
-    category: 'Moments & Emotions',
-    photographer: 'Tanya Ghosh',
-    caption: 'The emotional farewell during Durga visarjan (immersion).'
-  }
-];
+import { galleryImages } from '../data/images';
 
 const Gallery = () => {
   const [activeFilter, setActiveFilter] = useState('All');
   const [selectedImage, setSelectedImage] = useState<typeof galleryImages[0] | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
+  const location = useLocation();
+  
+  // Set page to 1 when component mounts
+  useEffect(() => {
+    setCurrentPage(1);
+  }, []);
   
   const imagesPerPage = 8;
   const categories = ['All', 'Idol Making', 'Cultural Events', 'Street Shots', 'Rituals & Traditions', 'Portraits', 'Moments & Emotions'];
 
-  const filteredImages = activeFilter === 'All' 
-    ? galleryImages 
-    : galleryImages.filter(img => img.category === activeFilter);
+  // Filter images based on category and search term
+  const filteredImages = galleryImages.filter(img => {
+    const matchesCategory = activeFilter === 'All' || img.category === activeFilter;
+    const matchesSearch = searchTerm === '' || 
+      img.alt.toLowerCase().includes(searchTerm.toLowerCase()) || 
+      img.photographer.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      img.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      img.caption.toLowerCase().includes(searchTerm.toLowerCase());
+    
+    return matchesCategory && matchesSearch;
+  });
 
   // Calculate total pages
   const totalPages = Math.ceil(filteredImages.length / imagesPerPage);
@@ -190,26 +72,53 @@ const Gallery = () => {
 
   // Change page
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+  
+  // Handle search
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value);
+    setCurrentPage(1); // Reset to first page when searching
+  };
 
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
-      
-      <section className="py-20 bg-festival-cream/30">
+      <section className="pt-10 pb-20 bg-festival-cream/30 min-h-screen">
         <div className="festival-container">
+          {/* Back to Home button - replacing navbar */}
+          <div className="mb-8 flex items-center justify-between">
+            <Button 
+              variant="outline" 
+              className="text-festival-maroon border-festival-golden hover:bg-festival-golden/10 group"
+              onClick={() => navigate('/')}
+            >
+              <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
+              Back to Home
+            </Button>
+            
+            <div className="text-center flex-1">
+              <span className="text-sm md:text-base text-festival-saffron font-medium">Presented by</span>
+              <h3 className="text-lg md:text-xl font-heading text-festival-maroon">Utsab Unites</h3>
+            </div>
+            
+            <div className="w-[100px]"></div> {/* Empty div for balance */}
+          </div>
+          
           <h1 className="section-title">Moments of Pujagraphy</h1>
           <p className="section-subtitle">A visual celebration of Maa Durga and the culture that surrounds Her</p>
 
-          {/* Back to Home button */}
-          <div className="mb-8 text-center">
-            <Button 
-              variant="outline" 
-              className="text-festival-maroon border-festival-golden hover:bg-festival-golden/10"
-              onClick={() => navigate('/')}
-            >
-              <ChevronLeft size={16} />
-              Back to Home
-            </Button>
+          {/* Search Bar */}
+          <div className="max-w-md mx-auto my-8">
+            <div className="relative">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <Search size={18} className="text-gray-400" />
+              </div>
+              <input
+                type="text"
+                className="w-full bg-white border border-festival-golden/30 rounded-full py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-festival-golden/50 focus:border-transparent"
+                placeholder="Search by title, photographer, category..."
+                value={searchTerm}
+                onChange={handleSearch}
+              />
+            </div>
           </div>
 
           {/* Category Filters */}
@@ -232,23 +141,44 @@ const Gallery = () => {
             ))}
           </div>
 
+          {/* No Results Message */}
+          {currentImages.length === 0 && (
+            <div className="text-center py-12">
+              <p className="text-lg text-festival-maroon">No photos match your search criteria.</p>
+              <button 
+                onClick={() => {
+                  setSearchTerm('');
+                  setActiveFilter('All');
+                }}
+                className="mt-4 px-4 py-2 bg-festival-saffron/20 text-festival-maroon rounded-lg hover:bg-festival-saffron/30 transition-colors"
+              >
+                Clear Filters
+              </button>
+            </div>
+          )}
+
           {/* Gallery Masonry Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {currentImages.map(image => (
               <div 
                 key={image.id} 
-                className="card-festive overflow-hidden cursor-pointer transform transition-all hover:scale-[1.02]"
+                className="card-festive overflow-hidden cursor-pointer transform transition-all hover:scale-[1.02] group"
                 onClick={() => {
                   setSelectedImage(image);
                   setCurrentImageIndex(filteredImages.findIndex(img => img.id === image.id));
                 }}
               >
-                <div className="aspect-square overflow-hidden">
+                <div className="aspect-square overflow-hidden relative">
                   <img 
                     src={image.src} 
                     alt={image.alt} 
-                    className="w-full h-full object-cover transition-transform hover:scale-110 duration-700"
+                    className="w-full h-full object-cover transition-transform group-hover:scale-110 duration-700"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                    <div className="text-white p-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                      <p className="text-sm font-light">{image.category}</p>
+                    </div>
+                  </div>
                 </div>
                 <div className="p-3">
                   <h3 className="font-medium text-festival-maroon">{image.alt}</h3>
@@ -299,10 +229,10 @@ const Gallery = () => {
 
           {/* Lightbox */}
           {selectedImage && (
-            <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
+            <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 animate-fade-in">
               <div className="max-w-6xl w-full bg-white rounded-lg overflow-hidden relative">
                 <button 
-                  className="absolute top-2 right-2 bg-white rounded-full p-1 z-10"
+                  className="absolute top-2 right-2 bg-white rounded-full p-1 z-10 hover:bg-festival-red hover:text-white transition-colors duration-300"
                   onClick={() => setSelectedImage(null)}
                 >
                   <X size={24} className="text-festival-maroon" />
@@ -310,14 +240,14 @@ const Gallery = () => {
                 
                 {/* Navigation buttons */}
                 <button 
-                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 z-10"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 z-10 hover:bg-festival-golden/20 transition-colors duration-300"
                   onClick={handlePrevImage}
                 >
                   <ChevronLeft size={24} className="text-festival-maroon" />
                 </button>
                 
                 <button 
-                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 z-10"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 z-10 hover:bg-festival-golden/20 transition-colors duration-300"
                   onClick={handleNextImage}
                 >
                   <ChevronRight size={24} className="text-festival-maroon" />
@@ -351,7 +281,7 @@ const Gallery = () => {
           <div className="mt-16 p-6 bg-white rounded-xl shadow-md text-center card-festive">
             <h3 className="text-xl font-heading text-festival-maroon mb-3">Have your own magical Puja frame to share?</h3>
             <p className="mb-4">Submit it today and be featured in our gallery!</p>
-            <a href="#submit" className="btn-festive">
+            <a href="https://forms.google.com" target="_blank" rel="noopener noreferrer" className="btn-festive transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
               Submit via Google Form
             </a>
           </div>
