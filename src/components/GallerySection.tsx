@@ -78,7 +78,11 @@ const GallerySection = () => {
 
         {/* View All Button */}
         <div className="mt-10 text-center">
-          <Link to="/gallery" className="btn-festive inline-flex items-center transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
+          <Link 
+            to="/gallery" 
+            className="btn-festive inline-flex items-center transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            onClick={() => window.scrollTo(0, 0)}
+          >
             View All Photos
             <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
           </Link>

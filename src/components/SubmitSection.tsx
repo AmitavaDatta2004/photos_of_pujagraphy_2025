@@ -3,9 +3,8 @@ import { ExternalLink, Camera, Clock } from 'lucide-react';
 import CountdownTimer from './CountdownTimer';
 
 const SubmitSection = () => {
-  // Set deadline to one month from now
-  const deadline = new Date();
-  deadline.setDate(deadline.getDate() + 30);
+  // Set deadline to May 15, 2025
+  const deadline = new Date("May 15, 2025");
 
   return (
     <section id="submit" className="py-20 relative">
@@ -47,7 +46,7 @@ const SubmitSection = () => {
                   <ExternalLink size={16} />
                 </a>
                 <p className="mt-3 text-sm text-gray-600">
-                  Submissions open until October 15th
+                  Submissions open until May 15th, 2025
                 </p>
               </div>
             </div>

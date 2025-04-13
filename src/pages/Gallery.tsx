@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight, Search, ArrowLeft } from 'lucide-react';
 import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
   Pagination,
@@ -22,11 +22,10 @@ const Gallery = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
-  const location = useLocation();
   
-  // Set page to 1 when component mounts
+  // Scroll to top when component mounts
   useEffect(() => {
-    setCurrentPage(1);
+    window.scrollTo(0, 0);
   }, []);
   
   const imagesPerPage = 8;
@@ -71,7 +70,10 @@ const Gallery = () => {
   };
 
   // Change page
-  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+  const paginate = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+    window.scrollTo(0, 0);
+  };
   
   // Handle search
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {

@@ -1,12 +1,10 @@
-
 import { useState, useEffect } from 'react';
 import { Camera } from 'lucide-react';
 import CountdownTimer from './CountdownTimer';
 
 const HeroSection = () => {
-  // Set deadline to one month from now
-  const deadline = new Date();
-  deadline.setDate(deadline.getDate() + 30);
+  // Set deadline to May 15, 2025
+  const deadline = new Date("May 15, 2025");
   
   const [typewriterText, setTypewriterText] = useState("");
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
@@ -80,7 +78,7 @@ const HeroSection = () => {
           </div>
           
           <div className="mb-10 mt-8">
-            <div className="text-lg mb-2 text-festival-maroon font-medium">Registration Deadline:</div>
+            <div className="text-lg mb-2 text-festival-maroon font-medium">Registration Deadline: May 15, 2025</div>
             <CountdownTimer targetDate={deadline} />
           </div>
           

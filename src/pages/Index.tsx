@@ -11,6 +11,7 @@ import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
 import StatsSection from "../components/StatsSection";
 import DeveloperSection from "../components/DeveloperSection";
+import ContestTimeline from "../components/ContestTimeline";
 
 const Index = () => {
   return (
@@ -18,6 +19,7 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <AboutSection />
+      <ContestTimeline />
       <StatsSection />
       <GallerySection />
       <SubmitSection />
