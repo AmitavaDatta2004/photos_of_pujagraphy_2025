@@ -1,6 +1,7 @@
 
-import { useState } from 'react';
-import { X } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { X, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 // Sample gallery images (in production, these would be dynamically loaded)
 const galleryImages = [
@@ -67,18 +68,93 @@ const galleryImages = [
     category: 'Rituals & Traditions',
     photographer: 'Meera Roy',
     caption: 'Devotees offering morning prayers with flowers and incense.'
+  },
+  {
+    id: 9,
+    src: 'https://source.unsplash.com/random/800x600/?devotion',
+    alt: 'Devotee Portrait',
+    category: 'Portraits',
+    photographer: 'Arun Mehta',
+    caption: 'The devotion and faith reflected in the eyes of a believer.'
+  },
+  {
+    id: 10,
+    src: 'https://source.unsplash.com/random/800x600/?emotion',
+    alt: 'Joy of Festival',
+    category: 'Moments & Emotions',
+    photographer: 'Kavita Sharma',
+    caption: 'Pure joy captured during sindoor khela celebrations.'
+  },
+  {
+    id: 11,
+    src: 'https://source.unsplash.com/random/800x600/?artist',
+    alt: 'Artisan at Work',
+    category: 'Idol Making',
+    photographer: 'Rahul Das',
+    caption: 'A skilled artisan giving final touches to the idol.'
+  },
+  {
+    id: 12,
+    src: 'https://source.unsplash.com/random/800x600/?crowd',
+    alt: 'Festival Crowd',
+    category: 'Street Shots',
+    photographer: 'Vikram Singh',
+    caption: 'The energy of the crowd during evening aarti.'
+  },
+  {
+    id: 13,
+    src: 'https://source.unsplash.com/random/800x600/?temple',
+    alt: 'Temple Ritual',
+    category: 'Rituals & Traditions',
+    photographer: 'Sanjay Bose',
+    caption: 'An age-old ritual being performed with utmost devotion.'
+  },
+  {
+    id: 14,
+    src: 'https://source.unsplash.com/random/800x600/?performer',
+    alt: 'Stage Performance',
+    category: 'Cultural Events',
+    photographer: 'Neha Rao',
+    caption: 'Cultural drama depicting scenes from mythology.'
+  },
+  {
+    id: 15,
+    src: 'https://source.unsplash.com/random/800x600/?portrait',
+    alt: 'Candid Moment',
+    category: 'Portraits',
+    photographer: 'Dinesh Joshi',
+    caption: 'A candid moment capturing the essence of the festival spirit.'
+  },
+  {
+    id: 16,
+    src: 'https://source.unsplash.com/random/800x600/?emotion',
+    alt: 'Emotional Farewell',
+    category: 'Moments & Emotions',
+    photographer: 'Tanya Ghosh',
+    caption: 'The emotional farewell during Durga visarjan (immersion).'
   }
 ];
 
 const GallerySection = () => {
   const [activeFilter, setActiveFilter] = useState('All');
   const [selectedImage, setSelectedImage] = useState<typeof galleryImages[0] | null>(null);
+  const [randomImages, setRandomImages] = useState<typeof galleryImages>([]);
+
+  // Get 6 random images from the gallery
+  useEffect(() => {
+    const getRandomImages = () => {
+      const shuffled = [...galleryImages].sort(() => 0.5 - Math.random());
+      return shuffled.slice(0, 6);
+    };
+    
+    setRandomImages(getRandomImages());
+  }, []);
 
   const categories = ['All', 'Idol Making', 'Cultural Events', 'Street Shots', 'Rituals & Traditions'];
 
   const filteredImages = activeFilter === 'All' 
-    ? galleryImages 
-    : galleryImages.filter(img => img.category === activeFilter);
+    ? randomImages 
+    : randomImages.filter(img => img.category === activeFilter);
 
   return (
     <section id="gallery" className="py-20 bg-festival-cream/30">
@@ -104,7 +180,7 @@ const GallerySection = () => {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {filteredImages.map(image => (
             <div 
               key={image.id} 
@@ -124,6 +200,14 @@ const GallerySection = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* View All Button */}
+        <div className="mt-10 text-center">
+          <Link to="/gallery" className="btn-festive inline-flex items-center">
+            View All Photos
+            <ArrowRight size={18} />
+          </Link>
         </div>
 
         {/* Lightbox */}
