@@ -61,10 +61,10 @@ const CountdownTimer = ({ targetDate, className = '' }: CountdownTimerProps) => 
         <span className="text-sm mt-1 block">Minutes</span>
       </div>
       <div className="text-center">
-        <div className="bg-festival-golden text-festival-maroon text-2xl md:text-3xl font-bold rounded-lg p-3 min-w-[70px]">
+        <div className="bg-festival-golden dark:bg-yellow-400 text-festival-maroon dark:text-gray-900 text-2xl md:text-3xl font-bold rounded-lg p-3 min-w-[70px]">
           {formatNumber(timeLeft.seconds)}
         </div>
-        <span className="text-sm mt-1 block">Seconds</span>
+        <span className="text-sm mt-1 block dark:text-gray-200">Seconds</span>
       </div>
     </div>
   );

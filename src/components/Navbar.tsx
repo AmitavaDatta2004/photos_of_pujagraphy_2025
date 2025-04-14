@@ -27,11 +27,11 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled || mobileMenuOpen ? (
-        theme === 'dark' ? 'bg-gray-900 shadow-md backdrop-blur-sm py-2' : 'bg-white shadow-md backdrop-blur-sm py-2'
-      ) : (
-        theme === 'dark' ? 'bg-gray-900 py-4' : 'bg-white py-4'
-      )}`}>
+      isScrolled || mobileMenuOpen ? 
+        (theme === 'dark' ? 'bg-gray-900/95 backdrop-blur-sm shadow-lg py-2' : 'bg-white/95 backdrop-blur-sm shadow-lg py-2') 
+      : 
+        (theme === 'dark' ? 'bg-gray-900/95 backdrop-blur-sm py-4' : 'bg-white/95 backdrop-blur-sm py-4')
+    }`}>
       <div className="festival-container flex items-center justify-between">
         <a href="#" className="flex flex-col items-start gap-0">
           <span className={`font-heading text-2xl font-bold ${theme === 'dark' ? 'text-festival-golden' : 'text-festival-maroon'}`}>
@@ -93,7 +93,7 @@ const Navbar = () => {
         className={`md:hidden fixed inset-0 transition-transform duration-300 ease-in-out ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`} 
         style={{ top: '60px' }}
       >
-        <div className={`p-4 flex flex-col gap-4 text-lg h-full ${theme === 'dark' ? 'bg-gray-900' : 'bg-white'}`}>
+        <div className={`p-4 flex flex-col gap-4 text-lg h-full ${theme === 'dark' ? 'bg-gray-900/98 backdrop-blur-md' : 'bg-white/98 backdrop-blur-md'}`}>
           <a href="#about" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors p-2 border-b ${theme === 'dark' ? 'border-gray-700' : 'border-festival-golden/20'}`} onClick={() => setMobileMenuOpen(false)}>About</a>
           <a href="#gallery" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors p-2 border-b ${theme === 'dark' ? 'border-gray-700' : 'border-festival-golden/20'}`} onClick={() => setMobileMenuOpen(false)}>Gallery</a>
           <a href="#submit" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors p-2 border-b ${theme === 'dark' ? 'border-gray-700' : 'border-festival-golden/20'}`} onClick={() => setMobileMenuOpen(false)}>Submit</a>

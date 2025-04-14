@@ -25,10 +25,24 @@ const Index = () => {
         <StatsSection />
         <GallerySection />
         <SubmitSection />
-        <JudgesSection />
+        
+        {/* Judges Section with updated background */}
+        <div className="dark:bg-gradient-to-b dark:from-gray-900 dark:to-purple-900/30">
+          <JudgesSection />
+        </div>
+        
         <WinnersSection />
-        <OrganizingTeamSection />
-        <DeveloperSection />
+        
+        {/* Team Section with updated background */}
+        <div className="dark:bg-gradient-to-b dark:from-purple-900/30 dark:to-indigo-900/20">
+          <OrganizingTeamSection />
+        </div>
+        
+        {/* Developer Section with updated background */}
+        <div className="dark:bg-gradient-to-br dark:from-indigo-900/30 dark:to-violet-900/40">
+          <DeveloperSection />
+        </div>
+        
         <ContactSection />
         <Footer />
         <ScrollToTop />

@@ -63,6 +63,8 @@ export default {
 					purple: '#8B008B',
 					teal: '#008080',
 					lime: '#32CD32',
+					violet: '#9400D3',
+					indigo: '#4B0082'
 				}
 			},
 			borderRadius: {
@@ -131,6 +133,10 @@ export default {
 				'dark-festival': 'linear-gradient(135deg, rgba(255,165,0,0.15) 0%, rgba(210,43,43,0.15) 100%)',
 				'festival-glow': 'linear-gradient(to right, rgba(255,215,0,0.2), rgba(210,43,43,0.2))',
 				'aurora-gradient': 'linear-gradient(to right, #4B0082, #9932CC, #FFD700)',
+				'purple-dream': 'linear-gradient(135deg, #9400D3 0%, #4B0082 100%)',
+				'golden-sunset': 'linear-gradient(135deg, #FFD700 0%, #FF8C00 100%)',
+				'night-sky': 'linear-gradient(to bottom, #0f172a, #1e1b4b)',
+				'festive-night': 'linear-gradient(to bottom, #161932, #301934)',
 			},
 			fontFamily: {
 				heading: ['Playfair Display', 'serif'],
