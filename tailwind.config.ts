@@ -98,7 +98,17 @@ export default {
 				'rotate-center': {
 					'0%': { transform: 'rotate(0)' },
 					'100%': { transform: 'rotate(360deg)' }
-				}
+				},
+				'gradient-x': {
+					'0%, 100%': {
+						'background-size': '200% 200%',
+						'background-position': 'left center'
+					},
+					'50%': {
+						'background-size': '200% 200%',
+						'background-position': 'right center'
+					}
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -107,13 +117,16 @@ export default {
 				'shimmer': 'shimmer 3s linear infinite',
 				'petal-fall': 'petal-fall 10s linear infinite',
 				'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
-				'rotate-center': 'rotate-center 8s linear infinite'
+				'rotate-center': 'rotate-center 8s linear infinite',
+				'gradient-x': 'gradient-x 15s ease infinite',
 			},
 			backgroundImage: {
 				'alpona-pattern': "url('/alpona-pattern.png')",
 				'festive-gradient': 'linear-gradient(to right, #FFA500, #D22B2B)',
 				'festive-dark-gradient': 'linear-gradient(to right, #FFA500, #800000)',
 				'rainbow-gradient': 'linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff)',
+				'dark-gradient': 'linear-gradient(to right, #4B0082, #800080, #9932CC)',
+				'gold-gradient': 'linear-gradient(to right, #FFD700, #FFA500, #FF8C00)',
 			},
 			fontFamily: {
 				heading: ['Playfair Display', 'serif'],
