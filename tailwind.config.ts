@@ -60,6 +60,9 @@ export default {
 					red: '#D22B2B',
 					golden: '#FFD700',
 					cream: '#FFFDD0',
+					purple: '#8B008B',
+					teal: '#008080',
+					lime: '#32CD32',
 				}
 			},
 			borderRadius: {
@@ -87,6 +90,14 @@ export default {
 				'petal-fall': {
 					'0%': { transform: 'translateY(0) rotate(0deg)', opacity: '1' },
 					'100%': { transform: 'translateY(100vh) rotate(360deg)', opacity: '0' }
+				},
+				'pulse-slow': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.6' }
+				},
+				'rotate-center': {
+					'0%': { transform: 'rotate(0)' },
+					'100%': { transform: 'rotate(360deg)' }
 				}
 			},
 			animation: {
@@ -94,11 +105,15 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'float': 'float 6s ease-in-out infinite',
 				'shimmer': 'shimmer 3s linear infinite',
-				'petal-fall': 'petal-fall 10s linear infinite'
+				'petal-fall': 'petal-fall 10s linear infinite',
+				'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
+				'rotate-center': 'rotate-center 8s linear infinite'
 			},
 			backgroundImage: {
 				'alpona-pattern': "url('/alpona-pattern.png')",
 				'festive-gradient': 'linear-gradient(to right, #FFA500, #D22B2B)',
+				'festive-dark-gradient': 'linear-gradient(to right, #FFA500, #800000)',
+				'rainbow-gradient': 'linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff)',
 			},
 			fontFamily: {
 				heading: ['Playfair Display', 'serif'],
