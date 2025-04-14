@@ -12,6 +12,7 @@ import ScrollToTop from "../components/ScrollToTop";
 import StatsSection from "../components/StatsSection";
 import DeveloperSection from "../components/DeveloperSection";
 import ContestTimeline from "../components/ContestTimeline";
+import OrganizingTeamSection from "../components/OrganizingTeamSection";
 
 const Index = () => {
   return (
@@ -25,6 +26,7 @@ const Index = () => {
       <SubmitSection />
       <JudgesSection />
       <WinnersSection />
+      <OrganizingTeamSection />
       <ContactSection />
       <DeveloperSection />
       <Footer />

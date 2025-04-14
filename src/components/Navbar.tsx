@@ -38,6 +38,7 @@ const Navbar = () => {
           <a href="#submit" className="text-festival-maroon hover:text-festival-red font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-festival-red hover:after:w-full after:transition-all">Submit</a>
           <a href="#judges" className="text-festival-maroon hover:text-festival-red font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-festival-red hover:after:w-full after:transition-all">Judges</a>
           <a href="#winners" className="text-festival-maroon hover:text-festival-red font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-festival-red hover:after:w-full after:transition-all">Winners</a>
+          <a href="#team" className="text-festival-maroon hover:text-festival-red font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-festival-red hover:after:w-full after:transition-all">Team</a>
           <a href="#contact" className="text-festival-maroon hover:text-festival-red font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-festival-red hover:after:w-full after:transition-all">Contact</a>
           <a href="#developer" className="text-festival-maroon hover:text-festival-red font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-festival-red hover:after:w-full after:transition-all">Developer</a>
         </div>
@@ -56,6 +57,7 @@ const Navbar = () => {
           <a href="#submit" className="text-festival-maroon hover:text-festival-red font-medium transition-colors p-2 border-b border-festival-golden/20" onClick={() => setMobileMenuOpen(false)}>Submit</a>
           <a href="#judges" className="text-festival-maroon hover:text-festival-red font-medium transition-colors p-2 border-b border-festival-golden/20" onClick={() => setMobileMenuOpen(false)}>Judges</a>
           <a href="#winners" className="text-festival-maroon hover:text-festival-red font-medium transition-colors p-2 border-b border-festival-golden/20" onClick={() => setMobileMenuOpen(false)}>Winners</a>
+          <a href="#team" className="text-festival-maroon hover:text-festival-red font-medium transition-colors p-2 border-b border-festival-golden/20" onClick={() => setMobileMenuOpen(false)}>Team</a>
           <a href="#contact" className="text-festival-maroon hover:text-festival-red font-medium transition-colors p-2 border-b border-festival-golden/20" onClick={() => setMobileMenuOpen(false)}>Contact</a>
           <a href="#developer" className="text-festival-maroon hover:text-festival-red font-medium transition-colors p-2" onClick={() => setMobileMenuOpen(false)}>Developer</a>
           

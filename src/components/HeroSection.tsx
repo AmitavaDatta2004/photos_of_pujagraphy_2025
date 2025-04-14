@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+
 import { Camera } from 'lucide-react';
 import CountdownTimer from './CountdownTimer';
 
@@ -6,50 +6,6 @@ const HeroSection = () => {
   // Set deadline to May 15, 2025
   const deadline = new Date("May 15, 2025");
   
-  const [typewriterText, setTypewriterText] = useState("");
-  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [typingSpeed, setTypingSpeed] = useState(150);
-  
-  const phrases = [
-    "Capture the Spirit",
-    "Share the Soul of Puja",
-    "Feel the Devotion",
-    "Live the Tradition",
-    "Celebrate with Utsab Unites"
-  ];
-
-  useEffect(() => {
-    const typewriterEffect = () => {
-      const currentPhrase = phrases[currentPhraseIndex];
-      
-      if (isDeleting) {
-        // Deleting text
-        setTypewriterText(currentPhrase.substring(0, typewriterText.length - 1));
-        setTypingSpeed(50); // Faster when deleting
-      } else {
-        // Typing text
-        setTypewriterText(currentPhrase.substring(0, typewriterText.length + 1));
-        setTypingSpeed(150); // Normal typing speed
-      }
-      
-      // Logic for changing phrases
-      if (!isDeleting && typewriterText === currentPhrase) {
-        // Finished typing, pause before deleting
-        setTimeout(() => setIsDeleting(true), 1500);
-        setTypingSpeed(150);
-      } else if (isDeleting && typewriterText === '') {
-        // Finished deleting, move to next phrase
-        setIsDeleting(false);
-        setCurrentPhraseIndex((currentPhraseIndex + 1) % phrases.length);
-        setTypingSpeed(150);
-      }
-    };
-    
-    const timer = setTimeout(typewriterEffect, typingSpeed);
-    return () => clearTimeout(timer);
-  }, [typewriterText, currentPhraseIndex, isDeleting, typingSpeed, phrases]);
-
   return (
     <section className="min-h-screen relative flex items-center overflow-hidden">
       {/* Background Pattern */}
@@ -72,8 +28,8 @@ const HeroSection = () => {
           </h1>
           
           <div className="h-16 flex items-center justify-center">
-            <p className="text-xl md:text-2xl text-festival-saffron font-heading relative after:content-[''] after:inline-block after:w-1 after:h-8 after:bg-festival-saffron after:ml-1 after:align-middle after:animate-pulse">
-              {typewriterText}
+            <p className="text-xl md:text-2xl text-festival-saffron font-heading">
+              Capture the Spirit of Puja, Share with Utsab Unites
             </p>
           </div>
           

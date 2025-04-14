@@ -1,5 +1,19 @@
 
-// Gallery images data
+// Define the available categories
+export const categories = [
+  'All',
+  'Idol Making',
+  'Cultural Events',
+  'Street Shots',
+  'Rituals & Traditions',
+  'Portraits',
+  'Moments & Emotions',
+];
+
+// Define the photo categories
+export type PhotoCategory = 'Mobile Captures' | 'Camera Captures';
+
+// Gallery images data with category information
 export const galleryImages = [
   {
     id: 1,
@@ -7,7 +21,8 @@ export const galleryImages = [
     alt: 'Durga Idol',
     category: 'Idol Making',
     photographer: 'Anurag Deb',
-    caption: 'The magnificent Durga idol being crafted by skilled artisans in Kumartuli.'
+    caption: 'The magnificent Durga idol being crafted by skilled artisans in Kumartuli.',
+    photoCategory: 'Camera Captures' as PhotoCategory
   },
   {
     id: 2,
@@ -15,7 +30,8 @@ export const galleryImages = [
     alt: 'Cultural Dance',
     category: 'Cultural Events',
     photographer: 'Priya Sen',
-    caption: 'Traditional dance performance during the evening celebrations.'
+    caption: 'Traditional dance performance during the evening celebrations.',
+    photoCategory: 'Mobile Captures' as PhotoCategory
   },
   {
     id: 3,
@@ -23,7 +39,8 @@ export const galleryImages = [
     alt: 'Street Decorations',
     category: 'Street Shots',
     photographer: 'Sameer Khan',
-    caption: 'Beautifully lit street decorations creating a magical atmosphere.'
+    caption: 'Beautifully lit street decorations creating a magical atmosphere.',
+    photoCategory: 'Camera Captures' as PhotoCategory
   },
   {
     id: 4,
@@ -31,7 +48,8 @@ export const galleryImages = [
     alt: 'Aarti Ceremony',
     category: 'Rituals & Traditions',
     photographer: 'Nita Patel',
-    caption: 'The mesmerizing aarti ceremony with glowing lamps.'
+    caption: 'The mesmerizing aarti ceremony with glowing lamps.',
+    photoCategory: 'Mobile Captures' as PhotoCategory
   },
   {
     id: 5,
@@ -39,7 +57,8 @@ export const galleryImages = [
     alt: 'Festival Lights',
     category: 'Street Shots',
     photographer: 'Rajiv Gupta',
-    caption: 'The pandal illuminated with thousands of colorful lights.'
+    caption: 'The pandal illuminated with thousands of colorful lights.',
+    photoCategory: 'Camera Captures' as PhotoCategory
   },
   {
     id: 6,
@@ -47,7 +66,8 @@ export const galleryImages = [
     alt: 'Idol Details',
     category: 'Idol Making',
     photographer: 'Anjali Sharma',
-    caption: 'Close-up detail of the intricate work on Durga\'s face.'
+    caption: 'Close-up detail of the intricate work on Durga\'s face.',
+    photoCategory: 'Mobile Captures' as PhotoCategory
   },
   {
     id: 7,
@@ -55,7 +75,8 @@ export const galleryImages = [
     alt: 'Dhak Players',
     category: 'Cultural Events',
     photographer: 'Rajan Dutta',
-    caption: 'The rhythmic beats of dhak drums filling the air with energy.'
+    caption: 'The rhythmic beats of dhak drums filling the air with energy.',
+    photoCategory: 'Camera Captures' as PhotoCategory
   },
   {
     id: 8,
@@ -63,7 +84,8 @@ export const galleryImages = [
     alt: 'Morning Prayers',
     category: 'Rituals & Traditions',
     photographer: 'Meera Roy',
-    caption: 'Devotees offering morning prayers with flowers and incense.'
+    caption: 'Devotees offering morning prayers with flowers and incense.',
+    photoCategory: 'Mobile Captures' as PhotoCategory
   },
   {
     id: 9,
@@ -71,7 +93,8 @@ export const galleryImages = [
     alt: 'Devotee Portrait',
     category: 'Portraits',
     photographer: 'Arun Mehta',
-    caption: 'The devotion and faith reflected in the eyes of a believer.'
+    caption: 'The devotion and faith reflected in the eyes of a believer.',
+    photoCategory: 'Camera Captures' as PhotoCategory
   },
   {
     id: 10,
@@ -79,7 +102,8 @@ export const galleryImages = [
     alt: 'Joy of Festival',
     category: 'Moments & Emotions',
     photographer: 'Kavita Sharma',
-    caption: 'Pure joy captured during sindoor khela celebrations.'
+    caption: 'Pure joy captured during sindoor khela celebrations.',
+    photoCategory: 'Mobile Captures' as PhotoCategory
   },
   {
     id: 11,
@@ -87,7 +111,8 @@ export const galleryImages = [
     alt: 'Artisan at Work',
     category: 'Idol Making',
     photographer: 'Rahul Das',
-    caption: 'A skilled artisan giving final touches to the idol.'
+    caption: 'A skilled artisan giving final touches to the idol.',
+    photoCategory: 'Camera Captures' as PhotoCategory
   },
   {
     id: 12,
@@ -95,7 +120,8 @@ export const galleryImages = [
     alt: 'Festival Crowd',
     category: 'Street Shots',
     photographer: 'Vikram Singh',
-    caption: 'The energy of the crowd during evening aarti.'
+    caption: 'The energy of the crowd during evening aarti.',
+    photoCategory: 'Mobile Captures' as PhotoCategory
   },
   {
     id: 13,
@@ -103,7 +129,8 @@ export const galleryImages = [
     alt: 'Temple Ritual',
     category: 'Rituals & Traditions',
     photographer: 'Sanjay Bose',
-    caption: 'An age-old ritual being performed with utmost devotion.'
+    caption: 'An age-old ritual being performed with utmost devotion.',
+    photoCategory: 'Camera Captures' as PhotoCategory
   },
   {
     id: 14,
@@ -111,7 +138,8 @@ export const galleryImages = [
     alt: 'Stage Performance',
     category: 'Cultural Events',
     photographer: 'Neha Rao',
-    caption: 'Cultural drama depicting scenes from mythology.'
+    caption: 'Cultural drama depicting scenes from mythology.',
+    photoCategory: 'Mobile Captures' as PhotoCategory
   },
   {
     id: 15,
@@ -119,7 +147,8 @@ export const galleryImages = [
     alt: 'Candid Moment',
     category: 'Portraits',
     photographer: 'Dinesh Joshi',
-    caption: 'A candid moment capturing the essence of the festival spirit.'
+    caption: 'A candid moment capturing the essence of the festival spirit.',
+    photoCategory: 'Camera Captures' as PhotoCategory
   },
   {
     id: 16,
@@ -127,6 +156,59 @@ export const galleryImages = [
     alt: 'Emotional Farewell',
     category: 'Moments & Emotions',
     photographer: 'Tanya Ghosh',
-    caption: 'The emotional farewell during Durga visarjan (immersion).'
+    caption: 'The emotional farewell during Durga visarjan (immersion).',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  }
+];
+
+// Organizing team data
+export const organizingTeam = [
+  {
+    id: 1,
+    name: "Ria Sen",
+    role: "Lead Coordinator",
+    team: "Event Management Team",
+    photo: "https://source.unsplash.com/random/300x300/?portrait",
+    social: {
+      instagram: "https://instagram.com/riasen",
+      facebook: "https://facebook.com/riasen",
+      twitter: "https://twitter.com/riasen",
+    }
+  },
+  {
+    id: 2,
+    name: "Arjun Sharma",
+    role: "Photography Expert",
+    team: "Curation Team",
+    photo: "https://source.unsplash.com/random/300x300/?man",
+    social: {
+      instagram: "https://instagram.com/arjunsharma",
+      facebook: "https://facebook.com/arjunsharma",
+      linkedin: "https://linkedin.com/in/arjunsharma"
+    }
+  },
+  {
+    id: 3,
+    name: "Priyanka Roy",
+    role: "Creative Director",
+    team: "Event Management Team",
+    photo: "https://source.unsplash.com/random/300x300/?woman",
+    social: {
+      instagram: "https://instagram.com/priyankaroy",
+      behance: "https://behance.net/priyankaroy",
+      dribbble: "https://dribbble.com/priyankaroy"
+    }
+  },
+  {
+    id: 4,
+    name: "Rahul Gupta",
+    role: "Technical Lead",
+    team: "Curation Team",
+    photo: "https://source.unsplash.com/random/300x300/?indian",
+    social: {
+      instagram: "https://instagram.com/rahulgupta",
+      github: "https://github.com/rahulgupta",
+      linkedin: "https://linkedin.com/in/rahulgupta"
+    }
   }
 ];
