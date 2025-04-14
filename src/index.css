@@ -55,7 +55,7 @@
     --secondary-foreground: 0 0% 98%;
 
     --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted-foreground: 240 5% 84.9%;
 
     --accent: 240 3.7% 15.9%;
     --accent-foreground: 0 0% 98%;
@@ -126,19 +126,19 @@
   }
   
   .section-subtitle {
-    @apply text-xl md:text-2xl text-center mb-12 text-festival-saffron font-heading dark:text-festival-red;
+    @apply text-xl md:text-2xl text-center mb-12 text-festival-saffron font-heading dark:text-amber-400;
   }
 
   .btn-festive {
-    @apply px-6 py-3 bg-festival-red text-white font-bold rounded-lg hover:bg-festival-maroon transition-all duration-300 inline-flex items-center gap-2 dark:bg-festival-golden dark:hover:bg-amber-600;
+    @apply px-6 py-3 bg-festival-red text-white font-bold rounded-lg hover:bg-festival-maroon transition-all duration-300 inline-flex items-center gap-2 dark:bg-gradient-to-r dark:from-amber-500 dark:to-red-600 dark:hover:from-amber-600 dark:hover:to-red-700;
   }
   
   .card-festive {
-    @apply bg-white rounded-xl shadow-md overflow-hidden border border-festival-golden/20 hover:shadow-lg transition-all duration-300 dark:bg-gray-800 dark:border-festival-golden/40;
+    @apply bg-white rounded-xl shadow-md overflow-hidden border border-festival-golden/20 hover:shadow-lg transition-all duration-300 dark:bg-gray-800/90 dark:border-festival-golden/40 dark:backdrop-blur-sm;
   }
   
   .alpona-border {
-    @apply relative before:absolute before:inset-0 before:p-1 before:rounded-lg before:bg-festive-gradient before:content-[''] before:-z-10;
+    @apply relative before:absolute before:inset-0 before:p-1 before:rounded-lg before:bg-festive-gradient before:content-[''] before:-z-10 dark:before:bg-aurora-gradient;
   }
 
   .bg-pattern {
@@ -152,6 +152,11 @@
   .dark .bg-pattern {
     background-color: #111;
     background-image: radial-gradient(#FFA500 0.5px, transparent 0.5px), radial-gradient(#FFA500 0.5px, #111 0.5px);
+  }
+
+  /* Enhance developer section */
+  .developer-title {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-festival-red to-festival-maroon dark:from-amber-400 dark:to-red-600;
   }
 }
 
@@ -239,7 +244,7 @@ html {
 
 /* Dark mode gradients and backgrounds */
 .dark .bg-festival-cream\/30 {
-  background: linear-gradient(to bottom, rgba(25, 25, 35, 0.7), rgba(35, 35, 45, 0.7));
+  background: linear-gradient(to bottom, rgba(30, 30, 60, 0.7), rgba(35, 35, 45, 0.7));
 }
 
 .dark .bg-white {
@@ -271,4 +276,40 @@ html {
 
 .dark .bg-festival-cream {
   background-color: #2a2a2a;
+}
+
+/* Fix dark theme text visibility issues */
+.dark .text-gray-500 {
+  color: #aaa;
+}
+
+.dark .text-gray-600 {
+  color: #bbb;
+}
+
+.dark .text-gray-700 {
+  color: #ccc;
+}
+
+.dark .text-gray-800 {
+  color: #ddd;
+}
+
+.dark .text-gray-900 {
+  color: #eee;
+}
+
+/* Dark mode gradients for backgrounds */
+.dark .card-festive {
+  background: linear-gradient(to bottom, rgba(30, 30, 50, 0.8), rgba(20, 20, 35, 0.8));
+  border-color: rgba(255, 215, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Glossy effect for dark mode */
+.dark .glossy {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }

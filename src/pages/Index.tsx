@@ -16,21 +16,23 @@ import OrganizingTeamSection from "../components/OrganizingTeamSection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen dark:bg-gray-900 bg-white transition-colors duration-300">
-      <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <ContestTimeline />
-      <StatsSection />
-      <GallerySection />
-      <SubmitSection />
-      <JudgesSection />
-      <WinnersSection />
-      <OrganizingTeamSection />
-      <DeveloperSection />
-      <ContactSection />
-      <Footer />
-      <ScrollToTop />
+    <div className="min-h-screen dark:bg-gray-900 bg-white transition-colors duration-300 dark:bg-gradient-to-b dark:from-gray-900 dark:to-indigo-950/50">
+      <div className="dark:bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] dark:from-indigo-900/20 dark:via-gray-900 dark:to-gray-900">
+        <Navbar />
+        <HeroSection />
+        <AboutSection />
+        <ContestTimeline />
+        <StatsSection />
+        <GallerySection />
+        <SubmitSection />
+        <JudgesSection />
+        <WinnersSection />
+        <OrganizingTeamSection />
+        <DeveloperSection />
+        <ContactSection />
+        <Footer />
+        <ScrollToTop />
+      </div>
     </div>
   );
 };

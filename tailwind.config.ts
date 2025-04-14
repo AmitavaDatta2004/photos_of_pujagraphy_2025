@@ -127,6 +127,10 @@ export default {
 				'rainbow-gradient': 'linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff)',
 				'dark-gradient': 'linear-gradient(to right, #4B0082, #800080, #9932CC)',
 				'gold-gradient': 'linear-gradient(to right, #FFD700, #FFA500, #FF8C00)',
+				'dark-radial': 'radial-gradient(circle, rgba(76,29,149,0.5) 0%, rgba(15,23,42,1) 60%)',
+				'dark-festival': 'linear-gradient(135deg, rgba(255,165,0,0.15) 0%, rgba(210,43,43,0.15) 100%)',
+				'festival-glow': 'linear-gradient(to right, rgba(255,215,0,0.2), rgba(210,43,43,0.2))',
+				'aurora-gradient': 'linear-gradient(to right, #4B0082, #9932CC, #FFD700)',
 			},
 			fontFamily: {
 				heading: ['Playfair Display', 'serif'],

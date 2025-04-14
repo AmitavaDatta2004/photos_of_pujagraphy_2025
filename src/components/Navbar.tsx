@@ -28,9 +28,9 @@ const Navbar = () => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled || mobileMenuOpen ? (
-        theme === 'dark' ? 'bg-gray-900/95 shadow-md backdrop-blur-sm py-2' : 'bg-white/95 shadow-md backdrop-blur-sm py-2'
+        theme === 'dark' ? 'bg-gray-900 shadow-md backdrop-blur-sm py-2' : 'bg-white shadow-md backdrop-blur-sm py-2'
       ) : (
-        theme === 'dark' ? 'bg-transparent py-4' : 'bg-transparent py-4'
+        theme === 'dark' ? 'bg-gray-900 py-4' : 'bg-white py-4'
       )}`}>
       <div className="festival-container flex items-center justify-between">
         <a href="#" className="flex flex-col items-start gap-0">
