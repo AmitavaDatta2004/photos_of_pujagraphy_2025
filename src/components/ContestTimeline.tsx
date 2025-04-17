@@ -23,7 +23,7 @@ const ContestTimeline = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-festival-maroon">Registration Open</h3>
-                  <p className="text-2xl font-heading mt-2 text-festival-red">April 15, 2025</p>
+                  <p className="text-2xl font-heading mt-2 text-festival-red">18th April, 2025</p>
                   <p className="mt-4 text-gray-700">
                     Begin your journey with us! Registration opens for all photography enthusiasts to participate in this celebration of Durga Puja through your lens.
                   </p>
@@ -39,7 +39,7 @@ const ContestTimeline = () => {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-festival-maroon">Submission Deadline</h3>
-                  <p className="text-2xl font-heading mt-2 text-festival-red">May 15, 2025</p>
+                  <p className="text-2xl font-heading mt-2 text-festival-red">28th April, 2025</p>
                   <p className="mt-4 text-gray-700">
                     Last chance to submit your stunning captures! Make sure your entries are in before the clock strikes midnight.
                   </p>

@@ -10,12 +10,12 @@ const AboutSection = () => {
       
       <div className="festival-container">
         <h2 className="section-title">About the Competition</h2>
-        <p className="section-subtitle">Celebrating Durga Puja through the art of photography</p>
+        <p className="section-subtitle">Celebrating Puja through the art of photography</p>
         
         <div className="max-w-3xl mx-auto text-center mb-12 transform transition-all duration-300 hover:scale-105 card-festive p-6 border-l-4 border-festival-saffron dark:border-festival-golden">
           <p className="text-lg mb-6">
             "Photos of Pujagraphy" is a photography competition dedicated to 
-            celebrating the spirit of Durga Puja through the lens of passionate 
+            celebrating the spirit of Puja through the lens of passionate 
             photographers. The competition invites participants to capture and share 
             the soul, emotion, and cultural richness of Puja across two categories: Mobile and Camera.
           </p>
@@ -62,8 +62,8 @@ const AboutSection = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 hover:bg-festival-cream/30 p-2 rounded-md transition-colors duration-200">
                 <div className="bg-festival-golden/20 p-2 rounded min-w-[40px] text-center">
-                  <span className="font-bold">1</span>
-                  <span className="block text-xs">SEP</span>
+                  <span className="font-bold">18</span>
+                  <span className="block text-xs">APR</span>
                 </div>
                 <div>
                   <span className="font-semibold">Registration Opens</span>
@@ -72,8 +72,8 @@ const AboutSection = () => {
               </li>
               <li className="flex items-start gap-3 hover:bg-festival-cream/30 p-2 rounded-md transition-colors duration-200">
                 <div className="bg-festival-golden/20 p-2 rounded min-w-[40px] text-center">
-                  <span className="font-bold">15</span>
-                  <span className="block text-xs">OCT</span>
+                  <span className="font-bold">28</span>
+                  <span className="block text-xs">APR</span>
                 </div>
                 <div>
                   <span className="font-semibold">Submission Deadline</span>
@@ -82,8 +82,8 @@ const AboutSection = () => {
               </li>
               <li className="flex items-start gap-3 hover:bg-festival-cream/30 p-2 rounded-md transition-colors duration-200">
                 <div className="bg-festival-golden/20 p-2 rounded min-w-[40px] text-center">
-                  <span className="font-bold">30</span>
-                  <span className="block text-xs">OCT</span>
+                  <span className="font-bold">31</span>
+                  <span className="block text-xs">MAY</span>
                 </div>
                 <div>
                   <span className="font-semibold">Winners Announced</span>

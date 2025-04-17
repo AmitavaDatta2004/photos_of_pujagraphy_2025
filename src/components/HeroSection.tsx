@@ -34,7 +34,7 @@ const HeroSection = () => {
           </div>
           
           <div className="mb-10 mt-8">
-            <div className="text-lg mb-2 text-festival-maroon font-medium">Registration Deadline: May 15, 2025</div>
+            <div className="text-lg mb-2 text-festival-maroon font-medium">Registration Deadline: 28th April, 2025</div>
             <CountdownTimer targetDate={deadline} />
           </div>
           

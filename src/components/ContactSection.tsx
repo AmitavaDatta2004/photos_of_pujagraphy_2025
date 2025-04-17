@@ -19,7 +19,7 @@ const ContactSection = () => {
                   <div>
                     <h4 className="font-semibold mb-1">Email</h4>
                     <a href="mailto:info@photosofpujagraphy.com" className="text-gray-600 hover:text-festival-maroon transition-colors">
-                      info@photosofpujagraphy.com
+                      utsavunites@gmail.com
                     </a>
                   </div>
                 </div>
@@ -29,7 +29,7 @@ const ContactSection = () => {
                   <div>
                     <h4 className="font-semibold mb-1">Phone</h4>
                     <a href="tel:+919876543210" className="text-gray-600 hover:text-festival-maroon transition-colors">
-                      +91 98765 43210
+                      +91 7439899848
                     </a>
                   </div>
                 </div>
@@ -39,8 +39,8 @@ const ContactSection = () => {
                   <div>
                     <h4 className="font-semibold mb-1">Address</h4>
                     <p className="text-gray-600">
-                      123 Puja Avenue, Kolkata<br />
-                      West Bengal, India 700001
+                      14, suksanatantala, Chandannagar<br />
+                      West Bengal, India 712136
                     </p>
                   </div>
                 </div>
@@ -50,7 +50,7 @@ const ContactSection = () => {
                 <h3 className="text-lg font-bold text-festival-maroon mb-4">Follow Us</h3>
                 <div className="flex gap-4">
                   <a 
-                    href="#" 
+                    href="https://www.instagram.com/utsav.unites?igsh=cWJrbmlvajF6eTdt" 
                     className="w-10 h-10 rounded-full bg-festival-red text-white flex items-center justify-center hover:bg-festival-maroon transition-colors"
                   >
                     <Instagram size={20} />
