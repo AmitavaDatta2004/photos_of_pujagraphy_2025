@@ -98,7 +98,7 @@ const ContactSection = () => {
                     <HelpCircle className="text-festival-saffron mt-1 flex-shrink-0" size={18} />
                     <h4 className="font-semibold">What kind of photos can I submit?</h4>
                   </div>
-                  <p className="text-gray-600 ml-6">Any photograph that captures the essence of Durga Puja – including idols, rituals, celebrations, cultural events, and street scenes.</p>
+                  <p className="text-gray-600 ml-6">Any photograph that captures the essence of every and all Pujas – including idols, rituals, celebrations, cultural events, and street scenes.</p>
                 </div>
                 
                 <div>
@@ -106,7 +106,7 @@ const ContactSection = () => {
                     <HelpCircle className="text-festival-saffron mt-1 flex-shrink-0" size={18} />
                     <h4 className="font-semibold">When will winners be announced?</h4>
                   </div>
-                  <p className="text-gray-600 ml-6">Winners will be announced on October 30th on our website and social media channels.</p>
+                  <p className="text-gray-600 ml-6">Winners will be announced on or within june on our website and social media channels.</p>
                 </div>
                 
                 <div>
@@ -114,7 +114,7 @@ const ContactSection = () => {
                     <HelpCircle className="text-festival-saffron mt-1 flex-shrink-0" size={18} />
                     <h4 className="font-semibold">How will my photos be used?</h4>
                   </div>
-                  <p className="text-gray-600 ml-6">Selected photos will be displayed on our website gallery with proper credit. Winners' photos may be featured in our promotional materials with attribution.</p>
+                  <p className="text-gray-600 ml-6">Selected photos will be displayed on our website gallery with proper credit. Winners' photos may be featured in our promotional materials with attribution. Also exiting prizes will be distributed for the winners</p>
                 </div>
               </div>
             </div>
