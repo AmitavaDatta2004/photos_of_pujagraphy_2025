@@ -82,7 +82,7 @@ const ContestTimeline = () => {
           
           <div className="mt-16 text-center">
             <a 
-              href="https://forms.google.com" 
+              href="https://docs.google.com/forms/d/e/1FAIpQLScQjLoo3U9XI9a5MSiblGE31GO0ZRW05F_nFxOV4HuX6ivung/viewform?usp=sharing" 
               target="_blank" 
               rel="noopener noreferrer"
               className="btn-festive bg-festive-gradient text-white transform transition-all duration-300 hover:scale-105 hover:shadow-lg"

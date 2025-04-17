@@ -4,7 +4,7 @@ import CountdownTimer from './CountdownTimer';
 
 const HeroSection = () => {
   // Set deadline to May 15, 2025
-  const deadline = new Date("May 15, 2025");
+  const deadline = new Date("April 28, 2025");
   
   return (
     <section className="min-h-screen relative flex items-center overflow-hidden">
@@ -39,7 +39,7 @@ const HeroSection = () => {
           </div>
           
           <a 
-            href="https://forms.google.com" 
+            href="https://docs.google.com/forms/d/e/1FAIpQLScQjLoo3U9XI9a5MSiblGE31GO0ZRW05F_nFxOV4HuX6ivung/viewform?usp=sharing" 
             target="_blank" 
             rel="noopener noreferrer"
             className="btn-festive transform transition-all duration-300 hover:scale-110 hover:shadow-lg"
