@@ -6,33 +6,33 @@ import { useState } from 'react';
 const organizingTeams = [
   {
     id: 1,
-    name: "Utsab Unites Cultural Team",
+    name: "Utsab Unites",
     description: "Leading cultural initiatives and traditional festivities",
     logo: "https://source.unsplash.com/random/200x200/?logo",
     coverImage: "https://source.unsplash.com/random/600x400/?festival,indian",
-    members: "15+ dedicated members",
-    established: "2018",
-    location: "Kolkata, West Bengal",
+    members: "10 dedicated members",
+    established: "2025",
+    location: "Chandannagar, West Bengal",
     social: {
       website: "https://example.com",
-      facebook: "https://facebook.com",
-      instagram: "https://instagram.com",
+      facebook: "https://www.facebook.com/share/1HikdQjzxP/",
+      instagram: "https://www.instagram.com/utsav.unites?igsh=cWJrbmlvajF6eTdt",
       twitter: "https://twitter.com"
     }
   },
   {
     id: 2,
-    name: "Pujagraphy Team",
+    name: "Debi Shaktirupen",
     description: "Photography and visual documentation specialists",
     logo: "https://source.unsplash.com/random/200x200/?camera,logo",
     coverImage: "https://source.unsplash.com/random/600x400/?photography,team",
     members: "8 professional photographers",
-    established: "2020",
-    location: "Kolkata, West Bengal",
+    established: "2022",
+    location: "Chandannagar, West Bengal",
     social: {
       website: "https://example.com",
-      facebook: "https://facebook.com",
-      instagram: "https://instagram.com",
+      facebook: "https://www.facebook.com/DebiShoktirupen",
+      instagram: "https://www.instagram.com/pujo_files/",
       twitter: "https://twitter.com"
     }
   }
@@ -124,8 +124,8 @@ const OrganizingTeamSection = () => {
                   <h4 className="text-sm font-medium text-festival-maroon mb-2">Contribution</h4>
                   <p className="text-xs text-gray-600">
                     {team.id === 1 ? 
-                      "Organizing cultural events, creating awareness about Bengali traditions, and fostering community engagement through Durga Puja celebrations." : 
-                      "Documenting festival moments, training photographers, and creating visual archives of cultural heritage through stunning photography."}
+                      "Utsav Unites is an upcoming digital platform envisioned to become the online heart of Chandannagar Jagaddhatri Puja. Designed with a long-term vision, this initiative aims to document the artistry, stories, traditions, and spirit of the festival like never before—bringing it to life on the web for a global audience." : 
+                      "With a growing community of over 2,000 followers, Debi Shoktirupen is a digital space dedicated to honoring the many Pujas and other events."}
                   </p>
                 </div>
               </div>

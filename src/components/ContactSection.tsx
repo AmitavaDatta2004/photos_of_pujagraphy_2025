@@ -56,7 +56,7 @@ const ContactSection = () => {
                     <Instagram size={20} />
                   </a>
                   <a 
-                    href="#" 
+                    href="https://www.facebook.com/share/1HikdQjzxP/" 
                     className="w-10 h-10 rounded-full bg-festival-red text-white flex items-center justify-center hover:bg-festival-maroon transition-colors"
                   >
                     <Facebook size={20} />
@@ -82,7 +82,7 @@ const ContactSection = () => {
                     <HelpCircle className="text-festival-saffron mt-1 flex-shrink-0" size={18} />
                     <h4 className="font-semibold">How many photos can I submit?</h4>
                   </div>
-                  <p className="text-gray-600 ml-6">You can submit up to 3 photos for consideration in the competition.</p>
+                  <p className="text-gray-600 ml-6">You can submit up to 2 photos for consideration in the competition.</p>
                 </div>
                 
                 <div>
