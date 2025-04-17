@@ -36,7 +36,7 @@ const SubmitSection = () => {
               
               <div className="text-center">
                 <a 
-                  href="https://forms.google.com" 
+                  href="https://docs.google.com/forms/d/e/1FAIpQLScQjLoo3U9XI9a5MSiblGE31GO0ZRW05F_nFxOV4HuX6ivung/viewform?usp=sharing" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="btn-festive"
