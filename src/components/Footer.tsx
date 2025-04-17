@@ -32,7 +32,7 @@ const Footer = () => {
             &copy; {currentYear} Photos of Pujagraphy by Utsab Unites. All rights reserved.
           </p>
           <p className="flex items-center justify-center gap-1">
-            Made with <Heart size={16} className="text-festival-red" /> by Amitava Datta for Durga Puja enthusiasts
+            Made with <Heart size={16} className="text-festival-red" /> by Amitava Datta for Puja enthusiasts
           </p>
         </div>
       </div>
