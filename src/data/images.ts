@@ -17,21 +17,21 @@ export type PhotoCategory = 'Mobile Captures' | 'Camera Captures';
 export const galleryImages = [
   {
     id: 1,
-    src: 'https://source.unsplash.com/random/800x600/?durga',
+    src: 'mobile/amitava_datta_01.jpg',
     alt: 'Durga Idol',
-    category: 'Idol Making',
-    photographer: 'Anurag Deb',
-    caption: 'The magnificent Durga idol being crafted by skilled artisans in Kumartuli.',
-    photoCategory: 'Camera Captures' as PhotoCategory
+    category: 'Puja Idol',
+    photographer: 'Amitava Datta',
+    caption: 'The majestic Durga idol adorned with intricate details and vibrant colors.',
+    photoCategory: 'Mobile Captures' as PhotoCategory
   },
   {
     id: 2,
-    src: 'https://source.unsplash.com/random/800x600/?festival',
-    alt: 'Cultural Dance',
-    category: 'Cultural Events',
-    photographer: 'Priya Sen',
-    caption: 'Traditional dance performance during the evening celebrations.',
-    photoCategory: 'Mobile Captures' as PhotoCategory
+    src: 'camera/amitava_datta_01.jpg',
+    alt: 'Jagadhatri Idol',
+    category: 'Puja Idol',
+    photographer: 'Amitava Datta',
+    caption: 'The stunning Jagadhatri idol captured in the golden hour light.',
+    photoCategory: 'Camera Captures' as PhotoCategory
   },
   {
     id: 3,
@@ -152,6 +152,15 @@ export const galleryImages = [
   },
   {
     id: 16,
+    src: 'https://source.unsplash.com/random/800x600/?emotion',
+    alt: 'Emotional Farewell',
+    category: 'Moments & Emotions',
+    photographer: 'Tanya Ghosh',
+    caption: 'The emotional farewell during Durga visarjan (immersion).',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 17,
     src: 'https://source.unsplash.com/random/800x600/?emotion',
     alt: 'Emotional Farewell',
     category: 'Moments & Emotions',

@@ -25,7 +25,7 @@ const DeveloperSection = () => {
                   onMouseLeave={() => setIsHovered(false)}
                 >
                   <img 
-                    src="https://source.unsplash.com/random/400x400/?portrait" 
+                    src="developer/AmitavaDatta.jpg" 
                     alt="Amitava Datta" 
                     className={`w-full h-full object-cover transition-transform duration-700 ${isHovered ? 'scale-110' : 'scale-100'}`}
                   />
@@ -63,7 +63,7 @@ const DeveloperSection = () => {
                   <HoverCard>
                     <HoverCardTrigger asChild>
                       <a 
-                        href="https://github.com" 
+                        href="https://github.com/AmitavaDatta2004" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="w-10 h-10 rounded-full bg-festival-maroon/10 flex items-center justify-center hover:bg-festival-maroon hover:text-white transition-all duration-300 hover:scale-110"
@@ -79,7 +79,7 @@ const DeveloperSection = () => {
                   <HoverCard>
                     <HoverCardTrigger asChild>
                       <a 
-                        href="https://linkedin.com" 
+                        href="https://www.linkedin.com/in/amitava-datta-301920292/" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="w-10 h-10 rounded-full bg-festival-maroon/10 flex items-center justify-center hover:bg-festival-maroon hover:text-white transition-all duration-300 hover:scale-110"
@@ -95,7 +95,7 @@ const DeveloperSection = () => {
                   <HoverCard>
                     <HoverCardTrigger asChild>
                       <a 
-                        href="mailto:contact@example.com" 
+                        href="mailto:dattaamitava2004@gmail.com" 
                         className="w-10 h-10 rounded-full bg-festival-maroon/10 flex items-center justify-center hover:bg-festival-maroon hover:text-white transition-all duration-300 hover:scale-110"
                       >
                         <Mail size={20} />

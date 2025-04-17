@@ -4,7 +4,7 @@ import HeroSection from "../components/HeroSection";
 import AboutSection from "../components/AboutSection";
 import GallerySection from "../components/GallerySection";
 import SubmitSection from "../components/SubmitSection";
-import JudgesSection from "../components/JudgesSection";
+// import JudgesSection from "../components/JudgesSection";
 import WinnersSection from "../components/WinnersSection";
 import ContactSection from "../components/ContactSection";
 import Footer from "../components/Footer";
@@ -27,9 +27,9 @@ const Index = () => {
         <SubmitSection />
         
         {/* Judges Section with updated background */}
-        <div className="dark:bg-gradient-to-b dark:from-gray-900 dark:to-purple-900/30">
+        {/* <div className="dark:bg-gradient-to-b dark:from-gray-900 dark:to-purple-900/30">
           <JudgesSection />
-        </div>
+        </div> */}
         
         <WinnersSection />
         
