@@ -4,7 +4,7 @@ import CountdownTimer from './CountdownTimer';
 
 const SubmitSection = () => {
   // Set deadline to May 15, 2025
-  const deadline = new Date("May 15, 2025");
+  const deadline = new Date("April 28, 2025");
 
   return (
     <section id="submit" className="py-20 relative">
