@@ -29,7 +29,7 @@ const ContactSection = () => {
                   <div>
                     <h4 className="font-semibold mb-1">Phone</h4>
                     <a href="tel:+919876543210" className="text-gray-600 hover:text-festival-maroon transition-colors">
-                      +91 7439899848
+                      +91 7439689648
                     </a>
                   </div>
                 </div>

@@ -46,7 +46,7 @@ const WinnersSection = () => {
             <div className="aspect-square bg-gray-100 flex items-center justify-center mb-4 overflow-hidden group">
               <p className="text-gray-500 group-hover:scale-110 transition-transform duration-300">Winner to be announced</p>
             </div>
-            <p className="text-sm text-gray-600">Exclusive professional photography equipment package + Feature in Utsab Unites exhibition</p>
+            <p className="text-sm text-gray-600">Exiting prizes will be handovered</p>
           </div>
         </div>
         
@@ -66,7 +66,7 @@ const WinnersSection = () => {
               <div className="aspect-square bg-gray-100 flex items-center justify-center mb-4 overflow-hidden group">
                 <p className="text-gray-500 group-hover:scale-110 transition-transform duration-300">Winner to be announced</p>
               </div>
-              <p className="text-sm text-gray-600">Premium smartphone + accessories package</p>
+              <p className="text-sm text-gray-600">Exiting prizes will be handovered</p>
             </div>
             
             <div 
@@ -86,7 +86,7 @@ const WinnersSection = () => {
                   <p className="text-gray-500 text-xs group-hover:scale-110 transition-transform duration-300">Winner 2</p>
                 </div>
               </div>
-              <p className="text-sm text-gray-600">Mobile photography masterclass & accessory kit</p>
+              <p className="text-sm text-gray-600">Exiting prizes will be handovered</p>
             </div>
             
             <div 
@@ -106,7 +106,7 @@ const WinnersSection = () => {
                   <p className="text-gray-500 text-xs group-hover:scale-110 transition-transform duration-300">Winner 2</p>
                 </div>
               </div>
-              <p className="text-sm text-gray-600">Mobile tripod & gift vouchers</p>
+              <p className="text-sm text-gray-600">Exiting prizes will be handovered</p>
             </div>
           </div>
         </div>
@@ -127,7 +127,7 @@ const WinnersSection = () => {
               <div className="aspect-square bg-gray-100 flex items-center justify-center mb-4 overflow-hidden group">
                 <p className="text-gray-500 group-hover:scale-110 transition-transform duration-300">Winner to be announced</p>
               </div>
-              <p className="text-sm text-gray-600">Professional camera accessories package</p>
+              <p className="text-sm text-gray-600">Exiting prizes will be handovered</p>
             </div>
             
             <div 
@@ -147,7 +147,7 @@ const WinnersSection = () => {
                   <p className="text-gray-500 text-xs group-hover:scale-110 transition-transform duration-300">Winner 2</p>
                 </div>
               </div>
-              <p className="text-sm text-gray-600">Photography workshop voucher</p>
+              <p className="text-sm text-gray-600">Exiting prizes will be handovered</p>
             </div>
             
             <div 
@@ -167,7 +167,7 @@ const WinnersSection = () => {
                   <p className="text-gray-500 text-xs group-hover:scale-110 transition-transform duration-300">Winner 2</p>
                 </div>
               </div>
-              <p className="text-sm text-gray-600">Photo printing voucher</p>
+              <p className="text-sm text-gray-600">Exiting prizes will be handovered</p>
             </div>
           </div>
         </div>
