@@ -25,7 +25,7 @@ const ContestTimeline = () => {
                   <h3 className="text-xl font-bold text-festival-maroon">Registration Open</h3>
                   <p className="text-2xl font-heading mt-2 text-festival-red">18th April, 2025</p>
                   <p className="mt-4 text-gray-700">
-                    Begin your journey with us! Registration opens for all photography enthusiasts to participate in this celebration of Durga Puja through your lens.
+                    Begin your journey with us! Registration opens for all photography enthusiasts to participate in this celebration of Puja through your lens.
                   </p>
                 </div>
               </div>
@@ -57,7 +57,7 @@ const ContestTimeline = () => {
                   <h3 className="text-xl font-bold text-festival-maroon">Judging Period</h3>
                   <p className="text-2xl font-heading mt-2 text-purple-700">May 16-30, 2025</p>
                   <p className="mt-4 text-gray-700">
-                    Our panel of expert judges will review all submissions and select the most captivating and meaningful captures of Durga Puja.
+                    Our panel of expert judges will review all submissions and select the most captivating and meaningful captures of Puja.
                   </p>
                 </div>
               </div>
@@ -73,7 +73,7 @@ const ContestTimeline = () => {
                   <h3 className="text-xl font-bold text-festival-maroon">Winners Announced</h3>
                   <p className="text-2xl font-heading mt-2 text-amber-700">June 1, 2025</p>
                   <p className="mt-4 text-gray-700">
-                    The moment we've all been waiting for! Join us online as we reveal the winners and celebrate the best of Durga Puja photography.
+                    The moment we've all been waiting for! Join us online as we reveal the winners and celebrate the best of Puja photography.
                   </p>
                 </div>
               </div>

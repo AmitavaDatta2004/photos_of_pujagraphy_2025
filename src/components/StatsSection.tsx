@@ -128,7 +128,7 @@ const StatsSection = () => {
 
         <div className="mt-12 text-center">
           <p className={`text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-festival-maroon'}`}>
-            Join our growing community of photographers celebrating Durga Puja!
+            Join our growing community of photographers celebrating Puja!
           </p>
         </div>
       </div>
