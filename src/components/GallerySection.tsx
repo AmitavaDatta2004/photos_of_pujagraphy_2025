@@ -36,7 +36,7 @@ const GallerySection = () => {
     <section id="gallery" className={`py-20 ${theme === 'dark' ? 'bg-gray-800/20' : 'bg-festival-cream/30'}`}>
       <div className="festival-container">
         <h2 className="section-title">Gallery</h2>
-        <p className="section-subtitle">Capturing the essence of Durga Puja by Utsab Unites</p>
+        <p className="section-subtitle">Capturing the essence of Puja by Utsab Unites</p>
 
         {/* Photo Category Filters (Mobile/Camera) */}
         <div className="flex flex-wrap justify-center gap-2 mb-4">

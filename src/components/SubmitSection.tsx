@@ -16,7 +16,7 @@ const SubmitSection = () => {
         
         <div className="max-w-3xl mx-auto text-center mb-12">
           <p className="text-lg mb-8">
-            Share your best Durga Puja photographs with us! We're looking for images
+            Share your best Puja photographs with us! We're looking for images
             that capture the essence, emotion, and cultural richness of the festival.
             Click the button below to submit your photo through our official Google Form.
           </p>
@@ -46,7 +46,7 @@ const SubmitSection = () => {
                   <ExternalLink size={16} />
                 </a>
                 <p className="mt-3 text-sm text-gray-600">
-                  Submissions open until May 15th, 2025
+                  Submissions open until April 28th, 2025
                 </p>
               </div>
             </div>
