@@ -33,141 +33,141 @@ export const galleryImages = [
     caption: 'The stunning Jagadhatri idol captured in the golden hour light.',
     photoCategory: 'Camera Captures' as PhotoCategory
   },
-  // {
-  //   id: 3,
-  //   src: 'https://source.unsplash.com/random/800x600/?celebration',
-  //   alt: 'Street Decorations',
-  //   category: 'Street Shots',
-  //   photographer: 'Sameer Khan',
-  //   caption: 'Beautifully lit street decorations creating a magical atmosphere.',
-  //   photoCategory: 'Camera Captures' as PhotoCategory
-  // },
-  // {
-  //   id: 4,
-  //   src: 'https://source.unsplash.com/random/800x600/?ritual',
-  //   alt: 'Aarti Ceremony',
-  //   category: 'Rituals & Traditions',
-  //   photographer: 'Nita Patel',
-  //   caption: 'The mesmerizing aarti ceremony with glowing lamps.',
-  //   photoCategory: 'Mobile Captures' as PhotoCategory
-  // },
-  // {
-  //   id: 5,
-  //   src: 'https://source.unsplash.com/random/800x600/?light',
-  //   alt: 'Festival Lights',
-  //   category: 'Street Shots',
-  //   photographer: 'Rajiv Gupta',
-  //   caption: 'The pandal illuminated with thousands of colorful lights.',
-  //   photoCategory: 'Camera Captures' as PhotoCategory
-  // },
-  // {
-  //   id: 6,
-  //   src: 'https://source.unsplash.com/random/800x600/?sculpture',
-  //   alt: 'Idol Details',
-  //   category: 'Idol Making',
-  //   photographer: 'Anjali Sharma',
-  //   caption: 'Close-up detail of the intricate work on Durga\'s face.',
-  //   photoCategory: 'Mobile Captures' as PhotoCategory
-  // },
-  // {
-  //   id: 7,
-  //   src: 'https://source.unsplash.com/random/800x600/?music',
-  //   alt: 'Dhak Players',
-  //   category: 'Cultural Events',
-  //   photographer: 'Rajan Dutta',
-  //   caption: 'The rhythmic beats of dhak drums filling the air with energy.',
-  //   photoCategory: 'Camera Captures' as PhotoCategory
-  // },
-  // {
-  //   id: 8,
-  //   src: 'https://source.unsplash.com/random/800x600/?prayer',
-  //   alt: 'Morning Prayers',
-  //   category: 'Rituals & Traditions',
-  //   photographer: 'Meera Roy',
-  //   caption: 'Devotees offering morning prayers with flowers and incense.',
-  //   photoCategory: 'Mobile Captures' as PhotoCategory
-  // },
-  // {
-  //   id: 9,
-  //   src: 'https://source.unsplash.com/random/800x600/?devotion',
-  //   alt: 'Devotee Portrait',
-  //   category: 'Portraits',
-  //   photographer: 'Arun Mehta',
-  //   caption: 'The devotion and faith reflected in the eyes of a believer.',
-  //   photoCategory: 'Camera Captures' as PhotoCategory
-  // },
-  // {
-  //   id: 10,
-  //   src: 'https://source.unsplash.com/random/800x600/?emotion',
-  //   alt: 'Joy of Festival',
-  //   category: 'Moments & Emotions',
-  //   photographer: 'Kavita Sharma',
-  //   caption: 'Pure joy captured during sindoor khela celebrations.',
-  //   photoCategory: 'Mobile Captures' as PhotoCategory
-  // },
-  // {
-  //   id: 11,
-  //   src: 'https://source.unsplash.com/random/800x600/?artist',
-  //   alt: 'Artisan at Work',
-  //   category: 'Idol Making',
-  //   photographer: 'Rahul Das',
-  //   caption: 'A skilled artisan giving final touches to the idol.',
-  //   photoCategory: 'Camera Captures' as PhotoCategory
-  // },
-  // {
-  //   id: 12,
-  //   src: 'https://source.unsplash.com/random/800x600/?crowd',
-  //   alt: 'Festival Crowd',
-  //   category: 'Street Shots',
-  //   photographer: 'Vikram Singh',
-  //   caption: 'The energy of the crowd during evening aarti.',
-  //   photoCategory: 'Mobile Captures' as PhotoCategory
-  // },
-  // {
-  //   id: 13,
-  //   src: 'https://source.unsplash.com/random/800x600/?temple',
-  //   alt: 'Temple Ritual',
-  //   category: 'Rituals & Traditions',
-  //   photographer: 'Sanjay Bose',
-  //   caption: 'An age-old ritual being performed with utmost devotion.',
-  //   photoCategory: 'Camera Captures' as PhotoCategory
-  // },
-  // {
-  //   id: 14,
-  //   src: 'https://source.unsplash.com/random/800x600/?performer',
-  //   alt: 'Stage Performance',
-  //   category: 'Cultural Events',
-  //   photographer: 'Neha Rao',
-  //   caption: 'Cultural drama depicting scenes from mythology.',
-  //   photoCategory: 'Mobile Captures' as PhotoCategory
-  // },
-  // {
-  //   id: 15,
-  //   src: 'https://source.unsplash.com/random/800x600/?portrait',
-  //   alt: 'Candid Moment',
-  //   category: 'Portraits',
-  //   photographer: 'Dinesh Joshi',
-  //   caption: 'A candid moment capturing the essence of the festival spirit.',
-  //   photoCategory: 'Camera Captures' as PhotoCategory
-  // },
-  // {
-  //   id: 16,
-  //   src: 'https://source.unsplash.com/random/800x600/?emotion',
-  //   alt: 'Emotional Farewell',
-  //   category: 'Moments & Emotions',
-  //   photographer: 'Tanya Ghosh',
-  //   caption: 'The emotional farewell during Durga visarjan (immersion).',
-  //   photoCategory: 'Mobile Captures' as PhotoCategory
-  // },
-  // {
-  //   id: 17,
-  //   src: 'https://source.unsplash.com/random/800x600/?emotion',
-  //   alt: 'Emotional Farewell',
-  //   category: 'Moments & Emotions',
-  //   photographer: 'Tanya Ghosh',
-  //   caption: 'The emotional farewell during Durga visarjan (immersion).',
-  //   photoCategory: 'Mobile Captures' as PhotoCategory
-  // },
+  {
+    id: 3,
+    src: 'camera/Soumendra Mohan Ray_pic_1.jpg',
+    alt: 'Jagadhatri Idol(Adi Maa)',
+    category: 'Street Shots',
+    photographer: 'Soumendra Mohan Ray',
+    caption: 'প্রনাম (Pronaam) - A devotee offering prayers with utmost devotion.',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
+  {
+    id: 4,
+    src: 'camera/Soumendra Mohan Ray_pic_2.jpg',
+    alt: 'Ritaul of Blessing',
+    category: 'Rituals & Traditions',
+    photographer: 'Soumendra Mohan Ray',
+    caption: 'আর্শীবাদ (Arshibad) - The blessings of the goddess captured in a moment.',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
+  {
+    id: 5,
+    src: 'mobile/Sudip Dutta_pic_1.jpg',
+    alt: 'Durga Idol',
+    category: 'Cultural Events',
+    photographer: 'Sudip Dutta',
+    caption: 'আরাধনা (Aaradhana) - The worship of the goddess during the festival.',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 6,
+    src: 'mobile/Sudip Dutta_pic_2.jpg',
+    alt: 'Idol Details',
+    category: 'Idol Making',
+    photographer: 'Sudip Dutta',
+    caption: 'দেবীরুপে সংহিস্তান (Debirupen Sanghistan) - The intricate details of the idol.',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 7,
+    src: 'mobile/Tanmoy banerjee_pic_1.jpg',
+    alt: 'Kali Idol',
+    category: 'Cultural Events',
+    photographer: 'Rajan Dutta',
+    caption: 'শক্তি (Shakti) - The power of the goddess captured in a moment.',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 8,
+    src: 'mobile/Koushik Das_pic_1.jpg',
+    alt: 'Mukhoshree',
+    category: 'Portraits',
+    photographer: 'Koushik Das',
+    caption: 'Chakroborty barir sampurna',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 9,
+    src: 'mobile/Koushik Das_pic_2.jpg',
+    alt: 'Devotee Portrait',
+    category: 'Portraits',
+    photographer: 'Koushik Das',
+    caption: 'Mukherjee barir haimantika',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 10,
+    src: 'mobile/SUPRATIM BHAR_pic_1.jpg',
+    alt: 'Joy of Festival',
+    category: 'Moments & Emotions',
+    photographer: 'Supratim Bhar',
+    caption: 'চিরস্থায়ী হোক শৈশব স্মৃতি (Chirashthayi Hok Shoishob Smriti) - The joy of childhood memories during the festival.',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 11,
+    src: 'mobile/SUPRATIM BHAR_pic_2.jpg',
+    alt: 'Jagadhatri Idol',
+    category: 'Rituals & Traditions',
+    photographer: 'Supratim Bhar',
+    caption: 'চিরন্তনী জগদ্ধাত্রী (Chirontoni Jagadhatri) - The eternal beauty of the Jagadhatri idol.',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 12,
+    src: 'mobile/Bhaskar Bhattacharya_pic_1.jpg',
+    alt: 'Jagadhatri Idol(Shantipur)',
+    category: 'Moments & Emotions',
+    photographer: 'Bhaskar Bhattacharya',
+    caption: 'দেবী জগদ্ধাত্রী সুত্রাগড় কদবেল তলা শান্তিপুর নদীয়া .',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 13,
+    src: 'camera/Bhaskar Bhattacharya_pic_1.jpg',
+    alt: 'Idol',
+    category: 'Rituals & Traditions',
+    photographer: 'Bhaskar Bhattacharya',
+    caption: 'মুখশ্রী ♥️',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
+  {
+    id: 14,
+    src: 'camera/Prithwiraj Paul_pic_2.JPG',
+    alt: 'Cultural Event',
+    category: 'Cultural Events',
+    photographer: 'Prithwiraj Paul',
+    caption: 'Sandhya Aroti - A mesmerizing moment during the festival.',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
+  {
+    id: 15,
+    src: 'camera/Prithwiraj Paul_pic_1.JPG',
+    alt: 'Candid Moment',
+    category: 'Portraits',
+    photographer: 'Prithwiraj Paul',
+    caption: 'A candid moment capturing the essence of the festival spirit.',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
+  {
+    id: 16,
+    src: 'https://source.unsplash.com/random/800x600/?emotion',
+    alt: 'Emotional Farewell',
+    category: 'Moments & Emotions',
+    photographer: 'Tanya Ghosh',
+    caption: 'The emotional farewell during Durga visarjan (immersion).',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 17,
+    src: 'https://source.unsplash.com/random/800x600/?emotion',
+    alt: 'Emotional Farewell',
+    category: 'Moments & Emotions',
+    photographer: 'Tanya Ghosh',
+    caption: 'The emotional farewell during Durga visarjan (immersion).',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
 ];
 
 // Organizing team data
