@@ -152,20 +152,20 @@ export const galleryImages = [
   },
   {
     id: 16,
-    src: 'https://source.unsplash.com/random/800x600/?emotion',
-    alt: 'Emotional Farewell',
+    src: 'mobile/rajib bagui_pic_1.jpg',
+    alt: 'Durga Idol',
     category: 'Moments & Emotions',
-    photographer: 'Tanya Ghosh',
-    caption: 'The emotional farewell during Durga visarjan (immersion).',
+    photographer: 'Rajib Bagui',
+    caption: 'Shanti Rupen Sansthitan - The goddess in her serene form.',
     photoCategory: 'Mobile Captures' as PhotoCategory
   },
   {
     id: 17,
-    src: 'https://source.unsplash.com/random/800x600/?emotion',
-    alt: 'Emotional Farewell',
+    src: 'mobile/rajib bagui_pic_2.jpg',
+    alt: 'Durga Idol',
     category: 'Moments & Emotions',
-    photographer: 'Tanya Ghosh',
-    caption: 'The emotional farewell during Durga visarjan (immersion).',
+    photographer: 'Rajib Bagui',
+    caption: 'উৎসবে জমজমাট (Utsobe Jomjomat) - The vibrant atmosphere of the festival.',
     photoCategory: 'Mobile Captures' as PhotoCategory
   },
 ];
