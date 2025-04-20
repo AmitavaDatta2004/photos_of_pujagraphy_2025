@@ -2,11 +2,13 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Moon, Sun } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,33 +27,47 @@ const Navbar = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
+  // Determine if we're on the home page
+  const isHomePage = location.pathname === '/';
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled || mobileMenuOpen ? 
-        (theme === 'dark' ? 'bg-gray-900/95 backdrop-blur-sm shadow-lg py-2' : 'bg-white/95 backdrop-blur-sm shadow-lg py-2') 
+        (theme === 'dark' ? 'bg-gray-900 shadow-lg py-2' : 'bg-white shadow-lg py-2') 
       : 
-        (theme === 'dark' ? 'bg-gray-900/95 backdrop-blur-sm py-4' : 'bg-white/95 backdrop-blur-sm py-4')
+        (theme === 'dark' ? 'bg-gray-900 py-4' : 'bg-white py-4')
     }`}>
       <div className="festival-container flex items-center justify-between">
-        <a href="#" className="flex flex-col items-start gap-0">
+        <Link to="/" className="flex flex-col items-start gap-0">
           <span className={`font-heading text-2xl font-bold ${theme === 'dark' ? 'text-festival-golden' : 'text-festival-maroon'}`}>
             Photos of Pujagraphy
           </span>
           <span className={`text-xs ${theme === 'dark' ? 'text-festival-saffron/80' : 'text-festival-saffron'} -mt-1`}>
             by Utsab Unites
           </span>
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-6">
-          <a href="#about" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-festival-red hover:after:w-full after:transition-all`}>About</a>
-          <a href="#gallery" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-festival-red hover:after:w-full after:transition-all`}>Gallery</a>
-          <a href="#submit" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-festival-red hover:after:w-full after:transition-all`}>Submit</a>
-          <a href="#judges" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-festival-red hover:after:w-full after:transition-all`}>Judges</a>
-          <a href="#winners" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-festival-red hover:after:w-full after:transition-all`}>Winners</a>
-          <a href="#team" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-festival-red hover:after:w-full after:transition-all`}>Team</a>
-          <a href="#contact" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-festival-red hover:after:w-full after:transition-all`}>Contact</a>
-          <a href="#developer" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-festival-red hover:after:w-full after:transition-all`}>Developer</a>
+          {isHomePage ? (
+            <>
+              <a href="#about" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-festival-red hover:after:w-full after:transition-all`}>About</a>
+              <a href="#gallery" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-festival-red hover:after:w-full after:transition-all`}>Gallery</a>
+              <a href="#submit" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-festival-red hover:after:w-full after:transition-all`}>Submit</a>
+              <a href="#judges" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-festival-red hover:after:w-full after:transition-all`}>Judges</a>
+              <a href="#winners" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-festival-red hover:after:w-full after:transition-all`}>Winners</a>
+              <a href="#team" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-festival-red hover:after:w-full after:transition-all`}>Team</a>
+              <Link to="/sponsors" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-festival-red hover:after:w-full after:transition-all`}>Sponsors</Link>
+              <a href="#contact" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-festival-red hover:after:w-full after:transition-all`}>Contact</a>
+              <a href="#developer" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-festival-red hover:after:w-full after:transition-all`}>Developer</a>
+            </>
+          ) : (
+            <>
+              <Link to="/" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-festival-red hover:after:w-full after:transition-all`}>Home</Link>
+              <Link to="/gallery" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-festival-red hover:after:w-full after:transition-all`}>Gallery</Link>
+              <Link to="/sponsors" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-festival-red hover:after:w-full after:transition-all`}>Sponsors</Link>
+            </>
+          )}
           
           {/* Theme toggle */}
           <button 
@@ -93,15 +109,26 @@ const Navbar = () => {
         className={`md:hidden fixed inset-0 transition-transform duration-300 ease-in-out ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`} 
         style={{ top: '60px' }}
       >
-        <div className={`p-4 flex flex-col gap-4 text-lg h-full ${theme === 'dark' ? 'bg-gray-900/98 backdrop-blur-md' : 'bg-white/98 backdrop-blur-md'}`}>
-          <a href="#about" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors p-2 border-b ${theme === 'dark' ? 'border-gray-700' : 'border-festival-golden/20'}`} onClick={() => setMobileMenuOpen(false)}>About</a>
-          <a href="#gallery" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors p-2 border-b ${theme === 'dark' ? 'border-gray-700' : 'border-festival-golden/20'}`} onClick={() => setMobileMenuOpen(false)}>Gallery</a>
-          <a href="#submit" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors p-2 border-b ${theme === 'dark' ? 'border-gray-700' : 'border-festival-golden/20'}`} onClick={() => setMobileMenuOpen(false)}>Submit</a>
-          <a href="#judges" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors p-2 border-b ${theme === 'dark' ? 'border-gray-700' : 'border-festival-golden/20'}`} onClick={() => setMobileMenuOpen(false)}>Judges</a>
-          <a href="#winners" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors p-2 border-b ${theme === 'dark' ? 'border-gray-700' : 'border-festival-golden/20'}`} onClick={() => setMobileMenuOpen(false)}>Winners</a>
-          <a href="#team" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors p-2 border-b ${theme === 'dark' ? 'border-gray-700' : 'border-festival-golden/20'}`} onClick={() => setMobileMenuOpen(false)}>Team</a>
-          <a href="#contact" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors p-2 border-b ${theme === 'dark' ? 'border-gray-700' : 'border-festival-golden/20'}`} onClick={() => setMobileMenuOpen(false)}>Contact</a>
-          <a href="#developer" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors p-2`} onClick={() => setMobileMenuOpen(false)}>Developer</a>
+        <div className={`p-4 flex flex-col gap-4 text-lg h-full ${theme === 'dark' ? 'bg-gray-900 backdrop-blur-md' : 'bg-white backdrop-blur-md'}`}>
+          {isHomePage ? (
+            <>
+              <a href="#about" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors p-2 border-b ${theme === 'dark' ? 'border-gray-700' : 'border-festival-golden/20'}`} onClick={() => setMobileMenuOpen(false)}>About</a>
+              <a href="#gallery" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors p-2 border-b ${theme === 'dark' ? 'border-gray-700' : 'border-festival-golden/20'}`} onClick={() => setMobileMenuOpen(false)}>Gallery</a>
+              <a href="#submit" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors p-2 border-b ${theme === 'dark' ? 'border-gray-700' : 'border-festival-golden/20'}`} onClick={() => setMobileMenuOpen(false)}>Submit</a>
+              <a href="#judges" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors p-2 border-b ${theme === 'dark' ? 'border-gray-700' : 'border-festival-golden/20'}`} onClick={() => setMobileMenuOpen(false)}>Judges</a>
+              <a href="#winners" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors p-2 border-b ${theme === 'dark' ? 'border-gray-700' : 'border-festival-golden/20'}`} onClick={() => setMobileMenuOpen(false)}>Winners</a>
+              <a href="#team" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors p-2 border-b ${theme === 'dark' ? 'border-gray-700' : 'border-festival-golden/20'}`} onClick={() => setMobileMenuOpen(false)}>Team</a>
+              <Link to="/sponsors" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors p-2 border-b ${theme === 'dark' ? 'border-gray-700' : 'border-festival-golden/20'}`} onClick={() => setMobileMenuOpen(false)}>Sponsors</Link>
+              <a href="#contact" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors p-2 border-b ${theme === 'dark' ? 'border-gray-700' : 'border-festival-golden/20'}`} onClick={() => setMobileMenuOpen(false)}>Contact</a>
+              <a href="#developer" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors p-2`} onClick={() => setMobileMenuOpen(false)}>Developer</a>
+            </>
+          ) : (
+            <>
+              <Link to="/" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors p-2 border-b ${theme === 'dark' ? 'border-gray-700' : 'border-festival-golden/20'}`} onClick={() => setMobileMenuOpen(false)}>Home</Link>
+              <Link to="/gallery" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors p-2 border-b ${theme === 'dark' ? 'border-gray-700' : 'border-festival-golden/20'}`} onClick={() => setMobileMenuOpen(false)}>Gallery</Link>
+              <Link to="/sponsors" className={`${theme === 'dark' ? 'text-white hover:text-festival-golden' : 'text-festival-maroon hover:text-festival-red'} font-medium transition-colors p-2 border-b ${theme === 'dark' ? 'border-gray-700' : 'border-festival-golden/20'}`} onClick={() => setMobileMenuOpen(false)}>Sponsors</Link>
+            </>
+          )}
           
           <div className={`mt-4 p-4 ${theme === 'dark' ? 'bg-gray-800' : 'bg-festival-cream/30'} rounded-lg text-center`}>
             <p className={`${theme === 'dark' ? 'text-festival-golden' : 'text-festival-saffron'} font-medium`}>Organized by</p>

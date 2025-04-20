@@ -13,14 +13,22 @@ import StatsSection from "../components/StatsSection";
 import DeveloperSection from "../components/DeveloperSection";
 import ContestTimeline from "../components/ContestTimeline";
 import OrganizingTeamSection from "../components/OrganizingTeamSection";
+import SponsorsHeroBanner from "../components/SponsorsHeroBanner";
+import SponsorPopup from "../components/SponsorPopup";
+import SponsorBadge from "../components/SponsorBadge";
+import SponsorsLogoRow from "../components/SponsorsLogoRow";
+import SponsorFooter from "../components/SponsorFooter";
+import SponsorSubmitBanner from "../components/SponsorSubmitBanner";
 
 const Index = () => {
   return (
     <div className="min-h-screen dark:bg-gray-900 bg-white transition-colors duration-300 dark:bg-gradient-to-b dark:from-gray-900 dark:to-indigo-950/50">
       <div className="dark:bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] dark:from-indigo-900/20 dark:via-gray-900 dark:to-gray-900">
+        <SponsorsHeroBanner />
         <Navbar />
         <HeroSection />
         <AboutSection />
+        <SponsorsLogoRow />
         <ContestTimeline />
         <StatsSection />
         <GallerySection />
@@ -45,7 +53,10 @@ const Index = () => {
         
         <ContactSection />
         <Footer />
+        <SponsorFooter />
         <ScrollToTop />
+        <SponsorPopup />
+        <SponsorBadge />
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
-
 import { ExternalLink, Camera, Clock } from 'lucide-react';
 import CountdownTimer from './CountdownTimer';
+import SponsorSubmitBanner from './SponsorSubmitBanner';
 
 const SubmitSection = () => {
   // Set deadline to May 15, 2025
@@ -22,6 +22,8 @@ const SubmitSection = () => {
           </p>
           
           <div className="card-festive p-8 max-w-2xl mx-auto">
+            <SponsorSubmitBanner />
+            
             <div className="flex flex-col md:flex-row items-center justify-between gap-8">
               <div className="text-center md:text-left">
                 <h3 className="text-xl font-bold text-festival-maroon mb-4 flex justify-center md:justify-start items-center gap-2">
