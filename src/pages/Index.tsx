@@ -19,6 +19,7 @@ import SponsorBadge from "../components/SponsorBadge";
 import SponsorsLogoRow from "../components/SponsorsLogoRow";
 import SponsorFooter from "../components/SponsorFooter";
 import SponsorSubmitBanner from "../components/SponsorSubmitBanner";
+import SponsorShowcase from "../components/SponsorShowcase";
 
 const Index = () => {
   return (
@@ -27,30 +28,33 @@ const Index = () => {
         <SponsorsHeroBanner />
         <Navbar />
         <HeroSection />
+        {/* New beautiful sponsor showcase section */}
+        <SponsorShowcase />
+        <SponsorSubmitBanner />
         <AboutSection />
         <SponsorsLogoRow />
         <ContestTimeline />
         <StatsSection />
         <GallerySection />
         <SubmitSection />
-        
+
         {/* Judges Section with updated background */}
         {/* <div className="dark:bg-gradient-to-b dark:from-gray-900 dark:to-purple-900/30">
           <JudgesSection />
         </div> */}
-        
+
         <WinnersSection />
-        
+
         {/* Team Section with updated background */}
         <div className="dark:bg-gradient-to-b dark:from-purple-900/30 dark:to-indigo-900/20">
           <OrganizingTeamSection />
         </div>
-        
+
         {/* Developer Section with updated background */}
         <div className="dark:bg-gradient-to-br dark:from-indigo-900/30 dark:to-violet-900/40">
           <DeveloperSection />
         </div>
-        
+
         <ContactSection />
         <Footer />
         <SponsorFooter />
