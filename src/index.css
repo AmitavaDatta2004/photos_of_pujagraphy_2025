@@ -157,6 +157,114 @@
   .developer-title {
     @apply text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-festival-red to-festival-maroon dark:from-amber-400 dark:to-red-600;
   }
+
+  /* Beautiful sponsor effects */
+  .fancy-underline {
+    @apply relative inline-block;
+  }
+  .fancy-underline:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 20%;
+    right: 20%;
+    bottom: -4px;
+    height: 5px;
+    background: linear-gradient(90deg, #FFD700 0%, #FFA500 50%, #D22B2B 100%);
+    border-radius: 9999px;
+    opacity: 0.18;
+    pointer-events: none;
+  }
+
+  .sponsor-logo-glow {
+    box-shadow: 0 0 18px 0 #FFD70044, 0 2px 8px #FFA50022, 0 0 4px 0 #ffffff33;
+  }
+
+  .glassy-card {
+    backdrop-filter: blur(18px) brightness(1.12);
+    background: linear-gradient(120deg, #fff8e2bb 50%, #FFD70022 100%) !important;
+    border: 1.5px solid #FFD70033 !important;
+  }
+  .dark .glassy-card {
+    background: linear-gradient(119deg, #2a2a2a87 44%, #FFD70019 100%) !important;
+    border: 2px solid #FFD70029 !important;
+  }
+  .glassy-gloss {
+    background: linear-gradient(120deg,rgba(255,255,255,0.17) 0%,rgba(255,255,255,0.07) 100%);
+    border-radius: 0.75rem;
+    pointer-events: none;
+    box-shadow: 0px 2px 32px #fff3;
+    top: 0; left:0; right:0; bottom:0;
+    position: absolute;
+    opacity: 0.6;
+    z-index: 1;
+  }
+
+  /* Sponsor shimmer gradient on highlight */
+  .shimmer-highlight {
+    background-image: linear-gradient(89deg, #FFD70022 30%, #FFA50033 65%, transparent 100%);
+    animation: shimmer 1.8s linear infinite;
+    background-size: 220% 100%;
+    background-position: left center;
+  }
+  .shimmer-gradient {
+    background: linear-gradient(90deg, #fff0 30%, #FFD70055 45%, #FFD70022 60%, #fff0 80%);
+    background-size: 180% 100%;
+    background-position: left center;
+    pointer-events: none;
+    animation: shimmer 2.5s linear infinite;
+    border-radius: inherit;
+  }
+  @keyframes shimmer {
+    0% { background-position: -150% 0; }
+    100% { background-position: 150% 0; }
+  }
+
+  /* Glow + bounce */
+  .drop-shadow-golden {
+    filter: drop-shadow(0 2px 6px #ffd70066) drop-shadow(0 1px 6px #FFD70066);
+  }
+  .drop-shadow-glow {
+    filter: drop-shadow(0 2px 7px #ffd70077) drop-shadow(0 4px 13px #fff4);
+  }
+  .sponsor-banner-glow {
+    box-shadow: 0 2px 44px 0 #ffd70033, 0 1px 8px #D22B2B16, 0 0px 5px #fff5;
+  }
+
+  .blur-effect {
+    filter: blur(0.7px);
+  }
+
+  /* Fancy link underline */
+  .fancy-link {
+    position: relative;
+    transition: color .18s, text-shadow .22s;
+  }
+  .fancy-link:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 6px;
+    right: 6px;
+    bottom: -3px;
+    height: 2px;
+    background: linear-gradient(90deg, #FFD700 0%, #FFA500 35%, #D22B2B 100%);
+    border-radius: 9999px;
+    opacity: 0.36;
+    pointer-events: none;
+    transition: opacity 0.16s;
+  }
+  .fancy-link:hover:after { opacity: 0.72; }
+
+  /* Animate sponsor section */
+  @keyframes bounce-in {
+    0% { opacity: 0; transform: scale(0.98) translateY(25px);}
+    90% { opacity: 0.93; transform: scale(1.04) translateY(-8px);}
+    100% { opacity: 1; transform: scale(1) translateY(0);}
+  }
+  .animate-bounce-in {
+    animation: bounce-in 800ms cubic-bezier(0.38,1.7,0.53,0.86);
+  }
 }
 
 /* Animation classes */
