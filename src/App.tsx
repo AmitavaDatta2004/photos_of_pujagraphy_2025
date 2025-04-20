@@ -8,6 +8,7 @@ import Gallery from "./pages/Gallery";
 import NotFound from "./pages/NotFound";
 import { ThemeProvider } from "./hooks/useTheme";
 import { Analytics } from '@vercel/analytics/react'; // <-- Imported Analytics
+import { SpeedInsights } from '@vercel/speed-insights/react'; // <-- Imported SpeedInsights
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
           </Routes>
         </BrowserRouter>
         <Analytics /> {/* <-- Added Analytics component here */}
+        <SpeedInsights />
       </TooltipProvider>
     </ThemeProvider>
   </QueryClientProvider>
