@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { gold, silver } from '@/data/sponsors';
+import { sponsors } from '../data/sponsors';
 import { ExternalLink } from 'lucide-react';
 
 // Pick a random sponsor with a discount
