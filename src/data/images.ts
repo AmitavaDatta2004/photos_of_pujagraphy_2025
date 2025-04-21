@@ -366,6 +366,24 @@ export const galleryImages = [
     caption: 'শিল্পী ও তার শিল্প',
     photoCategory: 'Camera Captures' as PhotoCategory
   },
+  {
+    id: 40,
+    src: 'camera/ARPAN_pic_1.jpg',
+    alt: 'jagadhatri idol',
+    category: 'portraits',
+    photographer: 'Arpan Sarkar',
+    caption: '২০২৪ এর চন্দননগর ফটকগোড়া সার্বজনীন',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
+  {
+    id: 41,
+    src: 'camera/ARPAN_pic_2.jpg',
+    alt: 'jagadhatri idol',
+    category: 'portraits',
+    photographer: 'Arpan Sarkar',
+    caption: '২০২৪ এর চন্দননগর গঞ্জ শীতলা তালা সার্বজনীন',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
 ];
 
 // Organizing team data
