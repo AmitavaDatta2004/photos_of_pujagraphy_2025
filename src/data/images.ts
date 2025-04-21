@@ -573,6 +573,42 @@ export const galleryImages = [
     caption: 'বহ্নিশিখা..🔥',
     photoCategory: 'Camera Captures' as PhotoCategory
   },
+  {
+    id: 63,
+    src: 'camera/Sanchita Arup Ray_pic_1.jpg',
+    alt: 'Durga Idol',
+    category: 'rituals & traditions',
+    photographer: 'Sanchita Arup Ray',
+    caption: 'Face behind all power',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
+  {
+    id: 64,
+    src: 'camera/Sanchita Arup Ray_pic_2.jpg',
+    alt: 'Durga Idol',
+    category: 'rituals & traditions',
+    photographer: 'Sanchita Arup Ray',
+    caption: 'decorated with love',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
+  {
+    id: 65,
+    src: 'mobile/Shreya Srimani_pic_1.jpg',
+    alt: 'Durga Idol',
+    category: 'rituals & traditions',
+    photographer: 'Sreya Srimani',
+    caption: 'The almighty goddess',
+    photoCategory: '  Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 66,
+    src: 'mobile/Shreya Srimani_pic_2.jpg',
+    alt: 'Durga Idol',
+    category: 'portraits',
+    photographer: 'Sreya Srimani',
+    caption: 'decorated with love',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
 ];
 
 // Organizing team data
