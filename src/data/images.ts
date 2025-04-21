@@ -474,6 +474,105 @@ export const galleryImages = [
     caption: 'অভয়া, বরদা',
     photoCategory: 'Camera Captures' as PhotoCategory
   },
+  {
+    id: 52,
+    src: 'mobile/Nirmallya Saha_pic_1.jpg',
+    alt: 'Monosa idol',
+    category: 'portraits',
+    photographer: 'Nirmallya Saha',
+    caption: 'এতো আনন্দ আয়োজন সবই বৃথা তোমায় ছাড়া',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 53,
+    src: 'mobile/Nirmallya Saha_pic_2.jpg',
+    alt: 'Jagadhatri idol',
+    category: 'portraits',
+    photographer: 'Biswajit Das',
+    caption: '✨জগৎ ধরণকারী মা জগদ্ধাত্রীর আরাধনা ✨',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 54,
+    src: 'camera/Rajib Chakraborty_pic_1.jpg',
+    alt: 'Jagadhatri idol',
+    category: 'portraits',
+    photographer: 'Rajib Chakraborty',
+    caption: 'পরমাপ্রকৃতি',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
+  {
+    id: 55,
+    src: 'mobile/Rajib Chakraborty _pic_1.jpg',
+    alt: 'Jagadhatri idol',
+    category: 'portraits',
+    photographer: 'Rajib Chakraborty',
+    caption: 'বুড়ি মা',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 56,
+    src: 'camera/Raunak Ganguly_pic_1.jpg',
+    alt: 'Jagadhatri idol',
+    category: 'portraits',
+    photographer: 'Raunak Ganguly',
+    caption: 'একি লাবণ্যে পূর্ণ প্রাণ...',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
+  {
+    id: 57,
+    src: 'mobile/Raunak Ganguly_pic_1.jpg',
+    alt: 'Sarashwati idol',
+    category: 'portraits',
+    photographer: 'Raunak Ganguly',
+    caption: 'নয়নাভিরাম ওই নয়ন যুগল।',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 58,
+    src: 'mobile/Ovideep Chakraborty_pic_1.jpeg',
+    alt: 'Durga idol',
+    category: 'portraits',
+    photographer: 'Ovideep Chakraborty',
+    caption: 'আনন্দময়ী',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 59,
+    src: 'camera/Biswajit Das_pic_2.jpg',
+    alt: 'Idol',
+    category: 'portraits',
+    photographer: 'Biswajit Das',
+    caption: 'পরিত্রানায়া সাধুনাং বিনাশয় চ দুষ্কৃতম',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
+  {
+    id: 60,
+    src: 'mobile/PALLABI DUTTA_pic_1.jpg',
+    alt: 'Durga Idol',
+    category: 'portraits',
+    photographer: 'Pallabi Dutta',
+    caption: 'মায়ের চক্ষুদান ❤️🙏',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 61,
+    src: 'mobile/PALLABI DUTTA_pic_2.jpg',
+    alt: 'Durga Idol',
+    category: 'street shots',
+    photographer: 'Pallabi Dutta',
+    caption: 'মায়ের বিদায়বেলা ❤️🙏😊',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 62,
+    src: 'camera/Harshit Banerjee_pic_2.jpg',
+    alt: 'Kali Idol',
+    category: 'rituals & traditions',
+    photographer: 'Harshit Banerjee',
+    caption: 'বহ্নিশিখা..🔥',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
 ];
 
 // Organizing team data
