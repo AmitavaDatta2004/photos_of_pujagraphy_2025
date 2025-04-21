@@ -384,6 +384,96 @@ export const galleryImages = [
     caption: '২০২৪ এর চন্দননগর গঞ্জ শীতলা তালা সার্বজনীন',
     photoCategory: 'Camera Captures' as PhotoCategory
   },
+  {
+    id: 42,
+    src: 'mobile/Prantik Maji_pic_1.jpg',
+    alt: 'Kali Idol',
+    category: 'tradition',
+    photographer: 'Prantik Maji',
+    caption: 'Mayer biday',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 43,
+    src: 'mobile/Prantik Maji_pic_2.jpg',
+    alt: 'jagadhatri idol',
+    category: 'street shots',
+    photographer: 'Prantik Maji',
+    caption: 'Asche bochor abar hobe',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 44,
+    src: 'camera/Tanmoy banerjee_pic_1.jpeg',
+    alt: 'Kali idol',
+    category: 'portraits',
+    photographer: 'Harshit Banerjee',
+    caption: ' চক্ষুদান',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
+  {
+    id: 45,
+    src: 'mobile/sujata bhakta_pic_2.jpg',
+    alt: 'Kartik idol',
+    category: 'portraits',
+    photographer: 'Sujata Bhakta',
+    caption: 'বিশ্বকর্মা পূজা-কারুশিল্পের প্রতি শ্রদ্ধার এক প্রকাশ। Morton dairy 2024',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 46,
+    src: 'mobile/Arpan Sarkar_pic_1.jpg',
+    alt: 'Durga idol',
+    category: 'portraits',
+    photographer: 'Arpan Sarkar',
+    caption: 'faboulous idol of maa durga',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 47,
+    src: 'camera/PALLABI DUTTA_pic_1.jpg',
+    alt: 'jagadhatri idol',
+    category: 'portraits',
+    photographer: 'Pallabi Dutta',
+    caption: 'তেঁতুলতলা মায়ের বরণের সময়❤️😌🙏',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
+  {
+    id: 48,
+    src: 'camera/PALLABI DUTTA_pic_2.jpg',
+    alt: 'jagadhatri idol',
+    category: 'portraits',
+    photographer: 'Pallabi Dutta',
+    caption: 'রাণীমায়ের নগর ভ্রমণ❤️😌🙏',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
+  {
+    id: 49,
+    src: 'mobile/Arijit koley_pic_1.jpg',
+    alt: 'Durga idol',
+    category: 'rituals & traditions',
+    photographer: 'Arijit Koley',
+    caption: 'bisarjan',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 50,
+    src: 'camera/Ovideep Chakraborty_pic_1.jpeg',
+    alt: 'Kali idol',
+    category: 'rituals & traditions',
+    photographer: 'Ovideep Chakraborty ',
+    caption: 'bisarjan',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
+  {
+    id: 51,
+    src: 'camera/Biswajit Das_pic_1.jpg',
+    alt: 'Durga idol',
+    category: 'portraits',
+    photographer: 'Biswajit Das',
+    caption: 'অভয়া, বরদা',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
 ];
 
 // Organizing team data
