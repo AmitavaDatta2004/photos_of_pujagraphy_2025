@@ -74,7 +74,7 @@ export const galleryImages = [
     src: 'mobile/Tanmoy banerjee_pic_1.jpg',
     alt: 'Kali Idol',
     category: 'Cultural Events',
-    photographer: 'Rajan Dutta',
+    photographer: 'Harshit Banerjee',
     caption: 'শক্তি (Shakti) - The power of the goddess captured in a moment.',
     photoCategory: 'Mobile Captures' as PhotoCategory
   },
@@ -167,6 +167,204 @@ export const galleryImages = [
     photographer: 'Rajib Bagui',
     caption: 'উৎসবে জমজমাট (Utsobe Jomjomat) - The vibrant atmosphere of the festival.',
     photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 18,
+    src: 'mobile/Sankar Das_pic_1.jpg',
+    alt: 'Idol',
+    category: 'Moments & Emotions',
+    photographer: 'Sankar Das',
+    caption: 'পৃথিবীর সব চেয়ে শান্তির জায়গা হল মায়ের কোলে - The most peaceful place in the world is in the lap of the mother.',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  // {
+  //   id: 19,
+  //   src: 'camera/Amarnath Roy_pic_2.jpg',
+  //   alt: 'Jagadhatri Idol',
+  //   category: 'Street Shots',
+  //   photographer: 'Amarnath Roy',
+  //   caption: 'বিদায় বেলায়, আলোক মালায়.... The farewell of the goddess adorned with lights.',
+  //   photoCategory: 'Camera Captures' as PhotoCategory
+  // },
+  {
+    id: 20,
+    src: 'camera/Amarnath Roy_pic_1.jpg',
+    alt: 'Idol making',
+    category: 'Idol Making',
+    photographer: 'Amarnath Roy',
+    caption: 'আহ্লাদে মা রাখবো তোরে.... আমার হাতে বন্দি করে......',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
+  {
+    id: 21,
+    src: 'mobile/Amarnath Roy_pic_1.jpg',
+    alt: 'Jagadhatri Idol',
+    category: 'cultural events',
+    photographer: 'Amarnath Roy',
+    caption: 'উৎসবে জমজমাট (Utsobe Jomjomat) - The vibrant atmosphere of the festival.',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 22,
+    src: 'mobile/Amarnath Roy_pic_2.jpg',
+    alt: 'Durga Idol',
+    category: 'Moments & Emotions',
+    photographer: 'Amarnath Roy',
+    caption: 'দৃষ্টি ',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 23,
+    src: 'mobile/Tanmoy banerjee_pic_2.jpg',
+    alt: 'Idol',
+    category: 'Street Shots',
+    photographer: 'Harshit Banerjee',
+    caption: '" বিদায় বেলায়, চোখে জলের খেলায় "... 💔',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 24,
+    src: 'camera/Surajit Ghosh_pic_1.jpg',
+    alt: 'Kali Idol',
+    category: 'Street Shots',
+    photographer: 'Surajit Ghosh',
+    caption: 'জয়কালী কলকাত্তাওয়ালি...',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
+  {
+    id: 25,
+    src: 'mobile/Tanmoy Das_pic_1.jpg',
+    alt: 'Durga Idol',
+    category: 'cultural events',
+    photographer: 'Tanmoy Das',
+    caption: 'হাওড়ার রাজরানী 🤎🔱🌼',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 26,
+    src: 'mobile/Swapnadeep Bhar_pic_1.jpg',
+    alt: 'jagadhatri idol',
+    category: 'cultural events',
+    photographer: 'Swapnadeep Bhar',
+    caption: 'মোবাইল ক্যামেরায় ক্যামেরাবন্দি ❤️ লালবাগান এর মা জগদ্ধাত্রী ❤️',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 27,
+    src: 'mobile/Swapnadeep Bhar_pic_2.jpg',
+    alt: 'jagadhatri idol',
+    category: 'Street Shots',
+    photographer: 'Swapnadeep Bhar',
+    caption: 'দুই মা এর দেখা ❤️',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 28,
+    src: 'camera/Amarnath Roy_pic_2.jpg',
+    alt: 'Jagadhatri Idol',
+    category: 'Street Shots',
+    photographer: 'Amarnath Roy',
+    caption: 'বিদায় বেলায়, আলোক মালায়.... The farewell of the goddess adorned with lights.',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
+  {
+    id: 29,
+    src: 'camera/SAYAK KUNDU_pic_1.jpg',
+    alt: 'Jagadhatri Idol',
+    category: 'Street Shots',
+    photographer: 'SAYAK KUNDU',
+    caption: 'আলোর শহরে আদিমা',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
+  {
+    id: 30,
+    src: 'camera/SAYAK KUNDU_pic_2.jpg',
+    alt: 'Jagadhatri Idol',
+    category: 'Portraits',
+    photographer: 'SAYAK KUNDU',
+    caption: 'চারমন্দিরতলার মায়ের মুখশ্রী',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
+  {
+    id: 31,
+    src: 'mobile/Sujata bhakta_pic_1.jpg',
+    alt: 'Jagadhatri Idol',
+    category: 'Street Shots',
+    photographer: 'Sujata Bhakta',
+    caption: 'মায়ের আলোয় আলোকিত😌✨',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 32,
+    src: 'camera/Rajib_pic_2.jpg',
+    alt: 'Jagadhatri Idol',
+    category: 'portraits',
+    photographer: 'Rajib',
+    caption: 'স্বর্ণময়ী সোনা মা ',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
+  {
+    id: 33,
+    src: 'mobile/Rajib_pic_1.jpg',
+    alt: 'Jagadhatri Idol',
+    category: 'portraits',
+    photographer: 'Rajib',
+    caption: '৮০০০ গাছে পুরাণের সাজে ',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 34,
+    src: 'mobile/Ishita Santra_pic_1.jpeg',
+    alt: 'Tradition',
+    category: 'Rituals & Traditions',
+    photographer: 'Ishita Santra',
+    caption: 'প্রত্যেক নারীতেই তার অধিষ্ঠান',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 35,
+    src: 'mobile/Ishita Santra_pic_2.jpeg',
+    alt: 'Kali puja',
+    category: 'Rituals & Traditions',
+    photographer: 'Ishita Santra',
+    caption: 'প্রত্যেক নারীতেই তার অধিষ্ঠান',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 36,
+    src: 'camera/Ishita Santra_pic_1.JPG',
+    alt: 'Jagadhatri Idol',
+    category: 'portraits',
+    photographer: 'Ishita Santra',
+    caption: 'চিন্ময়ী',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 37,
+    src: 'camera/Ishita Santra_pic_2.JPG',
+    alt: 'tradition',
+    category: 'portraits',
+    photographer: 'Ishita Santra',
+    caption: 'প্রত্যেক নারীতেই তার অধিষ্ঠান',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 38,
+    src: 'mobile/Souparno Datta_pic_1.jpg',
+    alt: 'tradition',
+    category: 'moments & emotions',
+    photographer: 'Souparno Datta',
+    caption: 'চক্ষুদান পর্ব 😍',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 39,
+    src: 'camera/Souparno Datta_pic_1.jpg',
+    alt: 'tradition',
+    category: 'portraits',
+    photographer: 'Souparno Datta',
+    caption: 'শিল্পী ও তার শিল্প',
+    photoCategory: 'Camera Captures' as PhotoCategory
   },
 ];
 
