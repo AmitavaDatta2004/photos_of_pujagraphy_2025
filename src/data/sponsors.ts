@@ -15,64 +15,64 @@ export interface Sponsor {
 
 export const sponsors: Sponsor[] = [
   {
-    id: 'canon',
-    name: 'Canon',
-    logo: 'https://placehold.co/200x80/222/fff?text=Canon',
+    id: 'tech-innovators',
+    name: 'Tech Innovators',
+    logo: 'https://placehold.co/200x80/222/fff?text=TechInnovators',
     tier: 'platinum',
-    website: 'https://www.canon.com',
-    description: 'Leading provider of professional photography equipment and printing solutions.',
-    promoCode: 'PUJAGRAPHY2025',
-    discount: '15% off on select DSLR cameras'
-  },
-  {
-    id: 'adobe',
-    name: 'Adobe',
-    logo: 'https://placehold.co/200x80/f00/fff?text=Adobe',
-    tier: 'platinum',
-    website: 'https://www.adobe.com',
-    description: 'Industry standard software for photo editing and creative design.',
+    website: 'https://example.com/tech-innovators',
+    description: 'Leading provider of innovative photography and imaging solutions.',
     promoCode: 'PHOTOFEST25',
-    discount: '20% off first 3 months of Creative Cloud'
+    discount: '20% off on all premium equipment'
   },
   {
-    id: 'nikon',
-    name: 'Nikon',
-    logo: 'https://placehold.co/200x80/222/yellow?text=Nikon',
+    id: 'creative-studio',
+    name: 'Creative Studio Pro',
+    logo: 'https://placehold.co/200x80/f00/fff?text=CreativeStudio',
+    tier: 'platinum',
+    website: 'https://example.com/creative-studio',
+    description: 'Professional software solutions for creative professionals.',
+    promoCode: 'CREATE25',
+    discount: '3 months free subscription'
+  },
+  {
+    id: 'photo-masters',
+    name: 'Photo Masters',
+    logo: 'https://placehold.co/200x80/222/yellow?text=PhotoMasters',
     tier: 'gold',
-    website: 'https://www.nikon.com',
-    description: 'Precision optics and imaging products for photographers worldwide.',
-    promoCode: 'NIKONFEST',
-    discount: '10% off accessories'
+    website: 'https://example.com/photo-masters',
+    description: 'Premium photography equipment and accessories.',
+    promoCode: 'MASTER2025',
+    discount: '15% off on all accessories'
   },
   {
-    id: 'sandisk',
-    name: 'SanDisk',
-    logo: 'https://placehold.co/200x80/red/fff?text=SanDisk',
+    id: 'digital-store',
+    name: 'Digital Store Plus',
+    logo: 'https://placehold.co/200x80/red/fff?text=DigitalStore',
     tier: 'gold',
-    website: 'https://www.sandisk.com',
-    description: 'High-performance storage solutions for photographers and creators.',
-    promoCode: 'SDSTORE25',
-    discount: 'Buy 1 Get 1 on SD cards'
+    website: 'https://example.com/digital-store',
+    description: 'Your one-stop shop for all digital photography needs.',
+    promoCode: 'DIGITAL25',
+    discount: 'Buy 1 Get 1 on memory cards'
   },
   {
-    id: 'manfrotto',
-    name: 'Manfrotto',
-    logo: 'https://placehold.co/200x80/333/fff?text=Manfrotto',
+    id: 'pro-gear',
+    name: 'Pro Gear Solutions',
+    logo: 'https://placehold.co/200x80/333/fff?text=ProGear',
     tier: 'silver',
-    website: 'https://www.manfrotto.com',
-    description: 'Professional tripods, lighting supports, and camera accessories.',
-    promoCode: 'TRIPOD25',
-    discount: '25% off tripods'
+    website: 'https://example.com/pro-gear',
+    description: 'Professional photography gear and accessories.',
+    promoCode: 'GEAR2025',
+    discount: '25% off on stands and supports'
   },
   {
-    id: 'fujifilm',
-    name: 'Fujifilm',
-    logo: 'https://placehold.co/200x80/green/fff?text=Fujifilm',
+    id: 'image-tech',
+    name: 'Image Tech Labs',
+    logo: 'https://placehold.co/200x80/green/fff?text=ImageTech',
     tier: 'silver',
-    website: 'https://www.fujifilm.com',
-    description: 'Innovative cameras and printing solutions with legendary color science.',
-    promoCode: 'FUJI2025',
-    discount: 'Free photo print with any purchase'
+    website: 'https://example.com/image-tech',
+    description: 'Innovative imaging solutions for photographers.',
+    promoCode: 'IMAGE25',
+    discount: 'Free prints with every purchase'
   }
 ];
 
