@@ -609,6 +609,24 @@ export const galleryImages = [
     caption: 'decorated with love',
     photoCategory: 'Mobile Captures' as PhotoCategory
   },
+  {
+    id: 67,
+    src: 'mobile/Projjal Das_pic_1.jpg',
+    alt: 'jagadhatri idol',
+    category: 'portraits',
+    photographer: 'Projjal Das',
+    caption: 'মায়ের মুখশ্রী',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 68,
+    src: 'mobile/Projjal Das_pic_2.jpg',
+    alt: 'Durga idol',
+    category: 'portraits',
+    photographer: 'Projjal Das',
+    caption: 'মায়ের মুখশ্রী',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
 ];
 
 // Organizing team data
