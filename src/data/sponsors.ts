@@ -16,9 +16,9 @@ export interface Sponsor {
 export const sponsors: Sponsor[] = [
   {
     id: 'mayur-cleaning',
-    name: 'Mayur Cleaning Essentials',
-    logo: '/sponsors/01.png',
-    banner: '/sponsors/01.png',
+    name: 'SHRI KRISHNA TRADERS',
+    logo: 'sponsers/01.png',
+    banner: 'sponsers/01.png',
     tier: 'gold',
     website: 'tel:7003102790',
     description: 'Your Everyday Cleaning Essentials, All in One Place!',
