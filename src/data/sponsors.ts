@@ -1,4 +1,3 @@
-
 // Sponsor tiers and information
 export type SponsorTier = 'platinum' | 'gold' | 'silver';
 
@@ -11,9 +10,22 @@ export interface Sponsor {
   description: string;
   promoCode?: string;
   discount?: string;
+  banner?: string;
 }
 
 export const sponsors: Sponsor[] = [
+  {
+    id: 'mayur-cleaning',
+    name: 'Mayur Cleaning Essentials',
+    logo: '/sponsors/01.png',
+    banner: '/sponsors/01.png',
+    tier: 'gold',
+    website: 'tel:7003102790',
+    description: 'Your Everyday Cleaning Essentials, All in One Place!',
+    promoCode: 'SPECIAL2024',
+    discount: 'Special Offer on Premium Products'
+  },
+  /* Commented out sample sponsors until we get more real sponsors
   {
     id: 'tech-innovators',
     name: 'Tech Innovators',
@@ -74,6 +86,7 @@ export const sponsors: Sponsor[] = [
     promoCode: 'IMAGE25',
     discount: 'Free prints with every purchase'
   }
+  */
 ];
 
 // Helper function to get sponsors by tier
