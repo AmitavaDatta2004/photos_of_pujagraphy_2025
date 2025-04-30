@@ -30,8 +30,14 @@ const Gallery = () => {
   
   const imagesPerPage = 8;
 
+  // Convert gallery images to have string IDs for consistency with the GalleryGrid component
+  const galleryImagesWithStringIds = galleryImages.map(img => ({
+    ...img,
+    id: img.id.toString()
+  }));
+
   // Filter images based on category, photo category, and search term
-  const filteredImages = galleryImages.filter(img => {
+  const filteredImages = galleryImagesWithStringIds.filter(img => {
     const matchesCategory = activeFilter === 'All' || img.category === activeFilter;
     const matchesPhotoCategory = activePhotoCategory === 'All' || img.photoCategory === activePhotoCategory;
     const matchesSearch = searchTerm === '' || 

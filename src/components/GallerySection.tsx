@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useContext } from 'react';
 import { X, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -101,7 +100,7 @@ const GallerySection = () => {
                     <h3 className={`font-medium ${theme === 'dark' ? 'text-festival-golden' : 'text-festival-maroon'}`}>{image.alt}</h3>
                     <p className="text-sm text-gray-600 dark:text-gray-300">By {image.photographer}</p>
                   </div>
-                  <LikeButton photoId={image.id} user={user} />
+                  <LikeButton photoId={image.id.toString()} user={user} />
                 </div>
                 <div className="mt-2 flex flex-wrap gap-2">
                   <span className={`inline-block px-2 py-1 text-xs rounded-full ${
@@ -152,7 +151,7 @@ const GallerySection = () => {
                 <div className="p-6 md:w-1/3">
                   <div className="flex justify-between items-start">
                     <h3 className={`text-xl font-bold ${theme === 'dark' ? 'text-festival-golden' : 'text-festival-maroon'} mb-2`}>{selectedImage.alt}</h3>
-                    <LikeButton photoId={selectedImage.id} user={user} />
+                    <LikeButton photoId={selectedImage.id.toString()} user={user} />
                   </div>
                   
                   <div className="flex gap-2 mb-4">
