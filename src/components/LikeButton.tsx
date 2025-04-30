@@ -5,6 +5,18 @@ import { User } from '@supabase/supabase-js';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
+import { 
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { 
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { Loader2 } from 'lucide-react';
 
 interface LikeButtonProps {
   photoId: string;
@@ -14,10 +26,18 @@ interface LikeButtonProps {
   className?: string;
 }
 
+interface LikerInfo {
+  id: string;
+  username: string;
+  avatar_url?: string | null;
+}
+
 const LikeButton = ({ photoId, user, onLike, onUnlike, className }: LikeButtonProps) => {
   const [liked, setLiked] = useState(false);
   const [likeCount, setLikeCount] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
+  const [loadingLikers, setLoadingLikers] = useState(false);
+  const [likers, setLikers] = useState<LikerInfo[]>([]);
   const { toast } = useToast();
 
   // Check if user has liked this photo
@@ -50,7 +70,7 @@ const LikeButton = ({ photoId, user, onLike, onUnlike, className }: LikeButtonPr
     checkUserLike();
   }, [photoId, user]);
 
-  // Get like count
+  // Get like count and set up realtime subscription
   useEffect(() => {
     const getLikeCount = async () => {
       try {
@@ -94,6 +114,39 @@ const LikeButton = ({ photoId, user, onLike, onUnlike, className }: LikeButtonPr
     };
   }, [photoId]);
 
+  // Fetch users who liked this photo
+  const fetchLikers = async () => {
+    setLoadingLikers(true);
+    try {
+      const { data: likes, error: likesError } = await supabase
+        .from('photo_likes')
+        .select('user_id')
+        .eq('photo_id', photoId)
+        .limit(10);
+
+      if (likesError) throw likesError;
+      
+      if (likes && likes.length > 0) {
+        const userIds = likes.map(like => like.user_id);
+        
+        const { data: profiles, error: profilesError } = await supabase
+          .from('profiles')
+          .select('id, username, avatar_url')
+          .in('id', userIds);
+          
+        if (profilesError) throw profilesError;
+        
+        setLikers(profiles || []);
+      } else {
+        setLikers([]);
+      }
+    } catch (error) {
+      console.error('Error fetching likers:', error);
+    } finally {
+      setLoadingLikers(false);
+    }
+  };
+
   const toggleLike = async () => {
     if (!user) {
       toast({
@@ -118,6 +171,7 @@ const LikeButton = ({ photoId, user, onLike, onUnlike, className }: LikeButtonPr
         if (error) throw error;
         
         setLiked(false);
+        setLikeCount(prev => Math.max(0, prev - 1));
         if (onUnlike) onUnlike();
       } else {
         // Like
@@ -129,6 +183,7 @@ const LikeButton = ({ photoId, user, onLike, onUnlike, className }: LikeButtonPr
         if (error) throw error;
         
         setLiked(true);
+        setLikeCount(prev => prev + 1);
         if (onLike) onLike();
       }
     } catch (error: any) {
@@ -146,28 +201,91 @@ const LikeButton = ({ photoId, user, onLike, onUnlike, className }: LikeButtonPr
 
   return (
     <div className={cn("flex items-center", className)}>
-      <button
-        onClick={toggleLike}
-        disabled={isLoading}
-        className={cn(
-          "flex items-center gap-1 transition-all px-2 py-1 rounded-full",
-          liked
-            ? "text-rose-600 dark:text-rose-500"
-            : "text-gray-500 dark:text-gray-400 hover:text-rose-500 dark:hover:text-rose-400",
-          isLoading && "opacity-50 cursor-not-allowed"
-        )}
-        title={user ? (liked ? "Unlike" : "Like") : "Log in to like"}
-      >
-        <Heart
-          size={16}
-          className={cn(
-            "transition-all",
-            liked ? "fill-rose-600 dark:fill-rose-500" : "fill-transparent",
-            liked && "scale-110"
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <button
+              onClick={toggleLike}
+              disabled={isLoading}
+              className={cn(
+                "flex items-center gap-1 transition-all duration-300 p-2 rounded-full",
+                liked
+                  ? "text-rose-600 dark:text-rose-500"
+                  : "text-gray-500 dark:text-gray-400 hover:text-rose-500 dark:hover:text-rose-400",
+                isLoading ? "opacity-50 cursor-not-allowed" : "hover:bg-rose-50 dark:hover:bg-rose-900/20",
+                "focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-opacity-50"
+              )}
+              title={user ? (liked ? "Unlike" : "Like") : "Log in to like"}
+            >
+              {isLoading ? (
+                <Loader2 size={18} className="animate-spin" />
+              ) : (
+                <Heart
+                  size={18}
+                  className={cn(
+                    "transition-all duration-300",
+                    liked ? "fill-rose-600 dark:fill-rose-500" : "fill-transparent",
+                    liked && "scale-110 animate-heartbeat"
+                  )}
+                />
+              )}
+            </button>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>{user ? (liked ? "Unlike" : "Like") : "Log in to like"}</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+      
+      <Popover>
+        <PopoverTrigger asChild>
+          <button 
+            className="text-sm font-medium hover:underline ml-1 focus:outline-none"
+            onClick={fetchLikers}
+          >
+            {likeCount > 0 ? likeCount : ""}
+          </button>
+        </PopoverTrigger>
+        <PopoverContent className="w-64 p-3" align="center">
+          <h4 className="font-medium text-sm mb-2">
+            {likeCount === 1 ? "1 person liked this" : `${likeCount} people liked this`}
+          </h4>
+          
+          {loadingLikers ? (
+            <div className="flex justify-center py-3">
+              <Loader2 size={20} className="animate-spin text-gray-500" />
+            </div>
+          ) : likers.length > 0 ? (
+            <div className="space-y-2 max-h-60 overflow-auto">
+              {likers.map(liker => (
+                <div key={liker.id} className="flex items-center gap-2">
+                  <div className="h-8 w-8 rounded-full overflow-hidden bg-gray-200 dark:bg-gray-700">
+                    {liker.avatar_url ? (
+                      <img 
+                        src={liker.avatar_url} 
+                        alt={liker.username} 
+                        className="h-full w-full object-cover"
+                      />
+                    ) : (
+                      <div className="h-full w-full flex items-center justify-center text-gray-500 bg-gray-100 dark:bg-gray-800">
+                        {liker.username.charAt(0).toUpperCase()}
+                      </div>
+                    )}
+                  </div>
+                  <span className="text-sm">{liker.username}</span>
+                </div>
+              ))}
+              {likers.length < likeCount && (
+                <p className="text-xs text-gray-500 text-center pt-1 border-t">
+                  And {likeCount - likers.length} more...
+                </p>
+              )}
+            </div>
+          ) : (
+            <p className="text-sm text-gray-500 py-1">No likes yet.</p>
           )}
-        />
-        <span className="text-sm font-medium">{likeCount}</span>
-      </button>
+        </PopoverContent>
+      </Popover>
     </div>
   );
 };

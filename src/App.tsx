@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import Gallery from "./pages/Gallery";
 import Sponsors from "./pages/Sponsors";
 import Auth from "./pages/Auth";
+import AuthCallback from "./pages/AuthCallback";
 import NotFound from "./pages/NotFound";
 import { ThemeProvider } from "./hooks/useTheme";
 import { Analytics } from '@vercel/analytics/react';
@@ -43,6 +44,7 @@ const AppContent = () => {
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/sponsors" element={<Sponsors />} />
               <Route path="/auth" element={<Auth />} />
+              <Route path="/auth-callback" element={<AuthCallback />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
