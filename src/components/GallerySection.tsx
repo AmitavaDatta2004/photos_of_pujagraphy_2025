@@ -1,9 +1,11 @@
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { X, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { galleryImages, PhotoCategory } from '../data/images';
 import { useTheme } from '../hooks/useTheme';
+import LikeButton from './LikeButton';
+import { AuthContext } from '../App';
 
 const GallerySection = () => {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -11,6 +13,7 @@ const GallerySection = () => {
   const [selectedImage, setSelectedImage] = useState<typeof galleryImages[0] | null>(null);
   const [randomImages, setRandomImages] = useState<typeof galleryImages>([]);
   const { theme } = useTheme();
+  const { user } = useContext(AuthContext);
 
   // Get 6 random images from the gallery
   useEffect(() => {
@@ -93,8 +96,13 @@ const GallerySection = () => {
                 </div>
               </div>
               <div className="p-3">
-                <h3 className={`font-medium ${theme === 'dark' ? 'text-festival-golden' : 'text-festival-maroon'}`}>{image.alt}</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300">By {image.photographer}</p>
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h3 className={`font-medium ${theme === 'dark' ? 'text-festival-golden' : 'text-festival-maroon'}`}>{image.alt}</h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-300">By {image.photographer}</p>
+                  </div>
+                  <LikeButton photoId={image.id} user={user} />
+                </div>
                 <div className="mt-2 flex flex-wrap gap-2">
                   <span className={`inline-block px-2 py-1 text-xs rounded-full ${
                     theme === 'dark' ? 'bg-amber-900/40 text-amber-300' : 'bg-festival-golden/20 text-festival-maroon'
@@ -142,7 +150,10 @@ const GallerySection = () => {
                   />
                 </div>
                 <div className="p-6 md:w-1/3">
-                  <h3 className={`text-xl font-bold ${theme === 'dark' ? 'text-festival-golden' : 'text-festival-maroon'} mb-2`}>{selectedImage.alt}</h3>
+                  <div className="flex justify-between items-start">
+                    <h3 className={`text-xl font-bold ${theme === 'dark' ? 'text-festival-golden' : 'text-festival-maroon'} mb-2`}>{selectedImage.alt}</h3>
+                    <LikeButton photoId={selectedImage.id} user={user} />
+                  </div>
                   
                   <div className="flex gap-2 mb-4">
                     <span className={`inline-block px-2 py-1 text-xs rounded-full ${

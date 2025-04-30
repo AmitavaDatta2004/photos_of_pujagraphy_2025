@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { X, ChevronLeft, ChevronRight, Search, ArrowLeft } from 'lucide-react';
 import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
@@ -15,6 +15,9 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 import { galleryImages, PhotoCategory } from '../data/images';
+import { AuthContext } from '../App';
+import AuthButton from '../components/AuthButton';
+import LikeButton from '../components/LikeButton';
 
 const Gallery = () => {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -25,6 +28,7 @@ const Gallery = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
   const { theme } = useTheme();
+  const { user, loading } = useContext(AuthContext);
   
   // Scroll to top when component mounts
   useEffect(() => {
@@ -90,7 +94,7 @@ const Gallery = () => {
     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
       <section className="pt-10 pb-20 bg-festival-cream/30 dark:bg-gray-800/30 min-h-screen transition-colors duration-300">
         <div className="festival-container">
-          {/* Back to Home button - replacing navbar */}
+          {/* Navigation and Authentication */}
           <div className="mb-8 flex items-center justify-between">
             <Button 
               variant="outline" 
@@ -106,7 +110,7 @@ const Gallery = () => {
               <h3 className="text-lg md:text-xl font-heading text-festival-maroon dark:text-festival-golden">Utsab Unites</h3>
             </div>
             
-            <div className="w-[100px]"></div> {/* Empty div for balance */}
+            {!loading && <AuthButton user={user} onAuthChange={() => {}} />}
           </div>
           
           <h1 className="section-title">Moments of Pujagraphy</h1>
@@ -209,8 +213,13 @@ const Gallery = () => {
                   </div>
                 </div>
                 <div className="p-3">
-                  <h3 className="font-medium text-festival-maroon dark:text-festival-golden">{image.alt}</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-300">By {image.photographer}</p>
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <h3 className="font-medium text-festival-maroon dark:text-festival-golden">{image.alt}</h3>
+                      <p className="text-sm text-gray-600 dark:text-gray-300">By {image.photographer}</p>
+                    </div>
+                    <LikeButton photoId={image.id} user={user} className="mt-1" />
+                  </div>
                   <div className="mt-2 flex flex-wrap gap-2">
                     <span className="inline-block px-2 py-1 text-xs bg-festival-golden/20 rounded-full text-festival-maroon dark:bg-amber-900/40 dark:text-amber-300">
                       {image.category}
@@ -294,7 +303,10 @@ const Gallery = () => {
                     />
                   </div>
                   <div className="p-6 md:w-1/3">
-                    <h3 className="text-xl font-bold text-festival-maroon dark:text-festival-golden mb-2">{selectedImage.alt}</h3>
+                    <div className="flex justify-between items-start mb-2">
+                      <h3 className="text-xl font-bold text-festival-maroon dark:text-festival-golden">{selectedImage.alt}</h3>
+                      <LikeButton photoId={selectedImage.id} user={user} />
+                    </div>
                     
                     <div className="flex gap-2 mb-4">
                       <span className="inline-block px-2 py-1 text-xs bg-festival-golden/20 rounded-full text-festival-maroon dark:bg-amber-900/40 dark:text-amber-300">
