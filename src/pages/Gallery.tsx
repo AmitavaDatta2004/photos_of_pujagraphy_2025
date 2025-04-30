@@ -3,7 +3,7 @@ import { useState, useEffect, useContext } from 'react';
 import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
 import { useTheme } from "../hooks/useTheme";
-import { galleryImages } from '../data/images';
+import { galleryImages, PhotoCategory } from '../data/images';
 import { AuthContext } from '../App';
 import GalleryHeader from '../components/gallery/GalleryHeader';
 import GallerySearch from '../components/gallery/GallerySearch';
@@ -15,7 +15,7 @@ import GallerySubmitCTA from '../components/gallery/GallerySubmitCTA';
 
 const Gallery = () => {
   const [activeFilter, setActiveFilter] = useState('All');
-  const [activePhotoCategory, setActivePhotoCategory] = useState('All');
+  const [activePhotoCategory, setActivePhotoCategory] = useState<PhotoCategory | 'All'>('All');
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
