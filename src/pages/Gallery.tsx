@@ -322,7 +322,7 @@ const Gallery = () => {
                     <p className="text-sm font-medium mb-1 dark:text-gray-300">Caption:</p>
                     <p className="text-gray-700 dark:text-gray-300">{selectedImage.caption}</p>
                     <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">
-                      Image {currentImageIndex + 1} of {filteredImages.length}
+                      Image {(currentImageIndex + 1).toString()} of {filteredImages.length.toString()}
                     </div>
                   </div>
                 </div>

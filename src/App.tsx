@@ -12,7 +12,7 @@ import NotFound from "./pages/NotFound";
 import { ThemeProvider } from "./hooks/useTheme";
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
-import { createContext } from "react";
+import { createContext, useState, useEffect } from "react";
 import { User } from "@supabase/supabase-js";
 import { useAuth } from "./hooks/useAuth";
 
@@ -25,6 +25,7 @@ export const AuthContext = createContext<{
   loading: false,
 });
 
+// Create a client
 const queryClient = new QueryClient();
 
 const AppContent = () => {
@@ -53,10 +54,12 @@ const AppContent = () => {
   );
 };
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <AppContent />
-  </QueryClientProvider>
-);
+const App = () => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <AppContent />
+    </QueryClientProvider>
+  );
+};
 
 export default App;
