@@ -45,6 +45,8 @@ const Auth = () => {
     try {
       if (isSignUp) {
         // Sign up
+        console.log(`Signing up user with email: ${email}, redirecting to: ${window.location.origin}/auth-callback`);
+        
         const { error } = await supabase.auth.signUp({
           email,
           password,
@@ -52,7 +54,7 @@ const Auth = () => {
             data: {
               username: username || email.split('@')[0],
             },
-            emailRedirectTo: window.location.origin + '/auth-callback'
+            emailRedirectTo: `${window.location.origin}/auth-callback`
           }
         });
         
@@ -66,6 +68,8 @@ const Auth = () => {
         });
       } else {
         // Sign in
+        console.log(`Signing in user with email: ${email}`);
+        
         const { error } = await supabase.auth.signInWithPassword({
           email,
           password,
@@ -82,6 +86,7 @@ const Auth = () => {
         navigate('/');
       }
     } catch (error: any) {
+      console.error("Auth error:", error);
       setError(error.message || 'An error occurred');
       toast({
         title: "Authentication Error",
@@ -98,15 +103,18 @@ const Auth = () => {
   const handleGoogleSignIn = async () => {
     try {
       setGoogleLoading(true);
+      console.log(`Redirecting to Google auth with redirectTo: ${window.location.origin}/auth-callback`);
+      
       const { error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          redirectTo: window.location.origin + '/auth-callback',
+          redirectTo: `${window.location.origin}/auth-callback`
         }
       });
       
       if (error) throw error;
     } catch (error: any) {
+      console.error("Google sign in error:", error);
       setError(error.message || 'Failed to sign in with Google');
       toast({
         title: "Google Sign In Error",

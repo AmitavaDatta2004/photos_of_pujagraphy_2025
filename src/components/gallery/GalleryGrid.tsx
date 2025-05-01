@@ -2,6 +2,7 @@
 import React from 'react';
 import { User } from '@supabase/supabase-js';
 import LikeButton from '../LikeButton';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface GalleryImage {
   id: string;
@@ -20,6 +21,8 @@ interface GalleryGridProps {
 }
 
 const GalleryGrid = ({ images, onImageSelect, user }: GalleryGridProps) => {
+  const isMobile = useIsMobile();
+
   if (images.length === 0) {
     return (
       <div className="text-center py-12">
@@ -34,8 +37,11 @@ const GalleryGrid = ({ images, onImageSelect, user }: GalleryGridProps) => {
     );
   }
 
+  // Determine grid columns based on screen size
+  const gridCols = isMobile ? "grid-cols-1" : "sm:grid-cols-2 lg:grid-cols-4";
+
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div className={`grid ${gridCols} gap-4`}>
       {images.map((image, index) => (
         <div 
           key={image.id} 
@@ -49,6 +55,7 @@ const GalleryGrid = ({ images, onImageSelect, user }: GalleryGridProps) => {
               src={image.src} 
               alt={image.alt} 
               className="w-full h-full object-cover transition-transform group-hover:scale-110 duration-700"
+              loading="lazy" // Add lazy loading for better performance
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
               <div className="text-white p-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
@@ -58,17 +65,17 @@ const GalleryGrid = ({ images, onImageSelect, user }: GalleryGridProps) => {
           </div>
           <div className="p-3">
             <div className="flex justify-between items-start">
-              <div>
-                <h3 className="font-medium text-festival-maroon dark:text-festival-golden">{image.alt}</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300">By {image.photographer}</p>
+              <div className="flex-grow overflow-hidden">
+                <h3 className="font-medium text-festival-maroon dark:text-festival-golden truncate">{image.alt}</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300 truncate">By {image.photographer}</p>
               </div>
-              <LikeButton photoId={image.id} user={user} className="mt-1" />
+              <LikeButton photoId={image.id} user={user} className="mt-1 flex-shrink-0 ml-2" />
             </div>
             <div className="mt-2 flex flex-wrap gap-2">
-              <span className="inline-block px-2 py-1 text-xs bg-festival-golden/20 rounded-full text-festival-maroon dark:bg-amber-900/40 dark:text-amber-300">
+              <span className="inline-block px-2 py-1 text-xs bg-festival-golden/20 rounded-full text-festival-maroon dark:bg-amber-900/40 dark:text-amber-300 whitespace-nowrap">
                 {image.category}
               </span>
-              <span className="inline-block px-2 py-1 text-xs bg-festival-red/20 rounded-full text-festival-maroon dark:bg-rose-900/40 dark:text-rose-300">
+              <span className="inline-block px-2 py-1 text-xs bg-festival-red/20 rounded-full text-festival-maroon dark:bg-rose-900/40 dark:text-rose-300 whitespace-nowrap">
                 {image.photoCategory}
               </span>
             </div>

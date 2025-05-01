@@ -6,6 +6,7 @@ import { galleryImages, PhotoCategory } from '../data/images';
 import { useTheme } from '../hooks/useTheme';
 import LikeButton from './LikeButton';
 import { AuthContext } from '../App';
+import { useIsMobile } from '../hooks/use-mobile';
 
 const GallerySection = () => {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -14,16 +15,17 @@ const GallerySection = () => {
   const [randomImages, setRandomImages] = useState<typeof galleryImages>([]);
   const { theme } = useTheme();
   const { user } = useContext(AuthContext);
+  const isMobile = useIsMobile();
 
   // Get 6 random images from the gallery
   useEffect(() => {
     const getRandomImages = () => {
       const shuffled = [...galleryImages].sort(() => 0.5 - Math.random());
-      return shuffled.slice(0, 6);
+      return shuffled.slice(0, isMobile ? 4 : 6);
     };
     
     setRandomImages(getRandomImages());
-  }, []);
+  }, [isMobile]);
 
   const categories = ['All', 'Idol Making', 'Cultural Events', 'Street Shots', 'Rituals & Traditions'];
   const photoCategories: (PhotoCategory | 'All')[] = ['All', 'Mobile Captures', 'Camera Captures'];
@@ -36,18 +38,18 @@ const GallerySection = () => {
   });
 
   return (
-    <section id="gallery" className={`py-20 ${theme === 'dark' ? 'bg-gray-800/20' : 'bg-festival-cream/30'}`}>
+    <section id="gallery" className={`py-10 md:py-20 ${theme === 'dark' ? 'bg-gray-800/20' : 'bg-festival-cream/30'}`}>
       <div className="festival-container">
         <h2 className="section-title">Gallery</h2>
         <p className="section-subtitle">Capturing the essence of Puja by Utsab Unites</p>
 
         {/* Photo Category Filters (Mobile/Camera) */}
-        <div className="flex flex-wrap justify-center gap-2 mb-4">
+        <div className="flex flex-wrap justify-center gap-2 mb-4 px-2">
           {photoCategories.map((photoCategory) => (
             <button
               key={photoCategory}
               onClick={() => setActivePhotoCategory(photoCategory)}
-              className={`px-4 py-2 rounded-full transition-all ${
+              className={`px-3 py-1 md:px-4 md:py-2 text-sm md:text-base rounded-full transition-all ${
                 activePhotoCategory === photoCategory
                   ? (theme === 'dark' ? 'bg-amber-600 text-white' : 'bg-festival-golden text-festival-maroon')
                   : (theme === 'dark' ? 'bg-gray-700 text-white hover:bg-amber-800/50' : 'bg-white text-festival-maroon hover:bg-festival-golden/20')
@@ -59,12 +61,12 @@ const GallerySection = () => {
         </div>
 
         {/* Category Filters */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
+        <div className="flex flex-wrap justify-center gap-2 mb-6 md:mb-12 px-2">
           {categories.map(category => (
             <button
               key={category}
               onClick={() => setActiveFilter(category)}
-              className={`px-4 py-2 rounded-full transition-all ${
+              className={`px-3 py-1 md:px-4 md:py-2 text-sm md:text-base rounded-full transition-all ${
                 activeFilter === category
                   ? (theme === 'dark' ? 'bg-rose-600 text-white' : 'bg-festival-red text-white')
                   : (theme === 'dark' ? 'bg-gray-700 text-white hover:bg-rose-900/50' : 'bg-white text-festival-maroon hover:bg-festival-golden/20')
@@ -76,7 +78,7 @@ const GallerySection = () => {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className={`grid grid-cols-1 ${isMobile ? 'sm:grid-cols-2' : 'sm:grid-cols-2 lg:grid-cols-3'} gap-4`}>
           {filteredImages.map(image => (
             <div 
               key={image.id} 
@@ -90,6 +92,7 @@ const GallerySection = () => {
                   src={image.src} 
                   alt={image.alt} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                   <div className="text-white p-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
@@ -99,23 +102,23 @@ const GallerySection = () => {
               </div>
               <div className="p-3">
                 <div className="flex justify-between items-start">
-                  <div>
-                    <h3 className={`font-medium ${theme === 'dark' ? 'text-festival-golden' : 'text-festival-maroon'}`}>{image.alt}</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-300">By {image.photographer}</p>
+                  <div className="flex-grow overflow-hidden">
+                    <h3 className={`font-medium truncate ${theme === 'dark' ? 'text-festival-golden' : 'text-festival-maroon'}`}>{image.alt}</h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-300 truncate">By {image.photographer}</p>
                   </div>
                   <LikeButton 
                     photoId={image.id.toString()} 
                     user={user} 
-                    className="mt-1"
+                    className="mt-1 flex-shrink-0 ml-2"
                   />
                 </div>
                 <div className="mt-2 flex flex-wrap gap-2">
-                  <span className={`inline-block px-2 py-1 text-xs rounded-full ${
+                  <span className={`inline-block px-2 py-1 text-xs rounded-full truncate ${
                     theme === 'dark' ? 'bg-amber-900/40 text-amber-300' : 'bg-festival-golden/20 text-festival-maroon'
                   }`}>
                     {image.category}
                   </span>
-                  <span className={`inline-block px-2 py-1 text-xs rounded-full ${
+                  <span className={`inline-block px-2 py-1 text-xs rounded-full truncate ${
                     theme === 'dark' ? 'bg-rose-900/40 text-rose-300' : 'bg-festival-red/20 text-festival-maroon'
                   }`}>
                     {image.photoCategory}
@@ -127,7 +130,7 @@ const GallerySection = () => {
         </div>
 
         {/* View All Button */}
-        <div className="mt-10 text-center">
+        <div className="mt-8 md:mt-10 text-center">
           <Link 
             to="/gallery" 
             className="btn-festive inline-flex items-center transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
@@ -137,9 +140,9 @@ const GallerySection = () => {
           </Link>
         </div>
 
-        {/* Lightbox */}
+        {/* Lightbox - More responsive for mobile */}
         {selectedImage && (
-          <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 animate-fade-in">
+          <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-2 md:p-4 animate-fade-in overflow-y-auto">
             <div className={`max-w-4xl w-full ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'} rounded-lg overflow-hidden relative`}>
               <button 
                 className={`absolute top-2 right-2 ${theme === 'dark' ? 'bg-gray-700' : 'bg-white'} rounded-full p-1 z-10 hover:bg-festival-red hover:text-white transition-colors duration-300`}
@@ -147,21 +150,21 @@ const GallerySection = () => {
               >
                 <X size={24} className={`${theme === 'dark' ? 'text-white' : 'text-festival-maroon'}`} />
               </button>
-              <div className="md:flex">
-                <div className="md:w-2/3">
+              <div className="flex flex-col md:flex-row">
+                <div className="w-full md:w-2/3">
                   <img 
                     src={selectedImage.src} 
                     alt={selectedImage.alt} 
-                    className="w-full h-full object-contain"
+                    className="w-full h-auto md:h-full object-contain"
                   />
                 </div>
-                <div className="p-6 md:w-1/3">
+                <div className="p-4 md:p-6 w-full md:w-1/3">
                   <div className="flex justify-between items-start">
                     <h3 className={`text-xl font-bold ${theme === 'dark' ? 'text-festival-golden' : 'text-festival-maroon'} mb-2`}>{selectedImage.alt}</h3>
                     <LikeButton photoId={selectedImage.id.toString()} user={user} />
                   </div>
                   
-                  <div className="flex gap-2 mb-4">
+                  <div className="flex gap-2 mb-4 flex-wrap">
                     <span className={`inline-block px-2 py-1 text-xs rounded-full ${
                       theme === 'dark' ? 'bg-amber-900/40 text-amber-300' : 'bg-festival-golden/20 text-festival-maroon'
                     }`}>
