@@ -54,6 +54,7 @@ const CommentSection = ({ photoId, user }: CommentSectionProps) => {
     const fetchComments = async () => {
       setLoading(true);
       try {
+        // Modified query to join with profiles table
         const { data, error } = await supabase
           .from('photo_comments')
           .select(`
@@ -61,13 +62,23 @@ const CommentSection = ({ photoId, user }: CommentSectionProps) => {
             content, 
             created_at, 
             user_id, 
-            profiles:user_id(username, avatar_url)
+            profiles:profiles(username, avatar_url)
           `)
           .eq('photo_id', photoId)
           .order('created_at', { ascending: false });
 
         if (error) throw error;
-        setComments(data || []);
+        
+        // Transform the data to match our Comment interface
+        const formattedComments: Comment[] = data?.map(comment => ({
+          id: comment.id,
+          content: comment.content,
+          created_at: comment.created_at,
+          user_id: comment.user_id,
+          profiles: comment.profiles as unknown as { username: string; avatar_url: string | null }
+        })) || [];
+        
+        setComments(formattedComments);
       } catch (error) {
         console.error('Error fetching comments:', error);
       } finally {
@@ -238,15 +249,15 @@ const CommentSection = ({ photoId, user }: CommentSectionProps) => {
                 <div className="flex items-center gap-2">
                   <Avatar className="h-8 w-8">
                     <AvatarImage
-                      src={comment.profiles.avatar_url || undefined}
-                      alt={comment.profiles.username}
+                      src={comment.profiles?.avatar_url || undefined}
+                      alt={comment.profiles?.username || "User"}
                     />
                     <AvatarFallback>
-                      {comment.profiles.username.charAt(0).toUpperCase()}
+                      {comment.profiles?.username ? comment.profiles.username.charAt(0).toUpperCase() : "U"}
                     </AvatarFallback>
                   </Avatar>
                   <div>
-                    <p className="font-medium text-sm">{comment.profiles.username}</p>
+                    <p className="font-medium text-sm">{comment.profiles?.username || "User"}</p>
                     <p className="text-xs text-gray-500 dark:text-gray-400">
                       {formatDistanceToNow(new Date(comment.created_at), { addSuffix: true })}
                     </p>

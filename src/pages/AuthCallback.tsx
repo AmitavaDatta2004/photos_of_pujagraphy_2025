@@ -13,32 +13,49 @@ const AuthCallback = () => {
     const { hash } = window.location;
     
     const handleAuthCallback = async () => {
-      if (hash) {
-        try {
-          const { data, error } = await supabase.auth.getUser();
-          
-          if (error) throw error;
-          
-          if (data.user) {
-            toast({
-              title: "Welcome!",
-              description: "You have successfully logged in.",
-              duration: 3000,
-            });
-            navigate('/');
-          }
-        } catch (error: any) {
-          console.error('Error during authentication:', error);
+      try {
+        // This will work for both email and OAuth providers
+        const { data, error } = await supabase.auth.getUser();
+        
+        if (error) throw error;
+        
+        if (data.user) {
           toast({
-            title: "Authentication Error",
-            description: error.message || "Failed to complete authentication",
-            variant: "destructive",
-            duration: 5000,
+            title: "Welcome!",
+            description: "You have successfully logged in.",
+            duration: 3000,
           });
-          navigate('/auth');
+          navigate('/');
+        } else {
+          // If no user is found, check if we have a session in the URL
+          if (hash && hash.includes("access_token")) {
+            // We have a hash with access token - OAuth login is completing
+            const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
+            
+            if (sessionError) throw sessionError;
+            
+            if (sessionData?.session) {
+              toast({
+                title: "Welcome!",
+                description: "You have successfully logged in with Google.",
+                duration: 3000,
+              });
+              navigate('/');
+            }
+          } else {
+            // No user and no session in URL - redirect to auth page
+            navigate('/auth');
+          }
         }
-      } else {
-        navigate('/');
+      } catch (error: any) {
+        console.error('Error during authentication:', error);
+        toast({
+          title: "Authentication Error",
+          description: error.message || "Failed to complete authentication",
+          variant: "destructive",
+          duration: 5000,
+        });
+        navigate('/auth');
       }
     };
     
