@@ -49,43 +49,33 @@ const CommentSection = ({ photoId, user }: CommentSectionProps) => {
     },
   });
 
+  const fetchComments = async () => {
+    setLoading(true);
+    try {
+      const { data, error } = await supabase
+        .from('photo_comments')
+        .select(`
+          id, 
+          content, 
+          created_at, 
+          user_id, 
+          profiles:profiles(username, avatar_url)
+        `)
+        .eq('photo_id', photoId)
+        .order('created_at', { ascending: false });
+
+      if (error) throw error;
+      
+      setComments(data || []);
+    } catch (error) {
+      console.error('Error fetching comments:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   // Fetch comments
   useEffect(() => {
-    const fetchComments = async () => {
-      setLoading(true);
-      try {
-        // Modified query to join with profiles table
-        const { data, error } = await supabase
-          .from('photo_comments')
-          .select(`
-            id, 
-            content, 
-            created_at, 
-            user_id, 
-            profiles:profiles(username, avatar_url)
-          `)
-          .eq('photo_id', photoId)
-          .order('created_at', { ascending: false });
-
-        if (error) throw error;
-        
-        // Transform the data to match our Comment interface
-        const formattedComments: Comment[] = data?.map(comment => ({
-          id: comment.id,
-          content: comment.content,
-          created_at: comment.created_at,
-          user_id: comment.user_id,
-          profiles: comment.profiles as unknown as { username: string; avatar_url: string | null }
-        })) || [];
-        
-        setComments(formattedComments);
-      } catch (error) {
-        console.error('Error fetching comments:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
     fetchComments();
 
     // Set up realtime subscription
@@ -99,7 +89,7 @@ const CommentSection = ({ photoId, user }: CommentSectionProps) => {
           table: 'photo_comments',
           filter: `photo_id=eq.${photoId}`,
         },
-        (payload) => {
+        () => {
           fetchComments();
         }
       )

@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useContext } from 'react';
 import { X, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -79,10 +80,12 @@ const GallerySection = () => {
           {filteredImages.map(image => (
             <div 
               key={image.id} 
-              className="card-festive overflow-hidden cursor-pointer transform transition-all hover:scale-[1.05] hover:shadow-xl group"
-              onClick={() => setSelectedImage(image)}
+              className="card-festive overflow-hidden transform transition-all hover:scale-[1.05] hover:shadow-xl group relative"
             >
-              <div className="aspect-square overflow-hidden relative">
+              <div 
+                className="aspect-square overflow-hidden cursor-pointer"
+                onClick={() => setSelectedImage(image)}
+              >
                 <img 
                   src={image.src} 
                   alt={image.alt} 
@@ -100,7 +103,11 @@ const GallerySection = () => {
                     <h3 className={`font-medium ${theme === 'dark' ? 'text-festival-golden' : 'text-festival-maroon'}`}>{image.alt}</h3>
                     <p className="text-sm text-gray-600 dark:text-gray-300">By {image.photographer}</p>
                   </div>
-                  <LikeButton photoId={image.id.toString()} user={user} />
+                  <LikeButton 
+                    photoId={image.id.toString()} 
+                    user={user} 
+                    className="mt-1"
+                  />
                 </div>
                 <div className="mt-2 flex flex-wrap gap-2">
                   <span className={`inline-block px-2 py-1 text-xs rounded-full ${

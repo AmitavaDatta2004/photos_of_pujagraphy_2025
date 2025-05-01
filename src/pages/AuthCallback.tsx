@@ -20,6 +20,39 @@ const AuthCallback = () => {
         if (error) throw error;
         
         if (data.user) {
+          // Check if user has a profile, if not, create one
+          const { data: profile, error: profileError } = await supabase
+            .from('profiles')
+            .select('*')
+            .eq('id', data.user.id)
+            .single();
+          
+          if (profileError && profileError.code !== 'PGRST116') {
+            console.error('Error checking profile:', profileError);
+          }
+          
+          // If no profile exists, create one with username from email
+          if (!profile) {
+            let username = data.user.email ? data.user.email.split('@')[0] : 'user';
+            
+            // For Google auth, we might have user_metadata with a name
+            if (data.user.app_metadata?.provider === 'google' && data.user.user_metadata?.name) {
+              username = data.user.user_metadata.name.split(' ')[0];
+            }
+            
+            const { error: insertError } = await supabase
+              .from('profiles')
+              .insert({
+                id: data.user.id,
+                username: username,
+                avatar_url: data.user.user_metadata?.avatar_url
+              });
+            
+            if (insertError) {
+              console.error('Error creating profile:', insertError);
+            }
+          }
+          
           toast({
             title: "Welcome!",
             description: "You have successfully logged in.",
@@ -35,9 +68,40 @@ const AuthCallback = () => {
             if (sessionError) throw sessionError;
             
             if (sessionData?.session) {
+              // Check/create profile similar to above
+              const user = sessionData.session.user;
+              
+              const { data: profile, error: profileError } = await supabase
+                .from('profiles')
+                .select('*')
+                .eq('id', user.id)
+                .single();
+              
+              if (profileError && profileError.code !== 'PGRST116') {
+                console.error('Error checking profile:', profileError);
+              }
+              
+              if (!profile) {
+                let username = user.email ? user.email.split('@')[0] : 'user';
+                
+                if (user.app_metadata?.provider === 'google' && user.user_metadata?.name) {
+                  username = user.user_metadata.name.split(' ')[0];
+                }
+                
+                await supabase
+                  .from('profiles')
+                  .insert({
+                    id: user.id,
+                    username: username,
+                    avatar_url: user.user_metadata?.avatar_url
+                  });
+              }
+              
               toast({
                 title: "Welcome!",
-                description: "You have successfully logged in with Google.",
+                description: user.app_metadata?.provider === 'google' 
+                  ? "You have successfully logged in with Google." 
+                  : "You have successfully logged in.",
                 duration: 3000,
               });
               navigate('/');

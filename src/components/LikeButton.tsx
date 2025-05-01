@@ -105,14 +105,36 @@ const LikeButton = ({ photoId, user, onLike, onUnlike, className }: LikeButtonPr
         },
         () => {
           getLikeCount();
+          if (user) checkUserLike();
         }
       )
       .subscribe();
 
+    const checkUserLike = async () => {
+      if (!user) return;
+      
+      try {
+        const { data, error } = await supabase
+          .from('photo_likes')
+          .select('*')
+          .eq('photo_id', photoId)
+          .eq('user_id', user.id)
+          .single();
+
+        if (error && error.code !== 'PGRST116') {
+          return;
+        }
+
+        setLiked(!!data);
+      } catch (error) {
+        console.error('Error checking like status:', error);
+      }
+    };
+
     return () => {
       supabase.removeChannel(channel);
     };
-  }, [photoId]);
+  }, [photoId, user]);
 
   // Fetch users who liked this photo
   const fetchLikers = async () => {
@@ -147,7 +169,9 @@ const LikeButton = ({ photoId, user, onLike, onUnlike, className }: LikeButtonPr
     }
   };
 
-  const toggleLike = async () => {
+  const toggleLike = async (e: React.MouseEvent) => {
+    e.stopPropagation(); // Prevent triggering parent click events
+    
     if (!user) {
       toast({
         title: 'Authentication required',
@@ -200,7 +224,7 @@ const LikeButton = ({ photoId, user, onLike, onUnlike, className }: LikeButtonPr
   };
 
   return (
-    <div className={cn("flex items-center", className)}>
+    <div className={cn("flex items-center", className)} onClick={e => e.stopPropagation()}>
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
@@ -241,12 +265,15 @@ const LikeButton = ({ photoId, user, onLike, onUnlike, className }: LikeButtonPr
         <PopoverTrigger asChild>
           <button 
             className="text-sm font-medium hover:underline ml-1 focus:outline-none"
-            onClick={fetchLikers}
+            onClick={(e) => {
+              e.stopPropagation();
+              fetchLikers();
+            }}
           >
             {likeCount > 0 ? likeCount : ""}
           </button>
         </PopoverTrigger>
-        <PopoverContent className="w-64 p-3" align="center">
+        <PopoverContent className="w-64 p-3" align="center" onClick={e => e.stopPropagation()}>
           <h4 className="font-medium text-sm mb-2">
             {likeCount === 1 ? "1 person liked this" : `${likeCount} people liked this`}
           </h4>

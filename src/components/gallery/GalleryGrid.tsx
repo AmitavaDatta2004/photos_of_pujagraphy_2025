@@ -39,10 +39,12 @@ const GalleryGrid = ({ images, onImageSelect, user }: GalleryGridProps) => {
       {images.map((image, index) => (
         <div 
           key={image.id} 
-          className="card-festive overflow-hidden cursor-pointer transform transition-all hover:scale-[1.02] group"
-          onClick={() => onImageSelect(image, index)}
+          className="card-festive overflow-hidden transform transition-all hover:scale-[1.02] group relative"
         >
-          <div className="aspect-square overflow-hidden relative">
+          <div 
+            className="aspect-square overflow-hidden cursor-pointer"
+            onClick={() => onImageSelect(image, index)}
+          >
             <img 
               src={image.src} 
               alt={image.alt} 
