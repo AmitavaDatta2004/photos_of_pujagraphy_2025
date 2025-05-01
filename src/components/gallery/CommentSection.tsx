@@ -32,8 +32,8 @@ interface Comment {
   content: string;
   created_at: string;
   user_id: string;
-  profiles: {
-    username: string;
+  profile?: {
+    username: string | null;
     avatar_url: string | null;
   };
 }
@@ -58,15 +58,45 @@ const CommentSection = ({ photoId, user }: CommentSectionProps) => {
           id, 
           content, 
           created_at, 
-          user_id, 
-          profiles:profiles(username, avatar_url)
+          user_id
         `)
         .eq('photo_id', photoId)
         .order('created_at', { ascending: false });
 
       if (error) throw error;
       
-      setComments(data || []);
+      if (data && data.length > 0) {
+        // Fetch profiles separately and join them to comments
+        const userIds = data.map(comment => comment.user_id);
+        
+        const { data: profilesData, error: profilesError } = await supabase
+          .from('profiles')
+          .select('id, username, avatar_url')
+          .in('id', userIds);
+          
+        if (profilesError) {
+          console.error('Error fetching profiles:', profilesError);
+        }
+        
+        // Map profiles to comments
+        const commentsWithProfiles = data.map(comment => {
+          const profile = profilesData?.find(p => p.id === comment.user_id);
+          return {
+            ...comment,
+            profile: profile ? { 
+              username: profile.username,
+              avatar_url: profile.avatar_url 
+            } : { 
+              username: 'User', 
+              avatar_url: null 
+            }
+          };
+        });
+        
+        setComments(commentsWithProfiles);
+      } else {
+        setComments([]);
+      }
     } catch (error) {
       console.error('Error fetching comments:', error);
     } finally {
@@ -239,15 +269,17 @@ const CommentSection = ({ photoId, user }: CommentSectionProps) => {
                 <div className="flex items-center gap-2">
                   <Avatar className="h-8 w-8">
                     <AvatarImage
-                      src={comment.profiles?.avatar_url || undefined}
-                      alt={comment.profiles?.username || "User"}
+                      src={comment.profile?.avatar_url || undefined}
+                      alt={comment.profile?.username || "User"}
                     />
                     <AvatarFallback>
-                      {comment.profiles?.username ? comment.profiles.username.charAt(0).toUpperCase() : "U"}
+                      {comment.profile?.username 
+                        ? comment.profile.username.charAt(0).toUpperCase() 
+                        : "U"}
                     </AvatarFallback>
                   </Avatar>
                   <div>
-                    <p className="font-medium text-sm">{comment.profiles?.username || "User"}</p>
+                    <p className="font-medium text-sm">{comment.profile?.username || "User"}</p>
                     <p className="text-xs text-gray-500 dark:text-gray-400">
                       {formatDistanceToNow(new Date(comment.created_at), { addSuffix: true })}
                     </p>

@@ -31,13 +31,16 @@ const AuthCallback = () => {
             console.error('Error checking profile:', profileError);
           }
           
-          // If no profile exists, create one with username from email
+          // If no profile exists, create one with username from email or display_name
           if (!profile) {
             let username = data.user.email ? data.user.email.split('@')[0] : 'user';
             
-            // For Google auth, we might have user_metadata with a name
+            // For Google auth, use name from user_metadata if available
             if (data.user.app_metadata?.provider === 'google' && data.user.user_metadata?.name) {
               username = data.user.user_metadata.name.split(' ')[0];
+            } else if (data.user.app_metadata?.provider === 'google' && data.user.user_metadata?.email) {
+              // If no name but email is available, extract username from email
+              username = data.user.user_metadata.email.split('@')[0];
             }
             
             const { error: insertError } = await supabase
@@ -84,8 +87,12 @@ const AuthCallback = () => {
               if (!profile) {
                 let username = user.email ? user.email.split('@')[0] : 'user';
                 
+                // For Google auth, use name from user_metadata if available
                 if (user.app_metadata?.provider === 'google' && user.user_metadata?.name) {
                   username = user.user_metadata.name.split(' ')[0];
+                } else if (user.app_metadata?.provider === 'google' && user.user_metadata?.email) {
+                  // If no name but email is available, extract username from email
+                  username = user.user_metadata.email.split('@')[0];
                 }
                 
                 await supabase
