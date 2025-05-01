@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Loader2 } from 'lucide-react';
@@ -154,8 +155,8 @@ const AuthCallback = () => {
   }, [navigate, toast]); // Dependencies for the effect
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-festival-cream/30 dark:bg-gray-800/30 p-4">
-      <div className="text-center">
+    <div className="fixed inset-0 flex flex-col items-center justify-center bg-background/95 backdrop-blur-md z-50">
+      <div className="bg-card p-8 rounded-xl shadow-lg border border-border max-w-md w-full text-center">
         <Loader2 className="h-12 w-12 animate-spin text-festival-maroon dark:text-festival-golden mx-auto mb-4" />
         <h2 className="text-xl font-semibold text-festival-maroon dark:text-festival-golden mb-2">
           Processing Authentication...
