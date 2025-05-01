@@ -3,9 +3,11 @@ import { useState, useEffect } from 'react';
 import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog";
 import { X } from 'lucide-react';
 import { sponsors } from '../data/sponsors';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const SponsorPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const isMobile = useIsMobile();
   
   // Show popup after 20 seconds of browsing
   useEffect(() => {
@@ -32,18 +34,18 @@ const SponsorPopup = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogContent className="max-w-md p-0 overflow-hidden">
+      <DialogContent className="max-w-md p-0 overflow-hidden bg-white dark:bg-gray-800 border-0">
         <div className="relative">
           <DialogClose className="absolute top-2 right-2 z-10 rounded-full bg-black/20 p-1 text-white hover:bg-black/40">
             <X size={18} />
           </DialogClose>
           
           <div className="bg-gradient-to-r from-festival-red/90 to-festival-maroon dark:from-amber-600 dark:to-red-700 p-4 text-white">
-            <h3 className="text-xl font-bold">Special Offer from {randomSponsor.name}</h3>
-            <p className="text-sm opacity-90">Exclusive for Pujagraphy participants</p>
+            <h3 className="text-lg sm:text-xl font-bold">Special Offer from {randomSponsor.name}</h3>
+            <p className="text-xs sm:text-sm opacity-90">Exclusive for Pujagraphy participants</p>
           </div>
           
-          <div className="p-6 bg-white dark:bg-gray-900">
+          <div className="p-4 sm:p-6 bg-white dark:bg-gray-800">
             <div className="flex justify-center mb-4">
               <img 
                 src={randomSponsor.logo} 
@@ -52,26 +54,26 @@ const SponsorPopup = () => {
               />
             </div>
             
-            <p className="text-gray-700 dark:text-gray-300 mb-4 text-center">
+            <p className="text-gray-700 dark:text-gray-300 mb-4 text-center text-sm sm:text-base">
               {randomSponsor.description}
             </p>
             
             {randomSponsor.discount && (
-              <div className="bg-festival-golden/10 dark:bg-festival-golden/20 p-4 rounded-lg mb-6 text-center">
-                <p className="font-bold text-festival-maroon dark:text-white text-lg mb-1">
+              <div className="bg-festival-golden/10 dark:bg-festival-golden/20 p-3 sm:p-4 rounded-lg mb-4 sm:mb-6 text-center">
+                <p className="font-bold text-festival-maroon dark:text-white text-base sm:text-lg mb-1">
                   {randomSponsor.discount}
                 </p>
                 {randomSponsor.promoCode && (
-                  <p className="font-mono bg-white dark:bg-gray-800 inline-block px-3 py-1 rounded text-gray-800 dark:text-white">
+                  <p className="font-mono bg-white dark:bg-gray-800 inline-block px-3 py-1 rounded text-gray-800 dark:text-white text-sm">
                     {randomSponsor.promoCode}
                   </p>
                 )}
               </div>
             )}
             
-            <div className="flex justify-center gap-4">
+            <div className="flex justify-center gap-3 sm:gap-4">
               <DialogClose asChild>
-                <button className="px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                <button className="px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-sm">
                   Maybe Later
                 </button>
               </DialogClose>
@@ -80,7 +82,7 @@ const SponsorPopup = () => {
                 href={randomSponsor.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 bg-festival-red text-white dark:bg-amber-500 dark:text-gray-900 rounded-md hover:opacity-90 transition-opacity"
+                className="px-3 py-2 bg-festival-red text-white dark:bg-amber-500 dark:text-gray-900 rounded-md hover:opacity-90 transition-opacity text-sm"
               >
                 Visit Website
               </a>

@@ -5,6 +5,7 @@ import LikeButton from '../LikeButton';
 import { User } from '@supabase/supabase-js';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import CommentSection from './CommentSection';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface ImageLightboxProps {
   selectedImage: any;
@@ -25,43 +26,46 @@ const ImageLightbox = ({
   totalImages,
   user 
 }: ImageLightboxProps) => {
+  const isMobile = useIsMobile();
+  
   if (!selectedImage) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 animate-fade-in overflow-y-auto">
+    <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-2 sm:p-4 animate-fade-in overflow-y-auto">
       <div onClick={(e) => e.stopPropagation()} className="max-w-6xl w-full bg-white dark:bg-gray-800 rounded-lg overflow-hidden relative max-h-[90vh] flex flex-col">
         <button 
           className="absolute top-2 right-2 bg-white/80 dark:bg-gray-700/80 backdrop-blur-sm rounded-full p-1 z-10 hover:bg-festival-red hover:text-white dark:hover:bg-festival-red transition-colors duration-300"
           onClick={onClose}
         >
-          <X size={24} className="text-festival-maroon dark:text-white" />
+          <X size={20} className="text-festival-maroon dark:text-white" />
         </button>
         
         {/* Navigation buttons */}
         <button 
-          className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-gray-700/80 backdrop-blur-sm rounded-full p-2 z-10 hover:bg-festival-golden/80 dark:hover:bg-festival-golden/80 transition-colors duration-300"
+          className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-gray-700/80 backdrop-blur-sm rounded-full p-1 sm:p-2 z-10 hover:bg-festival-golden/80 dark:hover:bg-festival-golden/80 transition-colors duration-300"
           onClick={onPrevious}
         >
-          <ChevronLeft size={24} className="text-festival-maroon dark:text-white" />
+          <ChevronLeft size={isMobile ? 20 : 24} className="text-festival-maroon dark:text-white" />
         </button>
         
         <button 
-          className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-gray-700/80 backdrop-blur-sm rounded-full p-2 z-10 hover:bg-festival-golden/80 dark:hover:bg-festival-golden/80 transition-colors duration-300"
+          className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-gray-700/80 backdrop-blur-sm rounded-full p-1 sm:p-2 z-10 hover:bg-festival-golden/80 dark:hover:bg-festival-golden/80 transition-colors duration-300"
           onClick={onNext}
         >
-          <ChevronRight size={24} className="text-festival-maroon dark:text-white" />
+          <ChevronRight size={isMobile ? 20 : 24} className="text-festival-maroon dark:text-white" />
         </button>
         
         <div className="overflow-auto">
-          <div className="md:flex">
+          <div className="flex flex-col md:flex-row">
             <div className="md:w-2/3 bg-gray-100 dark:bg-gray-900 flex items-center justify-center">
               <img 
                 src={selectedImage.src} 
                 alt={selectedImage.alt} 
-                className="w-full h-auto object-contain max-h-[60vh]"
+                className="w-full h-auto object-contain"
+                style={{ maxHeight: isMobile ? '40vh' : '60vh' }}
               />
             </div>
-            <div className="p-6 md:w-1/3 overflow-y-auto" style={{ maxHeight: 'calc(90vh - 2rem)' }}>
+            <div className="p-4 md:p-6 md:w-1/3 overflow-y-auto" style={{ maxHeight: isMobile ? '50vh' : 'calc(90vh - 2rem)' }}>
               <Tabs defaultValue="details" className="w-full">
                 <TabsList className="grid w-full grid-cols-2 mb-4">
                   <TabsTrigger value="details">Details</TabsTrigger>
