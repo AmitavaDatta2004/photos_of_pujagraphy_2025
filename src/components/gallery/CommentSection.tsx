@@ -1,15 +1,16 @@
+"use client"
 
-import { useState, useEffect } from 'react';
-import { User } from '@supabase/supabase-js';
-import { supabase } from '@/integrations/supabase/client';
-import { useToast } from '@/hooks/use-toast';
-import { Textarea } from '@/components/ui/textarea';
-import { Button } from '@/components/ui/button';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { MessageCircle, Trash2, Loader2 } from 'lucide-react';
-import { Form, FormControl, FormField, FormItem } from '@/components/ui/form';
-import { useForm } from 'react-hook-form';
-import { formatDistanceToNow } from 'date-fns';
+import { useState, useEffect } from "react"
+import type { User } from "@supabase/supabase-js"
+import { supabase } from "@/integrations/supabase/client"
+import { useToast } from "@/hooks/use-toast"
+import { Textarea } from "@/components/ui/textarea"
+import { Button } from "@/components/ui/button"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { MessageCircle, Trash2, Loader2 } from "lucide-react"
+import { Form, FormControl, FormField, FormItem } from "@/components/ui/form"
+import { useForm } from "react-hook-form"
+import { formatDistanceToNow } from "date-fns"
 import {
   AlertDialog,
   AlertDialogAction,
@@ -20,183 +21,185 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
+} from "@/components/ui/alert-dialog"
 
 interface CommentSectionProps {
-  photoId: string;
-  user: User | null;
+  photoId: string
+  user: User | null
 }
 
 interface Comment {
-  id: string;
-  content: string;
-  created_at: string;
-  user_id: string;
+  id: string
+  content: string
+  created_at: string
+  user_id: string
   profile?: {
-    username: string | null;
-    avatar_url: string | null;
-  };
+    username: string | null
+    avatar_url: string | null
+  }
 }
 
 const CommentSection = ({ photoId, user }: CommentSectionProps) => {
-  const [comments, setComments] = useState<Comment[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [submitLoading, setSubmitLoading] = useState(false);
-  const { toast } = useToast();
+  const [comments, setComments] = useState<Comment[]>([])
+  const [loading, setLoading] = useState(false)
+  const [submitLoading, setSubmitLoading] = useState(false)
+  const { toast } = useToast()
   const form = useForm({
     defaultValues: {
-      comment: '',
+      comment: "",
     },
-  });
+  })
 
   const fetchComments = async () => {
-    setLoading(true);
+    setLoading(true)
     try {
       const { data, error } = await supabase
-        .from('photo_comments')
+        .from("photo_comments")
         .select(`
           id, 
           content, 
           created_at, 
           user_id
         `)
-        .eq('photo_id', photoId)
-        .order('created_at', { ascending: false });
+        .eq("photo_id", photoId)
+        .order("created_at", { ascending: false })
 
-      if (error) throw error;
-      
+      if (error) throw error
+
       if (data && data.length > 0) {
         // Fetch profiles separately and join them to comments
-        const userIds = data.map(comment => comment.user_id);
-        
+        const userIds = data.map((comment) => comment.user_id)
+
         const { data: profilesData, error: profilesError } = await supabase
-          .from('profiles')
-          .select('id, username, avatar_url')
-          .in('id', userIds);
-          
+          .from("profiles")
+          .select("id, username, avatar_url")
+          .in("id", userIds)
+
         if (profilesError) {
-          console.error('Error fetching profiles:', profilesError);
+          console.error("Error fetching profiles:", profilesError)
         }
-        
+
         // Map profiles to comments
-        const commentsWithProfiles = data.map(comment => {
-          const profile = profilesData?.find(p => p.id === comment.user_id);
+        const commentsWithProfiles = data.map((comment) => {
+          const profile = profilesData?.find((p) => p.id === comment.user_id)
           return {
             ...comment,
-            profile: profile ? { 
-              username: profile.username,
-              avatar_url: profile.avatar_url 
-            } : { 
-              username: 'User', 
-              avatar_url: null 
-            }
-          };
-        });
-        
-        setComments(commentsWithProfiles);
+            profile: profile
+              ? {
+                  username: profile.username,
+                  avatar_url: profile.avatar_url,
+                }
+              : {
+                  username: "User",
+                  avatar_url: null,
+                },
+          }
+        })
+
+        setComments(commentsWithProfiles)
       } else {
-        setComments([]);
+        setComments([])
       }
     } catch (error) {
-      console.error('Error fetching comments:', error);
+      console.error("Error fetching comments:", error)
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   // Fetch comments
   useEffect(() => {
-    fetchComments();
+    fetchComments()
 
     // Set up realtime subscription
     const channel = supabase
-      .channel('schema-db-changes')
+      .channel("schema-db-changes")
       .on(
-        'postgres_changes',
+        "postgres_changes",
         {
-          event: '*',
-          schema: 'public',
-          table: 'photo_comments',
+          event: "*",
+          schema: "public",
+          table: "photo_comments",
           filter: `photo_id=eq.${photoId}`,
         },
         () => {
-          fetchComments();
-        }
+          fetchComments()
+        },
       )
-      .subscribe();
+      .subscribe()
 
     return () => {
-      supabase.removeChannel(channel);
-    };
-  }, [photoId]);
+      supabase.removeChannel(channel)
+    }
+  }, [photoId])
 
   const onSubmit = async (values: { comment: string }) => {
     if (!user) {
       toast({
-        title: 'Authentication required',
-        description: 'Please log in to comment',
-        variant: 'default',
+        title: "Authentication required",
+        description: "Please log in to comment",
+        variant: "default",
         duration: 3000,
-      });
-      return;
+      })
+      return
     }
 
-    if (!values.comment.trim()) return;
+    if (!values.comment.trim()) return
 
-    setSubmitLoading(true);
+    setSubmitLoading(true)
     try {
-      const { error } = await supabase.from('photo_comments').insert({
+      const { error } = await supabase.from("photo_comments").insert({
         photo_id: photoId,
         user_id: user.id,
         content: values.comment.trim(),
-      });
+      })
 
-      if (error) throw error;
-      
-      form.reset();
+      if (error) throw error
+
+      form.reset()
       toast({
-        title: 'Comment added',
-        description: 'Your comment has been posted successfully',
+        title: "Comment added",
+        description: "Your comment has been posted successfully",
         duration: 3000,
-      });
+      })
     } catch (error: any) {
-      console.error('Error adding comment:', error);
+      console.error("Error adding comment:", error)
       toast({
-        title: 'Error',
-        description: error.message || 'Failed to add comment',
-        variant: 'destructive',
+        title: "Error",
+        description: error.message || "Failed to add comment",
+        variant: "destructive",
         duration: 3000,
-      });
+      })
     } finally {
-      setSubmitLoading(false);
+      setSubmitLoading(false)
     }
-  };
+  }
 
   const deleteComment = async (commentId: string) => {
     try {
       const { error } = await supabase
-        .from('photo_comments')
+        .from("photo_comments")
         .delete()
-        .eq('id', commentId)
-        .eq('user_id', user?.id || '');
+        .eq("id", commentId)
+        .eq("user_id", user?.id || "")
 
-      if (error) throw error;
-      
+      if (error) throw error
+
       toast({
-        title: 'Comment deleted',
-        description: 'Your comment has been removed',
+        title: "Comment deleted",
+        description: "Your comment has been removed",
         duration: 3000,
-      });
+      })
     } catch (error: any) {
-      console.error('Error deleting comment:', error);
+      console.error("Error deleting comment:", error)
       toast({
-        title: 'Error',
-        description: error.message || 'Failed to delete comment',
-        variant: 'destructive',
+        title: "Error",
+        description: error.message || "Failed to delete comment",
+        variant: "destructive",
         duration: 3000,
-      });
+      })
     }
-  };
+  }
 
   return (
     <div className="space-y-4">
@@ -223,8 +226,8 @@ const CommentSection = ({ photoId, user }: CommentSectionProps) => {
                 </FormItem>
               )}
             />
-            <div className="flex justify-end">
-              <Button 
+            <div className="flex justify-end mt-2">
+              <Button
                 type="submit"
                 disabled={submitLoading}
                 className="bg-festival-maroon hover:bg-festival-maroon/90 text-white dark:bg-festival-golden dark:hover:bg-festival-golden/90 dark:text-festival-maroon"
@@ -241,12 +244,10 @@ const CommentSection = ({ photoId, user }: CommentSectionProps) => {
         </Form>
       ) : (
         <div className="bg-gray-50 dark:bg-gray-800/50 p-3 rounded-md text-center">
-          <p className="text-sm text-gray-600 dark:text-gray-300">
-            Please log in to add a comment
-          </p>
-          <Button 
+          <p className="text-sm text-gray-600 dark:text-gray-300">Please log in to add a comment</p>
+          <Button
             variant="link"
-            onClick={() => window.location.href = '/auth'}
+            onClick={() => (window.location.href = "/auth")}
             className="text-festival-maroon dark:text-festival-golden mt-1"
           >
             Log In / Sign Up
@@ -265,17 +266,15 @@ const CommentSection = ({ photoId, user }: CommentSectionProps) => {
               key={comment.id}
               className="p-3 bg-white dark:bg-gray-800/50 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700"
             >
-              <div className="flex justify-between">
-                <div className="flex items-center gap-2">
-                  <Avatar className="h-8 w-8">
+              <div className="flex flex-col sm:flex-row sm:justify-between">
+                <div className="flex items-center gap-2 mb-2 sm:mb-0">
+                  <Avatar className="h-7 w-7 sm:h-8 sm:w-8">
                     <AvatarImage
                       src={comment.profile?.avatar_url || undefined}
                       alt={comment.profile?.username || "User"}
                     />
                     <AvatarFallback>
-                      {comment.profile?.username 
-                        ? comment.profile.username.charAt(0).toUpperCase() 
-                        : "U"}
+                      {comment.profile?.username ? comment.profile.username.charAt(0).toUpperCase() : "U"}
                     </AvatarFallback>
                   </Avatar>
                   <div>
@@ -285,19 +284,19 @@ const CommentSection = ({ photoId, user }: CommentSectionProps) => {
                     </p>
                   </div>
                 </div>
-                
+
                 {user && user.id === comment.user_id && (
                   <AlertDialog>
                     <AlertDialogTrigger asChild>
                       <Button
                         variant="ghost"
                         size="icon"
-                        className="h-8 w-8 text-gray-500 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20"
+                        className="h-7 w-7 sm:h-8 sm:w-8 text-gray-500 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 ml-auto sm:ml-0"
                       >
                         <Trash2 size={14} />
                       </Button>
                     </AlertDialogTrigger>
-                    <AlertDialogContent>
+                    <AlertDialogContent className="max-w-[90vw] sm:max-w-md">
                       <AlertDialogHeader>
                         <AlertDialogTitle>Delete Comment</AlertDialogTitle>
                         <AlertDialogDescription>
@@ -317,10 +316,8 @@ const CommentSection = ({ photoId, user }: CommentSectionProps) => {
                   </AlertDialog>
                 )}
               </div>
-              
-              <p className="mt-2 text-gray-700 dark:text-gray-300 whitespace-pre-line break-words">
-                {comment.content}
-              </p>
+
+              <p className="mt-2 text-gray-700 dark:text-gray-300 whitespace-pre-line break-words">{comment.content}</p>
             </div>
           ))
         ) : (
@@ -331,7 +328,7 @@ const CommentSection = ({ photoId, user }: CommentSectionProps) => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CommentSection;
+export default CommentSection
