@@ -278,7 +278,7 @@ const LikeButton = ({ photoId, user, onLike, onUnlike, className }: LikeButtonPr
           align="center"
           onClick={(e) => e.stopPropagation()}
         >
-          <h4 className="font-medium text-sm mb-2">
+          <h4 className="font-medium text-sm mb-2 dark:text-gray-300">
             {likeCount === 1 ? "1 person liked this" : `${likeCount} people liked this`}
           </h4>
 

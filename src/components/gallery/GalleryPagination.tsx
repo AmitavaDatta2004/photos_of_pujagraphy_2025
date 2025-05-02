@@ -55,7 +55,7 @@ const GalleryPagination = ({ currentPage, totalPages, onPageChange }: GalleryPag
                 <PaginationLink
                   isActive={currentPage === pageNumber}
                   onClick={() => onPageChange(pageNumber)}
-                  className={`${theme === "dark" && currentPage !== pageNumber ? "text-white hover:text-festival-golden" : ""} min-w-[32px] h-8 sm:min-w-[36px] sm:h-9`}
+                  className={`${theme === "dark" && currentPage !== pageNumber ? "text-white hover:text-festival-golden" : "text-white hover:text-festival-golden"} min-w-[32px] h-8 sm:min-w-[36px] sm:h-9`}
                 >
                   {index === 1 && pageNumber !== 2 && totalPages > 5
                     ? "..."
