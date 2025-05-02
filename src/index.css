@@ -1,27 +1,26 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
   .festival-container {
-    @apply container mx-auto px-4;
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl font-heading text-center mb-2 text-festival-maroon dark:text-festival-golden;
+    @apply text-3xl md:text-4xl font-bold text-center text-festival-maroon dark:text-festival-golden mb-2;
   }
 
   .section-subtitle {
-    @apply text-lg text-center max-w-2xl mx-auto mb-10 text-gray-600 dark:text-gray-300;
-  }
-
-  .btn-festive {
-    @apply inline-flex py-3 px-6 bg-gradient-to-r from-festival-maroon to-festival-maroon rounded-lg font-medium text-white hover:from-festival-maroon hover:to-festival-red dark:from-festival-golden dark:to-festival-golden dark:hover:from-festival-golden dark:hover:to-festival-saffron dark:text-festival-maroon transition duration-300 shadow-md hover:shadow-lg;
+    @apply text-lg text-center text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto;
   }
 
   .card-festive {
-    @apply bg-white rounded-lg shadow-md overflow-hidden border border-festival-golden/20 dark:bg-gray-800 dark:border-festival-golden/10;
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 transition-all duration-300;
+  }
+
+  .btn-festive {
+    @apply inline-flex items-center gap-2 bg-festival-maroon dark:bg-festival-maroon/90 hover:bg-festival-red dark:hover:bg-festival-red/90 text-white px-6 py-3 rounded-lg font-medium shadow-md;
   }
 }
 
@@ -35,27 +34,41 @@
   }
 
   .font-heading {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
   }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes heartbeat {
-  0% { transform: scale(1); }
-  25% { transform: scale(1.3); }
-  50% { transform: scale(1); }
-  75% { transform: scale(1.3); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.3);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 :root {
-  --festival-maroon: #8E2241;
-  --festival-red: #D23B4D;
-  --festival-golden: #F2B705;
-  --festival-saffron: #F29F05;
-  --festival-cream: #F2E7C9;
+  --festival-maroon: #8e2241;
+  --festival-red: #d23b4d;
+  --festival-golden: #f2b705;
+  --festival-saffron: #f29f05;
+  --festival-cream: #f2e7c9;
 }
