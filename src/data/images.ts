@@ -629,7 +629,7 @@ export const galleryImages = [
   },
   {
     id: 69,
-    src: 'mobile/Arijit Koley_pic_2.jpg',
+    src: 'mobile/Arijit koley_pic_2.jpg',
     alt: 'Durga idol',
     category: 'portraits',
     photographer: 'Arijit Koley',
