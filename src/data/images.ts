@@ -627,6 +627,60 @@ export const galleryImages = [
     caption: 'মায়ের মুখশ্রী',
     photoCategory: 'Mobile Captures' as PhotoCategory
   },
+  {
+    id: 69,
+    src: 'mobile/Arijit Koley_pic_2.jpg',
+    alt: 'Durga idol',
+    category: 'portraits',
+    photographer: 'Arijit Koley',
+    caption: 'দেবীর চক্ষুদান',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 70,
+    src: 'camera/Surajit Ghosh_pic_2.jpg',
+    alt: 'Durga idol',
+    category: 'portraits',
+    photographer: 'Surajit Ghosh',
+    caption: 'অর্জুনপুর অমরা সবাই Arjunpur Amra Sabai  ক্লাব ২০২৪ দূর্গা পূজা ',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
+  {
+    id: 71,
+    src: 'mobile/Subhadip Roy_pic_1.jpg',
+    alt: 'Saraswati idol',
+    category: 'portraits',
+    photographer: 'Subhadip Roy',
+    caption: 'বীণা রঞ্জিত পুস্তক হস্তে, ভগবতী ভারতী দেবী নমস্তে',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 72,
+    src: 'mobile/Subhadip Roy_pic_2.jpg',
+    alt: 'Kali idol',
+    category: 'rituals & traditions',
+    photographer: 'Subhadip Roy',
+    caption: 'আলোর পরশমণি🪔 🌺',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 73,
+    src: 'camera/Subarno Talapatra_pic_1.jpg',
+    alt: 'jagadhatri idol',
+    category: 'portraits',
+    photographer: 'Subarno Talapatra',
+    caption: 'আলোকধারিনী',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
+  {
+    id: 74,
+    src: 'camera/Subarno Talapatra_pic_2.jpg',
+    alt: 'jagadhatri idol',
+    category: 'portraits',
+    photographer: 'Subarno Talapatra',
+    caption: 'দুই নয়নে স্নেহের হাসি, ললাটনেত্র আগুনবরণ',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
 ];
 
 // Organizing team data
