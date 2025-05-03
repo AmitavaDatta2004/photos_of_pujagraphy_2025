@@ -771,6 +771,186 @@ export const galleryImages = [
     caption: 'দুর্গতিনাশিনী ',
     photoCategory: 'Camera Captures' as PhotoCategory
   },
+  {
+    id: 85,
+    src: 'mobile/Ayush Ghosh_pic_1.jpeg',
+    alt: 'Annapurna idol',
+    category: 'portraits',
+    photographer: 'Argho Roy Choudhury',
+    caption: '🌾 অন্নদা 🌾',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 86,
+    src: 'mobile/Ayush Ghosh_pic_2.jpeg',
+    alt: 'Kali idol',
+    category: 'portraits',
+    photographer: 'Ayush Ghosh',
+    caption: '✨ কালী করালী ✨',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 87,
+    src: 'mobile/ARIJIT Chakraborty_pic_1.jpg',
+    alt: 'jagadhatri idol',
+    category: 'portraits',
+    photographer: 'Arijit Chakraborty',
+    caption: 'মাতৃরূপে সংস্থিতা',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 88,
+    src: 'mobile/Arijit Chakraborty_pic_2.jpg',
+    alt: 'Shiv Durga idol',
+    category: 'portraits',
+    photographer:'Arijit Chakraborty',
+    caption:'শিব সঙ্গে সদা রঙ্গে আনন্দে মগনা ',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 89,
+    src: 'camera/ABONTIKA DAS_pic_1.jpg',
+    alt: 'jagadhatri idol',
+    category: 'portraits',
+    photographer:'ABONTIKA DAS',
+    caption:'mukhshree',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
+  {
+    id: 90,
+    src: 'camera/ABONTIKA DAS_pic_2.jpg',
+    alt: 'jagadhatri idol',
+    category: 'portraits',
+    photographer:'ABONTIKA DAS',
+    caption:'তুলির টানে',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
+  {
+    id: 91,
+    src: 'mobile/ABONTIKA DAS_pic_1.jpg',
+    alt: 'jagadhatri idol',
+    category: 'portraits',
+    photographer:'ABONTIKA DAS',
+    caption:'Tematha Sarbojonin',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 92,
+    src: 'mobile/ABONTIKA DAS_pic_2.jpg',
+    alt: 'jagadhatri idol',
+    category: 'street shots',
+    photographer:'ABONTIKA DAS',
+    caption:'আকাশচুম্বী সিংহ বাহী মা জগদ্ধাত্রী',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 93,
+    src: 'camera/Rajib Chakraborty_pic.jpg',
+    alt: 'Kali idol',
+    category: 'portraits',
+    photographer:'Rajib Chakraborty',
+    caption:'মা কালীর মুখশ্রী',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
+  {
+    id: 94,
+    src: 'camera/Rajeswar Bhattacharjee_pic_1.jpg',
+    alt: 'durga idol',
+    category: 'street shots',
+    photographer:'Rajeswar Bhattacharjee',
+    caption:'The Arrival of the Goddess',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
+  {
+    id: 95,
+    src: 'camera/Rajeswar Bhattacharjee_pic_2.jpg',
+    alt: 'durga idol',
+    category: 'portraits',
+    photographer:'Rajeswar Bhattacharjee',
+    caption:'Frame in frame',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
+  {
+    id: 96,
+    src: 'camera/SUBHRO BHATTACHARYA_pic_1.jpg',
+    alt: 'idol',
+    category: 'rituals & traditions',
+    photographer:'Subhro Bhattacharya',
+    caption:'Konokanjali',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
+  {
+    id: 97,
+    src: 'mobile/SUBHRO BHATTACHARYA_pic_1.jpg',
+    alt: 'jagadhatri idol',
+    category: 'portraits',
+    photographer:'Subhro Bhattacharya',
+    caption:'Matri Rupena',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 98,
+    src: 'mobile/Anindita Chatterjee_PIC_1.jpg',
+    alt: 'Durga idol',
+    category: 'portraits',
+    photographer:'Anindita Chatterjee',
+    caption:'দুর্গাপূজা ২০২৪',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 99,
+    src: 'mobile/Anindita Chatterjee_PIC_2.jpg',
+    alt: 'jagadhatri idol',
+    category: 'portraits',
+    photographer:'Anindita Chatterjee',
+    caption:'জগদ্ধাত্রী পূজা ২০২৪',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 100,
+    src: 'mobile/Supriyo Das_pic_1.jpg',
+    alt: 'Sarashwati idol',
+    category: 'portraits',
+    photographer:'Supriyo Das',
+    caption:'সরস্বতী পুজা 2024',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 101,
+    src: 'mobile/Supriyo vlogs_pic_2.jpg',
+    alt: 'jagadhatri idol',
+    category: 'street shots',
+    photographer:'Supriyo Das',
+    caption:'জগদ্ধাত্রী পূজা ২০২৪',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 102,
+    src: 'mobile/INDRANIL MUKHERJEE_pic_1.jpg',
+    alt: 'durga idol',
+    category: 'rituals & traditions',
+    photographer:'Indranil Mukherjee',
+    caption:'DURGA PUJA ASHTAMI ANJALI',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 103,
+    src: 'mobile/Soma Das_pic_1.jpg',
+    alt: 'durga idol',
+    category: 'rituals & traditions',
+    photographer:'Soma Das',
+    caption:'Bisorjon, 2024',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 104,
+    src: 'mobile/Soma Das_pic_2.jpg',
+    alt: 'Idol Making',
+    category: 'idol making',
+    photographer:'Soma Das',
+    caption:'Agomoni, 2024',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
 ];
 
 // Organizing team data
