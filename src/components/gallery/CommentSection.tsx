@@ -219,7 +219,7 @@ const CommentSection = ({ photoId, user }: CommentSectionProps) => {
                   <FormControl>
                     <Textarea
                       placeholder="Add a comment..."
-                      className="resize-none border-festival-golden/30 focus:border-festival-golden focus:ring focus:ring-festival-golden/20"
+                      className="resize-none border-festival-golden/30 focus:border-festival-golden focus:ring focus:ring-festival-golden/20 dark:bg-gray-700 dark:text-white dark:border-gray-600"
                       {...field}
                     />
                   </FormControl>
@@ -291,7 +291,7 @@ const CommentSection = ({ photoId, user }: CommentSectionProps) => {
                       <Button
                         variant="ghost"
                         size="icon"
-                        className="h-7 w-7 sm:h-8 sm:w-8 text-gray-500 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 ml-auto sm:ml-0"
+                        className="h-7 w-7 sm:h-8 sm:w-8 text-gray-500 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 dark:text-gray-400 dark:hover:text-red-400 ml-auto sm:ml-0"
                       >
                         <Trash2 size={14} />
                       </Button>
@@ -322,8 +322,8 @@ const CommentSection = ({ photoId, user }: CommentSectionProps) => {
           ))
         ) : (
           <div className="text-center py-8">
-            <p className="text-gray-500 dark:text-gray-400">No comments yet</p>
-            <p className="text-sm text-gray-400 dark:text-gray-500">Be the first to share your thoughts</p>
+            <p className="text-gray-500 dark:text-gray-300">No comments yet</p>
+            <p className="text-sm text-gray-400 dark:text-gray-400">Be the first to share your thoughts</p>
           </div>
         )}
       </div>

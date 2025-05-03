@@ -72,9 +72,19 @@ const ImageLightbox = ({
               style={{ maxHeight: isMobile ? "calc(50vh)" : "calc(90vh - 2rem)" }}
             >
               <Tabs defaultValue="details" className="w-full">
-                <TabsList className="grid w-full grid-cols-2 mb-4">
-                  <TabsTrigger value="details">Details</TabsTrigger>
-                  <TabsTrigger value="comments">Comments</TabsTrigger>
+                <TabsList className="grid w-full grid-cols-2 mb-4 dark:bg-gray-700">
+                  <TabsTrigger
+                    value="details"
+                    className="data-[state=active]:bg-white dark:data-[state=active]:bg-gray-600 dark:text-white dark:data-[state=active]:text-white"
+                  >
+                    Details
+                  </TabsTrigger>
+                  <TabsTrigger
+                    value="comments"
+                    className="data-[state=active]:bg-white dark:data-[state=active]:bg-gray-600 dark:text-white dark:data-[state=active]:text-white"
+                  >
+                    Comments
+                  </TabsTrigger>
                 </TabsList>
 
                 <TabsContent value="details" className="space-y-4">
@@ -100,7 +110,7 @@ const ImageLightbox = ({
                   </p>
                   <p className="text-xs sm:text-sm font-medium mb-1 dark:text-gray-300">Caption:</p>
                   <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300">{selectedImage.caption}</p>
-                  <div className="mt-3 sm:mt-4 text-xs sm:text-sm text-gray-500 dark:text-gray-400">
+                  <div className="mt-3 sm:mt-4 text-xs sm:text-sm text-gray-500 dark:text-gray-300">
                     Image {(currentImageIndex + 1).toString()} of {totalImages.toString()}
                   </div>
                 </TabsContent>
