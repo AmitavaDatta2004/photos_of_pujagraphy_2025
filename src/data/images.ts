@@ -681,6 +681,96 @@ export const galleryImages = [
     caption: 'দুই নয়নে স্নেহের হাসি, ললাটনেত্র আগুনবরণ',
     photoCategory: 'Camera Captures' as PhotoCategory
   },
+  {
+    id: 75,
+    src: 'mobile/Sayoni Manna_pic_1.jpg',
+    alt: 'durga idol',
+    category: 'cultural events',
+    photographer: 'Sayoni Manna',
+    caption: 'অভয়দায়িনী মা দূর্গা আরতি',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 76,
+    src: 'mobile/Sayoni Manna_pic_2.jpg',
+    alt: 'jagadhatri idol',
+    category: 'cultural events',
+    photographer: 'Sayoni Manna',
+    caption: 'জগদ্ধাত্রী পূজা ',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 77,
+    src: 'mobile/Arpita Roy_pic_1.jpg',
+    alt: 'Durga idol',
+    category: 'cultural events',
+    photographer: 'Arpita Roy',
+    caption: 'Captured the soul of Bengal—one click at a time!',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 78,
+    src: 'mobile/Arpita Roy_pic_2.jpg',
+    alt: 'Durga idol',
+    category: 'rituals & traditions',
+    photographer: 'Arpita Roy',
+    caption: '"Durga Pujo isn’t just a festival, it’s an emotion in every frame!"',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 79,
+    src: 'camera/Ranjabati Das_pic_1.jpg',
+    alt: 'jagadhatri idol',
+    category: 'portraits',
+    photographer: 'Ranjabati Das',
+    caption: 'মায়ের মুখশ্রী',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
+  {
+    id: 80,
+    src: 'mobile/Swagoto Mondal_pic_1.jpg',
+    alt: 'Durga idol',
+    category: 'moments & emotions',
+    photographer: 'Swagoto Mondal',
+    caption: 'আগমনীর সুরে বাঁধে ভলোবাসার গান | দেবীপক্ষের সূচনায় হোক পাপের বিসর্জন।।🙏🏻♥️✨',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 81,
+    src: 'mobile/Swagoto Mondal_pic_2.jpg',
+    alt: 'Durga idol',
+    category: 'moments & emotions',
+    photographer: 'Sawgoto Mondal',
+    caption: 'মা এলো আজ বছর ঘুরে | বাঁচার নতুন ছন্দ নিয়ে, |আকাশ জুড়ে মেঘের খেলা | উৎসবের এক রঙের ভেলা , | কাশ ফুলের এই মাঠ পেরিয়ে | মা আসছে ,আজ সকালে 🌴',
+    photoCategory: 'Mobile Captures' as PhotoCategory
+  },
+  {
+    id: 82,
+    src: 'camera/Ranjabati Das_pic_2.jpg',
+    alt: 'jagadhatri idol',
+    category: 'portraits',
+    photographer: 'Ranjabati Das',
+    caption: 'ভদ্রেশ্বর গঞ্জ ',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
+  {
+    id: 83,
+    src: 'camera/Argho Roy Choudhury_pic_1.jpg',
+    alt: 'kali idol',
+    category: 'portraits',
+    photographer: 'Argho Roy Choudhury',
+    caption: 'মহাকালকামিনী',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
+  {
+    id: 84,
+    src: 'camera/Argho Roy Choudhury_pic_2.jpg',
+    alt: 'Durga idol',
+    category: 'portraits',
+    photographer: 'Argho Roy Choudhury',
+    caption: 'দুর্গতিনাশিনী ',
+    photoCategory: 'Camera Captures' as PhotoCategory
+  },
 ];
 
 // Organizing team data
