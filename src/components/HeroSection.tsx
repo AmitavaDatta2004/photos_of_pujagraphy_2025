@@ -1,5 +1,5 @@
 
-import { Camera } from "lucide-react"
+import { Camera, Trophy } from "lucide-react"
 import CountdownTimer from "./CountdownTimer"
 
 const HeroSection = () => {
