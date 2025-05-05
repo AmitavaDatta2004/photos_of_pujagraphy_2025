@@ -39,9 +39,9 @@ const Index = () => {
         <SubmitSection />
 
         {/* Judges Section with updated background */}
-        <div className="dark:bg-gradient-to-b dark:from-gray-900 dark:to-purple-900/30">
+        {/* <div className="dark:bg-gradient-to-b dark:from-gray-900 dark:to-purple-900/30">
           <JudgesSection />
-        </div>
+        </div> */}
 
         <WinnersSection />
 
