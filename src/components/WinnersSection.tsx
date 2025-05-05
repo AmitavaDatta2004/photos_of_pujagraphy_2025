@@ -1,7 +1,9 @@
+
 "use client"
 
-import { Trophy, Medal, Award } from "lucide-react"
+import { Trophy, Medal, Award, Image } from "lucide-react"
 import { useState } from "react"
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card"
 
 const WinnersSection = () => {
   // State to animate cards on hover
@@ -19,15 +21,15 @@ const WinnersSection = () => {
     <section id="winners" className="py-20 dark:bg-gray-900">
       <div className="festival-container">
         <h2 className="section-title">Results & Winners</h2>
-        <p className="section-subtitle">Celebrating excellence in Puja photography</p>
+        <p className="section-subtitle mb-8">Celebrating excellence in Puja photography</p>
 
         <div className="max-w-3xl mx-auto mb-16">
-          <div className="card-festive p-8 text-center hover:bg-gradient-to-r hover:from-festival-cream hover:to-white dark:hover:from-gray-800 dark:hover:to-gray-700 transition-all duration-500">
+          <div className="card-festive p-8 text-center bg-gradient-to-r from-white via-festival-cream/30 to-white dark:from-gray-800 dark:via-gray-700/50 dark:to-gray-800 transition-all duration-500 shadow-md hover:shadow-xl">
             <Trophy size={48} className="text-festival-golden mx-auto mb-4 animate-pulse" />
-            <h3 className="text-2xl font-bold text-festival-maroon mb-3">Winners Announcement Pending</h3>
+            <h3 className="text-2xl font-bold text-festival-maroon mb-3">Winners Announced!</h3>
             <p className="text-gray-600 dark:text-gray-300">
-              The competition is currently ongoing. Winners will be announced after the judging process is complete.
-              Check back here after June 1st, 2025 to see the winning photographs and honorable mentions.
+              Congratulations to all our winners! We received incredible entries that captured the spirit and 
+              beauty of Puja celebrations. Explore the winning photographs below and celebrate with us.
             </p>
           </div>
         </div>
@@ -44,12 +46,19 @@ const WinnersSection = () => {
               <Award size={40} className="text-white" />
             </div>
             <h3 className="text-xl font-bold text-festival-maroon mb-2">Best of Best Prize</h3>
-            <div className="aspect-square bg-gray-100 flex items-center justify-center mb-4 overflow-hidden group">
-              <p className="text-gray-500 dark:text-gray-400 group-hover:scale-110 transition-transform duration-300">
-                Winner to be announced
-              </p>
+            <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center mb-4 overflow-hidden group relative border-2 border-dashed border-festival-golden/50 hover:border-festival-golden transition-all duration-300">
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative z-10">
+                <p className="text-gray-500 dark:text-gray-400 group-hover:scale-110 transition-transform duration-300">
+                  <Image size={48} className="mx-auto mb-2 opacity-40 group-hover:opacity-70 transition-all" />
+                  <span className="font-medium">Winner Photo</span>
+                </p>
+                <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white py-2 px-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <p className="text-sm font-medium">Click to view full image</p>
+                </div>
+              </div>
             </div>
-            <p className="text-sm text-gray-600 dark:text-gray-400">Exiting prizes will be handovered</p>
+            <p className="text-sm text-gray-600 dark:text-gray-400">Exciting prizes will be handed over</p>
           </div>
         </div>
 
@@ -66,12 +75,19 @@ const WinnersSection = () => {
                 <Trophy size={32} className="text-white" />
               </div>
               <h3 className="text-xl font-bold text-festival-maroon mb-2">1st Prize</h3>
-              <div className="aspect-square bg-gray-100 flex items-center justify-center mb-4 overflow-hidden group">
-                <p className="text-gray-500 dark:text-gray-400 group-hover:scale-110 transition-transform duration-300">
-                  Winner to be announced
-                </p>
+              <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center mb-4 overflow-hidden group relative border-2 border-dashed border-festival-golden/50 hover:border-festival-golden transition-all duration-300">
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative z-10">
+                  <p className="text-gray-500 dark:text-gray-400 group-hover:scale-110 transition-transform duration-300">
+                    <Image size={40} className="mx-auto mb-2 opacity-40 group-hover:opacity-70 transition-all" />
+                    <span className="font-medium">Winner Photo</span>
+                  </p>
+                  <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white py-2 px-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <p className="text-sm font-medium">Click to view full image</p>
+                  </div>
+                </div>
               </div>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Exiting prizes will be handovered</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">Exciting prizes will be handed over</p>
             </div>
 
             <div
@@ -84,18 +100,26 @@ const WinnersSection = () => {
               </div>
               <h3 className="text-xl font-bold text-festival-maroon mb-2">2nd Prize (2 Winners)</h3>
               <div className="grid grid-cols-2 gap-2 mb-4">
-                <div className="aspect-square bg-gray-100 flex items-center justify-center overflow-hidden group">
-                  <p className="text-gray-500 dark:text-gray-400 text-xs group-hover:scale-110 transition-transform duration-300">
-                    Winner 1
-                  </p>
+                <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden group relative border-2 border-dashed border-[#C0C0C0]/50 hover:border-[#C0C0C0] transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <Image size={24} className="mx-auto mb-1 opacity-40 group-hover:opacity-70 transition-all" />
+                    <p className="text-gray-500 dark:text-gray-400 text-xs group-hover:scale-110 transition-transform duration-300">
+                      Winner 1
+                    </p>
+                  </div>
                 </div>
-                <div className="aspect-square bg-gray-100 flex items-center justify-center overflow-hidden group">
-                  <p className="text-gray-500 dark:text-gray-400 text-xs group-hover:scale-110 transition-transform duration-300">
-                    Winner 2
-                  </p>
+                <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden group relative border-2 border-dashed border-[#C0C0C0]/50 hover:border-[#C0C0C0] transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <Image size={24} className="mx-auto mb-1 opacity-40 group-hover:opacity-70 transition-all" />
+                    <p className="text-gray-500 dark:text-gray-400 text-xs group-hover:scale-110 transition-transform duration-300">
+                      Winner 2
+                    </p>
+                  </div>
                 </div>
               </div>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Exiting prizes will be handovered</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">Exciting prizes will be handed over</p>
             </div>
 
             <div
@@ -108,18 +132,26 @@ const WinnersSection = () => {
               </div>
               <h3 className="text-xl font-bold text-festival-maroon mb-2">3rd Prize (2 Winners)</h3>
               <div className="grid grid-cols-2 gap-2 mb-4">
-                <div className="aspect-square bg-gray-100 flex items-center justify-center overflow-hidden group">
-                  <p className="text-gray-500 dark:text-gray-400 text-xs group-hover:scale-110 transition-transform duration-300">
-                    Winner 1
-                  </p>
+                <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden group relative border-2 border-dashed border-[#CD7F32]/50 hover:border-[#CD7F32] transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <Image size={24} className="mx-auto mb-1 opacity-40 group-hover:opacity-70 transition-all" />
+                    <p className="text-gray-500 dark:text-gray-400 text-xs group-hover:scale-110 transition-transform duration-300">
+                      Winner 1
+                    </p>
+                  </div>
                 </div>
-                <div className="aspect-square bg-gray-100 flex items-center justify-center overflow-hidden group">
-                  <p className="text-gray-500 dark:text-gray-400 text-xs group-hover:scale-110 transition-transform duration-300">
-                    Winner 2
-                  </p>
+                <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden group relative border-2 border-dashed border-[#CD7F32]/50 hover:border-[#CD7F32] transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <Image size={24} className="mx-auto mb-1 opacity-40 group-hover:opacity-70 transition-all" />
+                    <p className="text-gray-500 dark:text-gray-400 text-xs group-hover:scale-110 transition-transform duration-300">
+                      Winner 2
+                    </p>
+                  </div>
                 </div>
               </div>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Exiting prizes will be handovered</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">Exciting prizes will be handed over</p>
             </div>
           </div>
         </div>
@@ -137,12 +169,19 @@ const WinnersSection = () => {
                 <Trophy size={32} className="text-white" />
               </div>
               <h3 className="text-xl font-bold text-festival-maroon mb-2">1st Prize</h3>
-              <div className="aspect-square bg-gray-100 flex items-center justify-center mb-4 overflow-hidden group">
-                <p className="text-gray-500 dark:text-gray-400 group-hover:scale-110 transition-transform duration-300">
-                  Winner to be announced
-                </p>
+              <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center mb-4 overflow-hidden group relative border-2 border-dashed border-festival-golden/50 hover:border-festival-golden transition-all duration-300">
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative z-10">
+                  <p className="text-gray-500 dark:text-gray-400 group-hover:scale-110 transition-transform duration-300">
+                    <Image size={40} className="mx-auto mb-2 opacity-40 group-hover:opacity-70 transition-all" />
+                    <span className="font-medium">Winner Photo</span>
+                  </p>
+                  <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white py-2 px-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <p className="text-sm font-medium">Click to view full image</p>
+                  </div>
+                </div>
               </div>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Exiting prizes will be handovered</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">Exciting prizes will be handed over</p>
             </div>
 
             <div
@@ -155,18 +194,26 @@ const WinnersSection = () => {
               </div>
               <h3 className="text-xl font-bold text-festival-maroon mb-2">2nd Prize (2 Winners)</h3>
               <div className="grid grid-cols-2 gap-2 mb-4">
-                <div className="aspect-square bg-gray-100 flex items-center justify-center overflow-hidden group">
-                  <p className="text-gray-500 dark:text-gray-400 text-xs group-hover:scale-110 transition-transform duration-300">
-                    Winner 1
-                  </p>
+                <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden group relative border-2 border-dashed border-[#C0C0C0]/50 hover:border-[#C0C0C0] transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <Image size={24} className="mx-auto mb-1 opacity-40 group-hover:opacity-70 transition-all" />
+                    <p className="text-gray-500 dark:text-gray-400 text-xs group-hover:scale-110 transition-transform duration-300">
+                      Winner 1
+                    </p>
+                  </div>
                 </div>
-                <div className="aspect-square bg-gray-100 flex items-center justify-center overflow-hidden group">
-                  <p className="text-gray-500 dark:text-gray-400 text-xs group-hover:scale-110 transition-transform duration-300">
-                    Winner 2
-                  </p>
+                <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden group relative border-2 border-dashed border-[#C0C0C0]/50 hover:border-[#C0C0C0] transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <Image size={24} className="mx-auto mb-1 opacity-40 group-hover:opacity-70 transition-all" />
+                    <p className="text-gray-500 dark:text-gray-400 text-xs group-hover:scale-110 transition-transform duration-300">
+                      Winner 2
+                    </p>
+                  </div>
                 </div>
               </div>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Exiting prizes will be handovered</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">Exciting prizes will be handed over</p>
             </div>
 
             <div
@@ -179,18 +226,26 @@ const WinnersSection = () => {
               </div>
               <h3 className="text-xl font-bold text-festival-maroon mb-2">3rd Prize (2 Winners)</h3>
               <div className="grid grid-cols-2 gap-2 mb-4">
-                <div className="aspect-square bg-gray-100 flex items-center justify-center overflow-hidden group">
-                  <p className="text-gray-500 dark:text-gray-400 text-xs group-hover:scale-110 transition-transform duration-300">
-                    Winner 1
-                  </p>
+                <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden group relative border-2 border-dashed border-[#CD7F32]/50 hover:border-[#CD7F32] transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <Image size={24} className="mx-auto mb-1 opacity-40 group-hover:opacity-70 transition-all" />
+                    <p className="text-gray-500 dark:text-gray-400 text-xs group-hover:scale-110 transition-transform duration-300">
+                      Winner 1
+                    </p>
+                  </div>
                 </div>
-                <div className="aspect-square bg-gray-100 flex items-center justify-center overflow-hidden group">
-                  <p className="text-gray-500 dark:text-gray-400 text-xs group-hover:scale-110 transition-transform duration-300">
-                    Winner 2
-                  </p>
+                <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden group relative border-2 border-dashed border-[#CD7F32]/50 hover:border-[#CD7F32] transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <Image size={24} className="mx-auto mb-1 opacity-40 group-hover:opacity-70 transition-all" />
+                    <p className="text-gray-500 dark:text-gray-400 text-xs group-hover:scale-110 transition-transform duration-300">
+                      Winner 2
+                    </p>
+                  </div>
                 </div>
               </div>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Exiting prizes will be handovered</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">Exciting prizes will be handed over</p>
             </div>
           </div>
         </div>
@@ -205,10 +260,14 @@ const WinnersSection = () => {
                 onMouseEnter={() => handleCardHover(`honor-${num}`)}
                 onMouseLeave={handleCardLeave}
               >
-                <div className="aspect-square bg-gray-100 flex items-center justify-center overflow-hidden group">
-                  <p className="text-gray-500 dark:text-gray-400 text-sm group-hover:scale-110 transition-transform duration-300">
-                    Coming soon
-                  </p>
+                <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden group relative border-2 border-dashed border-purple-400/30 hover:border-purple-400 transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10">
+                    <Image size={24} className="mx-auto mb-1 opacity-40 group-hover:opacity-70 transition-all" />
+                    <p className="text-gray-500 dark:text-gray-400 text-sm group-hover:scale-110 transition-transform duration-300">
+                      Winner {num}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}

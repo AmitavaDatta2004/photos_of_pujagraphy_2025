@@ -1,3 +1,4 @@
+
 import { Camera } from "lucide-react"
 import CountdownTimer from "./CountdownTimer"
 
@@ -20,6 +21,19 @@ const HeroSection = () => {
         className="absolute w-20 h-20 bg-festival-maroon/10 rounded-full bottom-1/4 left-[20%] animate-float"
         style={{ animationDelay: "1.5s" }}
       ></div>
+
+      {/* Results Announcement Banner */}
+      <div className="absolute top-36 left-0 right-0 z-20 flex justify-center">
+        <div className="animate-pulse-slow animate-bounce transition-all duration-500">
+          <div className="bg-gradient-to-r from-festival-golden via-festival-red to-festival-maroon p-1 rounded-lg rotate-2 shadow-xl transform hover:scale-105 hover:rotate-0 transition-all duration-300">
+            <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-md px-6 py-3 rounded-md">
+              <p className="text-lg md:text-2xl font-bold bg-gradient-to-r from-festival-maroon via-festival-red to-festival-golden bg-clip-text text-transparent animate-gradient-x">
+                🎉 RESULTS OUT NOW! 🎉
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Hero Content */}
       <div className="festival-container relative z-10 py-20 mt-16">
@@ -45,15 +59,25 @@ const HeroSection = () => {
             <CountdownTimer targetDate={deadline} />
           </div>
 
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLScQjLoo3U9XI9a5MSiblGE31GO0ZRW05F_nFxOV4HuX6ivung/viewform?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-festive transform transition-all duration-300 hover:scale-110 hover:shadow-lg"
-          >
-            <Camera size={20} />
-            Submit Your Photo
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLScQjLoo3U9XI9a5MSiblGE31GO0ZRW05F_nFxOV4HuX6ivung/viewform?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-festive transform transition-all duration-300 hover:scale-110 hover:shadow-lg"
+            >
+              <Camera size={20} />
+              Submit Your Photo
+            </a>
+            
+            <a
+              href="#winners"
+              className="btn-festive bg-gradient-to-r from-festival-golden to-festival-saffron text-festival-maroon hover:from-festival-golden/90 hover:to-festival-red/90 hover:text-white transform transition-all duration-300 hover:scale-110 hover:shadow-lg flex items-center gap-2"
+            >
+              <Trophy size={20} />
+              View Winners
+            </a>
+          </div>
 
           <div className="mt-12">
             <a
