@@ -64,16 +64,10 @@ const WinnersSection = () => {
             </h3>
             <div className="aspect-square w-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center mb-6 overflow-hidden group relative border-4 border-dashed border-festival-golden/50 hover:border-festival-golden transition-all duration-300">
               <img 
-                src="https://source.unsplash.com/random/800x800/?durga-puja,festival,india" 
+                src="winners/camera/sample.jpg" 
                 alt="Grand Prize Winner" 
                 className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
-                <div className="text-center text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <Camera className="mx-auto mb-2" size={32} />
-                  <p className="text-lg font-medium">View Full Image</p>
-                </div>
-              </div>
             </div>
             <p className="text-lg text-gray-700 dark:text-gray-300">
               Exciting prizes will be handed over
@@ -102,12 +96,6 @@ const WinnersSection = () => {
                 alt="Grand Prize Winner" 
                 className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4">
-                <div className="text-center text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <Camera className="mx-auto mb-2" size={32} />
-                  <p className="text-lg font-medium">View Full Image</p>
-                </div>
-              </div>
             </div>
             <p className="text-lg text-gray-700 dark:text-gray-300">
               Exciting prizes will be handed over
@@ -142,12 +130,6 @@ const WinnersSection = () => {
                   alt="Mobile 1st Prize Winner" 
                   className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-3">
-                  <div className="text-center text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    <Camera className="mx-auto mb-1" size={24} />
-                    <p className="text-sm font-medium">View Full Image</p>
-                  </div>
-                </div>
               </div>
               <p className="text-sm text-gray-600 dark:text-gray-400">
                 Exciting prizes will be handed over
@@ -176,12 +158,6 @@ const WinnersSection = () => {
                     alt="Mobile 2nd Prize Winner 1" 
                     className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-2">
-                    <div className="text-center text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                      <Camera className="mx-auto mb-1" size={16} />
-                      <p className="text-xs font-medium">View Photo</p>
-                    </div>
-                  </div>
                 </div>
                 <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden group relative border-2 border-dashed border-[#C0C0C0]/50 hover:border-[#C0C0C0] transition-all duration-300">
                   <img 
@@ -189,12 +165,6 @@ const WinnersSection = () => {
                     alt="Mobile 2nd Prize Winner 2" 
                     className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-2">
-                    <div className="text-center text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                      <Camera className="mx-auto mb-1" size={16} />
-                      <p className="text-xs font-medium">View Photo</p>
-                    </div>
-                  </div>
                 </div>
               </div>
               <p className="text-sm text-gray-600 dark:text-gray-400">
@@ -224,12 +194,6 @@ const WinnersSection = () => {
                     alt="Mobile 3rd Prize Winner 1" 
                     className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-2">
-                    <div className="text-center text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                      <Camera className="mx-auto mb-1" size={16} />
-                      <p className="text-xs font-medium">View Photo</p>
-                    </div>
-                  </div>
                 </div>
                 <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden group relative border-2 border-dashed border-[#CD7F32]/50 hover:border-[#CD7F32] transition-all duration-300">
                   <img 
@@ -237,12 +201,6 @@ const WinnersSection = () => {
                     alt="Mobile 3rd Prize Winner 2" 
                     className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-2">
-                    <div className="text-center text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                      <Camera className="mx-auto mb-1" size={16} />
-                      <p className="text-xs font-medium">View Photo</p>
-                    </div>
-                  </div>
                 </div>
               </div>
               <p className="text-sm text-gray-600 dark:text-gray-400">
@@ -279,12 +237,6 @@ const WinnersSection = () => {
                   alt="Camera 1st Prize Winner" 
                   className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-3">
-                  <div className="text-center text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    <Camera className="mx-auto mb-1" size={24} />
-                    <p className="text-sm font-medium">View Full Image</p>
-                  </div>
-                </div>
               </div>
               <p className="text-sm text-gray-600 dark:text-gray-400">
                 Exciting prizes will be handed over
@@ -313,12 +265,6 @@ const WinnersSection = () => {
                     alt="Camera 2nd Prize Winner 1" 
                     className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-2">
-                    <div className="text-center text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                      <Camera className="mx-auto mb-1" size={16} />
-                      <p className="text-xs font-medium">View Photo</p>
-                    </div>
-                  </div>
                 </div>
                 <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden group relative border-2 border-dashed border-[#C0C0C0]/50 hover:border-[#C0C0C0] transition-all duration-300">
                   <img 
@@ -326,12 +272,6 @@ const WinnersSection = () => {
                     alt="Camera 2nd Prize Winner 2" 
                     className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-2">
-                    <div className="text-center text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                      <Camera className="mx-auto mb-1" size={16} />
-                      <p className="text-xs font-medium">View Photo</p>
-                    </div>
-                  </div>
                 </div>
               </div>
               <p className="text-sm text-gray-600 dark:text-gray-400">
@@ -361,12 +301,6 @@ const WinnersSection = () => {
                     alt="Camera 3rd Prize Winner 1" 
                     className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-2">
-                    <div className="text-center text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                      <Camera className="mx-auto mb-1" size={16} />
-                      <p className="text-xs font-medium">View Photo</p>
-                    </div>
-                  </div>
                 </div>
                 <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden group relative border-2 border-dashed border-[#CD7F32]/50 hover:border-[#CD7F32] transition-all duration-300">
                   <img 
@@ -374,12 +308,6 @@ const WinnersSection = () => {
                     alt="Camera 3rd Prize Winner 2" 
                     className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-2">
-                    <div className="text-center text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                      <Camera className="mx-auto mb-1" size={16} />
-                      <p className="text-xs font-medium">View Photo</p>
-                    </div>
-                  </div>
                 </div>
               </div>
               <p className="text-sm text-gray-600 dark:text-gray-400">
@@ -403,16 +331,10 @@ const WinnersSection = () => {
               >
                 <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden group relative border-2 border-dashed border-purple-400/30 hover:border-purple-400 transition-all duration-300">
                   <img 
-                    src={`https://source.unsplash.com/random/300x300/?durga,festival,india&sig=${num}`}
+                    src={`hon_men${num}.jpg`}
                     alt={`Honorable Mention ${num}`} 
                     className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-2">
-                    <div className="text-center text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                      <Camera className="mx-auto mb-1" size={16} />
-                      <p className="text-xs font-medium">View Photo</p>
-                    </div>
-                  </div>
                 </div>
               </div>
             ))}

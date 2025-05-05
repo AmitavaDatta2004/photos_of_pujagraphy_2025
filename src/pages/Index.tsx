@@ -28,8 +28,6 @@ const Index = () => {
         <SponsorsHeroBanner />
         <Navbar />
         <HeroSection />
-        {/* Display Winners section prominently right after Hero section */}
-        <WinnersSection />
         {/* New beautiful sponsor showcase section */}
         <SponsorShowcase />
         <SponsorSubmitBanner />
@@ -39,6 +37,13 @@ const Index = () => {
         <StatsSection />
         <GallerySection />
         <SubmitSection />
+
+        {/* Judges Section with updated background */}
+        {/* <div className="dark:bg-gradient-to-b dark:from-gray-900 dark:to-purple-900/30">
+          <JudgesSection />
+        </div> */}
+
+        <WinnersSection />
 
         {/* Team Section with updated background */}
         <div className="dark:bg-gradient-to-b dark:from-purple-900/30 dark:to-indigo-900/20">
