@@ -1,6 +1,7 @@
+
 "use client";
 
-import { Trophy, Medal, Award, Image } from "lucide-react";
+import { Trophy, Medal, Award, Image, Eye, Camera } from "lucide-react";
 import { useState } from "react";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
 
@@ -47,7 +48,7 @@ const WinnersSection = () => {
         </h3>
         <div className="max-w-7xl mx-auto mb-24 flex justify-center gap-12 flex-wrap">
           <div
-            className={`card-festive w-[28rem] overflow-hidden text-center p-10 transition-all duration-500 ${
+            className={`card-festive w-full md:w-[28rem] overflow-hidden text-center p-6 md:p-10 transition-all duration-500 ${
               activeCard === "best"
                 ? "shadow-2xl scale-105 bg-gradient-to-r from-festival-golden/20 to-white dark:from-amber-700/30 dark:to-gray-800"
                 : ""
@@ -62,20 +63,17 @@ const WinnersSection = () => {
               Best of Best Prize
             </h3>
             <div className="aspect-square w-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center mb-6 overflow-hidden group relative border-4 border-dashed border-festival-golden/50 hover:border-festival-golden transition-all duration-300">
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="relative z-10">
-                <p className="text-gray-500 dark:text-gray-400 group-hover:scale-110 transition-transform duration-300">
-                  <Image
-                    size={64}
-                    className="mx-auto mb-2 opacity-40 group-hover:opacity-80 transition-all"
-                  />
-                  <span className="text-lg font-medium">Winner Photo</span>
-                </p>
-                <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white py-3 px-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <p className="text-base font-medium">
-                    Click to view full image
-                  </p>
-                </div>
+              <img 
+                src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81" 
+                alt="Best of Best Winner" 
+                className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-105">
+                <span className="bg-black/70 text-white px-4 py-2 rounded-full backdrop-blur-sm flex items-center gap-2">
+                  <Eye size={20} />
+                  <span>View Full Image</span>
+                </span>
               </div>
             </div>
             <p className="text-lg text-gray-700 dark:text-gray-300">
@@ -85,12 +83,12 @@ const WinnersSection = () => {
 
           {/* Duplicate of the above card with same big styles */}
           <div
-            className={`card-festive w-[28rem] overflow-hidden text-center p-10 transition-all duration-500 ${
-              activeCard === "best"
+            className={`card-festive w-full md:w-[28rem] overflow-hidden text-center p-6 md:p-10 transition-all duration-500 ${
+              activeCard === "best2"
                 ? "shadow-2xl scale-105 bg-gradient-to-r from-festival-golden/20 to-white dark:from-amber-700/30 dark:to-gray-800"
                 : ""
             }`}
-            onMouseEnter={() => handleCardHover("best")}
+            onMouseEnter={() => handleCardHover("best2")}
             onMouseLeave={handleCardLeave}
           >
             <div className="inline-block bg-gradient-to-r from-festival-golden via-festival-red to-purple-500 p-5 rounded-full mb-8 transition-transform duration-300 hover:rotate-12">
@@ -100,20 +98,17 @@ const WinnersSection = () => {
               Best of Best Prize
             </h3>
             <div className="aspect-square w-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center mb-6 overflow-hidden group relative border-4 border-dashed border-festival-golden/50 hover:border-festival-golden transition-all duration-300">
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="relative z-10">
-                <p className="text-gray-500 dark:text-gray-400 group-hover:scale-110 transition-transform duration-300">
-                  <Image
-                    size={64}
-                    className="mx-auto mb-2 opacity-40 group-hover:opacity-80 transition-all"
-                  />
-                  <span className="text-lg font-medium">Winner Photo</span>
-                </p>
-                <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white py-3 px-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <p className="text-base font-medium">
-                    Click to view full image
-                  </p>
-                </div>
+              <img 
+                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" 
+                alt="Best of Best Winner" 
+                className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-105">
+                <span className="bg-black/70 text-white px-4 py-2 rounded-full backdrop-blur-sm flex items-center gap-2">
+                  <Eye size={20} />
+                  <span>View Full Image</span>
+                </span>
               </div>
             </div>
             <p className="text-lg text-gray-700 dark:text-gray-300">
@@ -144,19 +139,15 @@ const WinnersSection = () => {
                 1st Prize
               </h3>
               <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center mb-4 overflow-hidden group relative border-2 border-dashed border-festival-golden/50 hover:border-festival-golden transition-all duration-300">
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <p className="text-gray-500 dark:text-gray-400 group-hover:scale-110 transition-transform duration-300">
-                    <Image
-                      size={40}
-                      className="mx-auto mb-2 opacity-40 group-hover:opacity-70 transition-all"
-                    />
-                    <span className="font-medium">Winner Photo</span>
-                  </p>
-                  <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white py-2 px-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <p className="text-sm font-medium">
-                      Click to view full image
-                    </p>
+                <img 
+                  src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b" 
+                  alt="Mobile 1st Prize Winner" 
+                  className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                  <div className="bg-black/70 backdrop-blur-sm p-2 rounded-full">
+                    <Camera size={24} className="text-white" />
                   </div>
                 </div>
               </div>
@@ -182,27 +173,29 @@ const WinnersSection = () => {
               </h3>
               <div className="grid grid-cols-2 gap-2 mb-4">
                 <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden group relative border-2 border-dashed border-[#C0C0C0]/50 hover:border-[#C0C0C0] transition-all duration-300">
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative z-10">
-                    <Image
-                      size={24}
-                      className="mx-auto mb-1 opacity-40 group-hover:opacity-70 transition-all"
-                    />
-                    <p className="text-gray-500 dark:text-gray-400 text-xs group-hover:scale-110 transition-transform duration-300">
-                      Winner 1
-                    </p>
+                  <img 
+                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
+                    alt="Mobile 2nd Prize Winner 1" 
+                    className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                    <div className="bg-black/70 backdrop-blur-sm p-1 rounded-full">
+                      <Camera size={16} className="text-white" />
+                    </div>
                   </div>
                 </div>
                 <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden group relative border-2 border-dashed border-[#C0C0C0]/50 hover:border-[#C0C0C0] transition-all duration-300">
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative z-10">
-                    <Image
-                      size={24}
-                      className="mx-auto mb-1 opacity-40 group-hover:opacity-70 transition-all"
-                    />
-                    <p className="text-gray-500 dark:text-gray-400 text-xs group-hover:scale-110 transition-transform duration-300">
-                      Winner 2
-                    </p>
+                  <img 
+                    src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" 
+                    alt="Mobile 2nd Prize Winner 2" 
+                    className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                    <div className="bg-black/70 backdrop-blur-sm p-1 rounded-full">
+                      <Camera size={16} className="text-white" />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -228,27 +221,29 @@ const WinnersSection = () => {
               </h3>
               <div className="grid grid-cols-2 gap-2 mb-4">
                 <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden group relative border-2 border-dashed border-[#CD7F32]/50 hover:border-[#CD7F32] transition-all duration-300">
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative z-10">
-                    <Image
-                      size={24}
-                      className="mx-auto mb-1 opacity-40 group-hover:opacity-70 transition-all"
-                    />
-                    <p className="text-gray-500 dark:text-gray-400 text-xs group-hover:scale-110 transition-transform duration-300">
-                      Winner 1
-                    </p>
+                  <img 
+                    src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6" 
+                    alt="Mobile 3rd Prize Winner 1" 
+                    className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                    <div className="bg-black/70 backdrop-blur-sm p-1 rounded-full">
+                      <Camera size={16} className="text-white" />
+                    </div>
                   </div>
                 </div>
                 <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden group relative border-2 border-dashed border-[#CD7F32]/50 hover:border-[#CD7F32] transition-all duration-300">
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative z-10">
-                    <Image
-                      size={24}
-                      className="mx-auto mb-1 opacity-40 group-hover:opacity-70 transition-all"
-                    />
-                    <p className="text-gray-500 dark:text-gray-400 text-xs group-hover:scale-110 transition-transform duration-300">
-                      Winner 2
-                    </p>
+                  <img 
+                    src="https://images.unsplash.com/photo-1518770660439-4636190af475" 
+                    alt="Mobile 3rd Prize Winner 2" 
+                    className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                    <div className="bg-black/70 backdrop-blur-sm p-1 rounded-full">
+                      <Camera size={16} className="text-white" />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -281,19 +276,15 @@ const WinnersSection = () => {
                 1st Prize
               </h3>
               <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center mb-4 overflow-hidden group relative border-2 border-dashed border-festival-golden/50 hover:border-festival-golden transition-all duration-300">
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <p className="text-gray-500 dark:text-gray-400 group-hover:scale-110 transition-transform duration-300">
-                    <Image
-                      size={40}
-                      className="mx-auto mb-2 opacity-40 group-hover:opacity-70 transition-all"
-                    />
-                    <span className="font-medium">Winner Photo</span>
-                  </p>
-                  <div className="absolute bottom-0 left-0 right-0 bg-black/70 text-white py-2 px-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <p className="text-sm font-medium">
-                      Click to view full image
-                    </p>
+                <img 
+                  src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5" 
+                  alt="Camera 1st Prize Winner" 
+                  className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                  <div className="bg-black/70 backdrop-blur-sm p-2 rounded-full">
+                    <Camera size={24} className="text-white" />
                   </div>
                 </div>
               </div>
@@ -319,27 +310,29 @@ const WinnersSection = () => {
               </h3>
               <div className="grid grid-cols-2 gap-2 mb-4">
                 <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden group relative border-2 border-dashed border-[#C0C0C0]/50 hover:border-[#C0C0C0] transition-all duration-300">
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative z-10">
-                    <Image
-                      size={24}
-                      className="mx-auto mb-1 opacity-40 group-hover:opacity-70 transition-all"
-                    />
-                    <p className="text-gray-500 dark:text-gray-400 text-xs group-hover:scale-110 transition-transform duration-300">
-                      Winner 1
-                    </p>
+                  <img 
+                    src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7" 
+                    alt="Camera 2nd Prize Winner 1" 
+                    className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                    <div className="bg-black/70 backdrop-blur-sm p-1 rounded-full">
+                      <Camera size={16} className="text-white" />
+                    </div>
                   </div>
                 </div>
                 <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden group relative border-2 border-dashed border-[#C0C0C0]/50 hover:border-[#C0C0C0] transition-all duration-300">
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative z-10">
-                    <Image
-                      size={24}
-                      className="mx-auto mb-1 opacity-40 group-hover:opacity-70 transition-all"
-                    />
-                    <p className="text-gray-500 dark:text-gray-400 text-xs group-hover:scale-110 transition-transform duration-300">
-                      Winner 2
-                    </p>
+                  <img 
+                    src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" 
+                    alt="Camera 2nd Prize Winner 2" 
+                    className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                    <div className="bg-black/70 backdrop-blur-sm p-1 rounded-full">
+                      <Camera size={16} className="text-white" />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -365,27 +358,29 @@ const WinnersSection = () => {
               </h3>
               <div className="grid grid-cols-2 gap-2 mb-4">
                 <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden group relative border-2 border-dashed border-[#CD7F32]/50 hover:border-[#CD7F32] transition-all duration-300">
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative z-10">
-                    <Image
-                      size={24}
-                      className="mx-auto mb-1 opacity-40 group-hover:opacity-70 transition-all"
-                    />
-                    <p className="text-gray-500 dark:text-gray-400 text-xs group-hover:scale-110 transition-transform duration-300">
-                      Winner 1
-                    </p>
+                  <img 
+                    src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81" 
+                    alt="Camera 3rd Prize Winner 1" 
+                    className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                    <div className="bg-black/70 backdrop-blur-sm p-1 rounded-full">
+                      <Camera size={16} className="text-white" />
+                    </div>
                   </div>
                 </div>
                 <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden group relative border-2 border-dashed border-[#CD7F32]/50 hover:border-[#CD7F32] transition-all duration-300">
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative z-10">
-                    <Image
-                      size={24}
-                      className="mx-auto mb-1 opacity-40 group-hover:opacity-70 transition-all"
-                    />
-                    <p className="text-gray-500 dark:text-gray-400 text-xs group-hover:scale-110 transition-transform duration-300">
-                      Winner 2
-                    </p>
+                  <img 
+                    src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" 
+                    alt="Camera 3rd Prize Winner 2" 
+                    className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                    <div className="bg-black/70 backdrop-blur-sm p-1 rounded-full">
+                      <Camera size={16} className="text-white" />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -401,27 +396,39 @@ const WinnersSection = () => {
             Honorable Mentions (5 Winners)
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-            {[1, 2, 3, 4, 5].map((num) => (
-              <div
-                key={num}
-                className="card-festive p-3 hover:shadow-lg hover:scale-105 transition-all duration-300"
-                onMouseEnter={() => handleCardHover(`honor-${num}`)}
-                onMouseLeave={handleCardLeave}
-              >
-                <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden group relative border-2 border-dashed border-purple-400/30 hover:border-purple-400 transition-all duration-300">
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative z-10">
-                    <Image
-                      size={24}
-                      className="mx-auto mb-1 opacity-40 group-hover:opacity-70 transition-all"
+            {[1, 2, 3, 4, 5].map((num, index) => {
+              const images = [
+                "https://images.unsplash.com/photo-1605810230434-7631ac76ec81",
+                "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+                "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+                "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
+                "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5"
+              ];
+              
+              return (
+                <div
+                  key={num}
+                  className="card-festive p-3 hover:shadow-lg hover:scale-105 transition-all duration-500 group"
+                  onMouseEnter={() => handleCardHover(`honor-${num}`)}
+                  onMouseLeave={handleCardLeave}
+                >
+                  <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden group relative border-2 border-dashed border-purple-400/30 hover:border-purple-400 transition-all duration-300">
+                    <img 
+                      src={images[index]} 
+                      alt={`Honorable Mention ${num}`}
+                      className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
                     />
-                    <p className="text-gray-500 dark:text-gray-400 text-sm group-hover:scale-110 transition-transform duration-300">
-                      Winner {num}
-                    </p>
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 z-10">
+                      <div className="bg-black/70 backdrop-blur-sm px-2 py-1 rounded-full flex items-center gap-1">
+                        <Camera size={14} className="text-white" />
+                        <span className="text-white text-xs">Winner {num}</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
