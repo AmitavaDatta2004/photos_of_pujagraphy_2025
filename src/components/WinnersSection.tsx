@@ -64,7 +64,7 @@ const WinnersSection = () => {
             </h3>
             <div className="aspect-square w-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center mb-6 overflow-hidden group relative border-4 border-dashed border-festival-golden/50 hover:border-festival-golden transition-all duration-300">
               <img 
-                src="winners/camera/sample.jpg" 
+                src="winners/camera/BEST2.jpg" 
                 alt="Grand Prize Winner" 
                 className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
               />
@@ -92,7 +92,7 @@ const WinnersSection = () => {
             </h3>
             <div className="aspect-square w-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center mb-6 overflow-hidden group relative border-4 border-dashed border-festival-golden/50 hover:border-festival-golden transition-all duration-300">
               <img 
-                src="https://source.unsplash.com/random/800x800/?durga,idol,festival" 
+                src="winners\mobile\BEST1.jpg" 
                 alt="Grand Prize Winner" 
                 className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
               />
@@ -126,7 +126,7 @@ const WinnersSection = () => {
               </h3>
               <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center mb-4 overflow-hidden group relative border-2 border-dashed border-festival-golden/50 hover:border-festival-golden transition-all duration-300">
                 <img 
-                  src="https://source.unsplash.com/random/400x400/?durga,statue,festival" 
+                  src="winners\mobile\MP1.jpg" 
                   alt="Mobile 1st Prize Winner" 
                   className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                 />
@@ -154,14 +154,14 @@ const WinnersSection = () => {
               <div className="grid grid-cols-2 gap-2 mb-4">
                 <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden group relative border-2 border-dashed border-[#C0C0C0]/50 hover:border-[#C0C0C0] transition-all duration-300">
                   <img 
-                    src="https://source.unsplash.com/random/200x200/?durga,goddess,festival" 
+                    src="winners\mobile\MP2.jpg" 
                     alt="Mobile 2nd Prize Winner 1" 
                     className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
                 <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden group relative border-2 border-dashed border-[#C0C0C0]/50 hover:border-[#C0C0C0] transition-all duration-300">
                   <img 
-                    src="https://source.unsplash.com/random/200x200/?puja,celebration,india" 
+                    src="winners\mobile\MP2A.jpg" 
                     alt="Mobile 2nd Prize Winner 2" 
                     className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                   />
@@ -190,14 +190,14 @@ const WinnersSection = () => {
               <div className="grid grid-cols-2 gap-2 mb-4">
                 <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden group relative border-2 border-dashed border-[#CD7F32]/50 hover:border-[#CD7F32] transition-all duration-300">
                   <img 
-                    src="https://source.unsplash.com/random/200x200/?bengal,festival,lights" 
+                    src="winners\mobile\MP3.jpg" 
                     alt="Mobile 3rd Prize Winner 1" 
                     className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
                 <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden group relative border-2 border-dashed border-[#CD7F32]/50 hover:border-[#CD7F32] transition-all duration-300">
                   <img 
-                    src="https://source.unsplash.com/random/200x200/?india,festival,celebration" 
+                    src="winners\mobile\MP3A.jpg" 
                     alt="Mobile 3rd Prize Winner 2" 
                     className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                   />
@@ -233,7 +233,7 @@ const WinnersSection = () => {
               </h3>
               <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center mb-4 overflow-hidden group relative border-2 border-dashed border-festival-golden/50 hover:border-festival-golden transition-all duration-300">
                 <img 
-                  src="https://source.unsplash.com/random/400x400/?bengal,durga,idol" 
+                  src="winners\camera\CP1.jpg" 
                   alt="Camera 1st Prize Winner" 
                   className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                 />
@@ -261,14 +261,14 @@ const WinnersSection = () => {
               <div className="grid grid-cols-2 gap-2 mb-4">
                 <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden group relative border-2 border-dashed border-[#C0C0C0]/50 hover:border-[#C0C0C0] transition-all duration-300">
                   <img 
-                    src="https://source.unsplash.com/random/200x200/?india,festival,lights" 
+                    src="winners\camera\CP2.jpg" 
                     alt="Camera 2nd Prize Winner 1" 
                     className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
                 <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden group relative border-2 border-dashed border-[#C0C0C0]/50 hover:border-[#C0C0C0] transition-all duration-300">
                   <img 
-                    src="https://source.unsplash.com/random/200x200/?durga,ceremony,festival" 
+                    src="winners\camera\CP2A.jpg" 
                     alt="Camera 2nd Prize Winner 2" 
                     className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                   />
@@ -297,14 +297,14 @@ const WinnersSection = () => {
               <div className="grid grid-cols-2 gap-2 mb-4">
                 <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden group relative border-2 border-dashed border-[#CD7F32]/50 hover:border-[#CD7F32] transition-all duration-300">
                   <img 
-                    src="https://source.unsplash.com/random/200x200/?bengal,puja,tradition" 
+                    src="winners\camera\CP3.jpg" 
                     alt="Camera 3rd Prize Winner 1" 
                     className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
                 <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden group relative border-2 border-dashed border-[#CD7F32]/50 hover:border-[#CD7F32] transition-all duration-300">
                   <img 
-                    src="https://source.unsplash.com/random/200x200/?kolkata,festival,durga" 
+                    src="winners\camera\CP3A.jpg" 
                     alt="Camera 3rd Prize Winner 2" 
                     className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                   />
@@ -319,10 +319,10 @@ const WinnersSection = () => {
 
         <div className="mt-16 text-center">
           <h3 className="text-xl font-bold text-festival-maroon mb-6">
-            Honorable Mentions (5 Winners)
+            Honorable Mentions (10 EXCELLENT SHOTS)
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-            {[1, 2, 3, 4, 5].map((num) => (
+            {[1, 2, 3, 4, 5,6,7,8,9,10].map((num) => (
               <div
                 key={num}
                 className="card-festive p-3 hover:shadow-lg hover:scale-105 transition-all duration-300"
@@ -331,7 +331,7 @@ const WinnersSection = () => {
               >
                 <div className="aspect-square bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden group relative border-2 border-dashed border-purple-400/30 hover:border-purple-400 transition-all duration-300">
                   <img 
-                    src={`hon_men${num}.jpg`}
+                    src={`hon_men/${num}.jpg`}
                     alt={`Honorable Mention ${num}`} 
                     className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                   />
